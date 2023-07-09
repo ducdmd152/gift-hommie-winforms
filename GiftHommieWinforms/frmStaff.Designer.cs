@@ -70,6 +70,7 @@
             btnClose = new System.Windows.Forms.Button();
             tabHome = new System.Windows.Forms.TabPage();
             tabcontrolStaff = new System.Windows.Forms.TabControl();
+            btnDeleteProduct = new System.Windows.Forms.Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBoxSearch.SuspendLayout();
@@ -265,6 +266,7 @@
             // groupBoxSearch
             // 
             groupBoxSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            groupBoxSearch.Controls.Add(btnDeleteProduct);
             groupBoxSearch.Controls.Add(btnAddProduct);
             groupBoxSearch.Controls.Add(cbProductSort);
             groupBoxSearch.Controls.Add(label15);
@@ -289,9 +291,9 @@
             // btnAddProduct
             // 
             btnAddProduct.BackColor = System.Drawing.Color.LemonChiffon;
-            btnAddProduct.Location = new System.Drawing.Point(83, 631);
+            btnAddProduct.Location = new System.Drawing.Point(28, 623);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new System.Drawing.Size(125, 38);
+            btnAddProduct.Size = new System.Drawing.Size(101, 38);
             btnAddProduct.TabIndex = 3;
             btnAddProduct.Text = "Add";
             btnAddProduct.UseVisualStyleBackColor = false;
@@ -554,6 +556,16 @@
             tabcontrolStaff.TabIndex = 1;
             tabcontrolStaff.TabStop = false;
             // 
+            // btnDeleteProduct
+            // 
+            btnDeleteProduct.BackColor = System.Drawing.Color.LemonChiffon;
+            btnDeleteProduct.Location = new System.Drawing.Point(185, 623);
+            btnDeleteProduct.Name = "btnDeleteProduct";
+            btnDeleteProduct.Size = new System.Drawing.Size(101, 38);
+            btnDeleteProduct.TabIndex = 53;
+            btnDeleteProduct.Text = "Delete";
+            btnDeleteProduct.UseVisualStyleBackColor = false;
+            // 
             // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -636,5 +648,6 @@
         private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.TabControl tabcontrolStaff;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteProduct;
     }
 }

@@ -21,6 +21,13 @@ namespace GiftHommieWinforms
         public frmStaff()
         {
             InitializeComponent();
+            dgvProducts.CellDoubleClick += DgvProduct_CellDoubleClick;
+        }
+
+        private void DgvProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var frm =  new frmStaffManageProduct();
+            frm.ShowDialog();
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
