@@ -17,7 +17,6 @@ namespace GiftHommieWinforms
     {
         private IProductRepository productRepository = new ProductRepository();
         private BindingSource bindingSource = null;
-        private bool orderTimeDescMode = true;
 
         public frmStaff()
         {
