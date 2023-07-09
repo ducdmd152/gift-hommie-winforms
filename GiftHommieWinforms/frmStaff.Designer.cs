@@ -65,6 +65,7 @@
             lbPrice = new System.Windows.Forms.Label();
             lbProductName = new System.Windows.Forms.Label();
             pbProductAvatar = new System.Windows.Forms.PictureBox();
+            button1 = new System.Windows.Forms.Button();
             dgvProducts = new System.Windows.Forms.DataGridView();
             btnClose = new System.Windows.Forms.Button();
             tabHome = new System.Windows.Forms.TabPage();
@@ -111,6 +112,7 @@
             txtUnitPriceMaxSearch.Size = new System.Drawing.Size(138, 27);
             txtUnitPriceMaxSearch.TabIndex = 1;
             txtUnitPriceMaxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUnitPriceMaxSearch.TextChanged += txtUnitPriceMaxSearch_TextChanged;
             // 
             // txtUnitPriceMinSearch
             // 
@@ -119,6 +121,7 @@
             txtUnitPriceMinSearch.Size = new System.Drawing.Size(138, 27);
             txtUnitPriceMinSearch.TabIndex = 0;
             txtUnitPriceMinSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUnitPriceMinSearch.TextChanged += txtUnitPriceMinSearch_TextChanged;
             // 
             // cbProductSort
             // 
@@ -129,6 +132,7 @@
             cbProductSort.Name = "cbProductSort";
             cbProductSort.Size = new System.Drawing.Size(290, 28);
             cbProductSort.TabIndex = 51;
+            cbProductSort.SelectedIndexChanged += cbProductSort_SelectedIndexChanged;
             // 
             // label15
             // 
@@ -148,6 +152,7 @@
             cbProductCategory.Name = "cbProductCategory";
             cbProductCategory.Size = new System.Drawing.Size(290, 28);
             cbProductCategory.TabIndex = 3;
+            cbProductCategory.SelectedIndexChanged += cbProductCategory_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -165,6 +170,7 @@
             txtProductNameSearch.Name = "txtProductNameSearch";
             txtProductNameSearch.Size = new System.Drawing.Size(290, 27);
             txtProductNameSearch.TabIndex = 0;
+            txtProductNameSearch.TextChanged += txtProductNameSearch_TextChanged;
             // 
             // label5
             // 
@@ -200,6 +206,7 @@
             txtUnitsInStockMinSearch.Size = new System.Drawing.Size(138, 27);
             txtUnitsInStockMinSearch.TabIndex = 0;
             txtUnitsInStockMinSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUnitsInStockMinSearch.TextChanged += txtUnitsInStockMinSearch_TextChanged;
             // 
             // btnReset
             // 
@@ -209,6 +216,7 @@
             btnReset.TabIndex = 7;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // groupBox2
             // 
@@ -230,6 +238,7 @@
             txtUnitsInStockMaxSearch.Size = new System.Drawing.Size(138, 27);
             txtUnitsInStockMaxSearch.TabIndex = 1;
             txtUnitsInStockMaxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUnitsInStockMaxSearch.TextChanged += txtUnitsInStockMaxSearch_TextChanged;
             // 
             // label2
             // 
@@ -329,6 +338,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            splitContainer2.Panel2.Controls.Add(button1);
             splitContainer2.Panel2.Controls.Add(dgvProducts);
             splitContainer2.Panel2.Controls.Add(btnClose);
             splitContainer2.Size = new System.Drawing.Size(1076, 723);
@@ -383,6 +393,7 @@
             btnBack.TabIndex = 0;
             btnBack.Text = "<< Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // btnNext
             // 
@@ -392,6 +403,7 @@
             btnNext.TabIndex = 2;
             btnNext.Text = "Next >>";
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
             // 
             // txtAvailable
             // 
@@ -470,6 +482,8 @@
             lbProductName.Size = new System.Drawing.Size(236, 45);
             lbProductName.TabIndex = 0;
             lbProductName.Text = "Product Name";
+            lbProductName.TextChanged += lbProductName_TextChanged;
+            lbProductName.Click += lbProductName_Click;
             // 
             // pbProductAvatar
             // 
@@ -479,6 +493,17 @@
             pbProductAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbProductAvatar.TabIndex = 85;
             pbProductAvatar.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button1.Location = new System.Drawing.Point(963, 306);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(85, 29);
+            button1.TabIndex = 84;
+            button1.Text = "Close";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dgvProducts
             // 
@@ -538,6 +563,7 @@
             Name = "frmStaff";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmStaff";
+            FormClosing += frmStaff_FormClosing;
             Load += frmStaff_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
@@ -609,5 +635,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.TabControl tabcontrolStaff;
+        private System.Windows.Forms.Button button1;
     }
 }
