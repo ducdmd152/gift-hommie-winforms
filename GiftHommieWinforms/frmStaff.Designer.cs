@@ -47,11 +47,11 @@
             label2 = new System.Windows.Forms.Label();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBoxSearch = new System.Windows.Forms.GroupBox();
+            btnAddProduct = new System.Windows.Forms.Button();
             btnSearch = new System.Windows.Forms.Button();
             splitContainer1 = new System.Windows.Forms.SplitContainer();
             splitContainer2 = new System.Windows.Forms.SplitContainer();
             gbProduct = new System.Windows.Forms.GroupBox();
-            btnAddToCart = new System.Windows.Forms.Button();
             gbSelect = new System.Windows.Forms.GroupBox();
             txtCurrentIndex = new System.Windows.Forms.TextBox();
             btnBack = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             dgvProducts = new System.Windows.Forms.DataGridView();
             btnClose = new System.Windows.Forms.Button();
             tabHome = new System.Windows.Forms.TabPage();
-            tabcontrolCustomer = new System.Windows.Forms.TabControl();
+            tabcontrolStaff = new System.Windows.Forms.TabControl();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBoxSearch.SuspendLayout();
@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             tabHome.SuspendLayout();
-            tabcontrolCustomer.SuspendLayout();
+            tabcontrolStaff.SuspendLayout();
             SuspendLayout();
             // 
             // sqlCommandBuilder1
@@ -256,7 +256,7 @@
             // groupBoxSearch
             // 
             groupBoxSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            groupBoxSearch.Controls.Add(btnAddToCart);
+            groupBoxSearch.Controls.Add(btnAddProduct);
             groupBoxSearch.Controls.Add(cbProductSort);
             groupBoxSearch.Controls.Add(label15);
             groupBoxSearch.Controls.Add(cbProductCategory);
@@ -276,6 +276,17 @@
             groupBoxSearch.TabIndex = 0;
             groupBoxSearch.TabStop = false;
             groupBoxSearch.Text = "Search";
+            // 
+            // btnAddProduct
+            // 
+            btnAddProduct.BackColor = System.Drawing.Color.LemonChiffon;
+            btnAddProduct.Location = new System.Drawing.Point(83, 631);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new System.Drawing.Size(125, 38);
+            btnAddProduct.TabIndex = 3;
+            btnAddProduct.Text = "Add";
+            btnAddProduct.UseVisualStyleBackColor = false;
+            btnAddProduct.Click += btnAddToCart_Click;
             // 
             // btnSearch
             // 
@@ -342,17 +353,6 @@
             gbProduct.TabIndex = 86;
             gbProduct.TabStop = false;
             gbProduct.Text = "Product Name";
-            // 
-            // btnAddToCart
-            // 
-            btnAddToCart.BackColor = System.Drawing.Color.LemonChiffon;
-            btnAddToCart.Location = new System.Drawing.Point(74, 642);
-            btnAddToCart.Name = "btnAddToCart";
-            btnAddToCart.Size = new System.Drawing.Size(125, 38);
-            btnAddToCart.TabIndex = 3;
-            btnAddToCart.Text = "Add";
-            btnAddToCart.UseVisualStyleBackColor = false;
-            btnAddToCart.Click += btnAddToCart_Click;
             // 
             // gbSelect
             // 
@@ -516,27 +516,29 @@
             tabHome.TabIndex = 0;
             tabHome.Text = "Home";
             tabHome.UseVisualStyleBackColor = true;
+            tabHome.Click += tabHome_Click;
             // 
-            // tabcontrolCustomer
+            // tabcontrolStaff
             // 
-            tabcontrolCustomer.Controls.Add(tabHome);
-            tabcontrolCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            tabcontrolCustomer.Location = new System.Drawing.Point(0, 0);
-            tabcontrolCustomer.Name = "tabcontrolCustomer";
-            tabcontrolCustomer.SelectedIndex = 0;
-            tabcontrolCustomer.Size = new System.Drawing.Size(1437, 762);
-            tabcontrolCustomer.TabIndex = 1;
-            tabcontrolCustomer.TabStop = false;
+            tabcontrolStaff.Controls.Add(tabHome);
+            tabcontrolStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            tabcontrolStaff.Location = new System.Drawing.Point(0, 0);
+            tabcontrolStaff.Name = "tabcontrolStaff";
+            tabcontrolStaff.SelectedIndex = 0;
+            tabcontrolStaff.Size = new System.Drawing.Size(1437, 762);
+            tabcontrolStaff.TabIndex = 1;
+            tabcontrolStaff.TabStop = false;
             // 
             // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1437, 762);
-            Controls.Add(tabcontrolCustomer);
+            Controls.Add(tabcontrolStaff);
             Name = "frmStaff";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmStaff";
+            Load += frmStaff_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -560,7 +562,7 @@
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             tabHome.ResumeLayout(false);
-            tabcontrolCustomer.ResumeLayout(false);
+            tabcontrolStaff.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -585,7 +587,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBoxSearch;
-        private System.Windows.Forms.Button btnAddToCart;
+        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
@@ -606,6 +608,6 @@
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TabPage tabHome;
-        private System.Windows.Forms.TabControl tabcontrolCustomer;
+        private System.Windows.Forms.TabControl tabcontrolStaff;
     }
 }
