@@ -44,6 +44,8 @@
             button1 = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             txtImgUrl = new System.Windows.Forms.TextBox();
+            cbProductCategory = new System.Windows.Forms.ComboBox();
+            label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).BeginInit();
             SuspendLayout();
             // 
@@ -101,7 +103,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(38, 394);
+            label5.Location = new System.Drawing.Point(38, 467);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(112, 28);
             label5.TabIndex = 5;
@@ -145,7 +147,7 @@
             // 
             // txtDesciption
             // 
-            txtDesciption.Location = new System.Drawing.Point(175, 398);
+            txtDesciption.Location = new System.Drawing.Point(175, 471);
             txtDesciption.Multiline = true;
             txtDesciption.Name = "txtDesciption";
             txtDesciption.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -165,7 +167,7 @@
             // btnSave
             // 
             btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSave.Location = new System.Drawing.Point(281, 590);
+            btnSave.Location = new System.Drawing.Point(281, 663);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(100, 44);
             btnSave.TabIndex = 87;
@@ -175,7 +177,7 @@
             // button1
             // 
             button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            button1.Location = new System.Drawing.Point(491, 590);
+            button1.Location = new System.Drawing.Point(491, 663);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(100, 44);
             button1.TabIndex = 88;
@@ -186,7 +188,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label6.Location = new System.Drawing.Point(42, 529);
+            label6.Location = new System.Drawing.Point(42, 602);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(97, 28);
             label6.TabIndex = 89;
@@ -194,18 +196,40 @@
             // 
             // txtImgUrl
             // 
-            txtImgUrl.Location = new System.Drawing.Point(175, 533);
+            txtImgUrl.Location = new System.Drawing.Point(175, 606);
             txtImgUrl.Name = "txtImgUrl";
             txtImgUrl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             txtImgUrl.Size = new System.Drawing.Size(343, 27);
             txtImgUrl.TabIndex = 90;
             txtImgUrl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // cbProductCategory
+            // 
+            cbProductCategory.BackColor = System.Drawing.Color.White;
+            cbProductCategory.FormattingEnabled = true;
+            cbProductCategory.Items.AddRange(new object[] { "Select the category" });
+            cbProductCategory.Location = new System.Drawing.Point(175, 395);
+            cbProductCategory.Name = "cbProductCategory";
+            cbProductCategory.Size = new System.Drawing.Size(290, 28);
+            cbProductCategory.TabIndex = 91;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label7.Location = new System.Drawing.Point(38, 395);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(92, 28);
+            label7.TabIndex = 92;
+            label7.Text = "Category";
+            // 
             // frmStaffManageProduct
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(957, 683);
+            ClientSize = new System.Drawing.Size(900, 775);
+            Controls.Add(label7);
+            Controls.Add(cbProductCategory);
             Controls.Add(txtImgUrl);
             Controls.Add(label6);
             Controls.Add(button1);
@@ -247,5 +271,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtImgUrl;
+        private System.Windows.Forms.ComboBox cbProductCategory;
+        private System.Windows.Forms.Label label7;
     }
 }
