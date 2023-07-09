@@ -28,6 +28,24 @@ namespace DataAccessObjects
         }
 
         // CRUD
+        public List<OrderDetail> GetOrderDetails()
+        {
+            List<OrderDetail> list = new List<OrderDetail>();
+            try
+            {
+                using (var context = new HommieStoreContext())
+                {
+                    list = context.OrderDetails.ToList();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return list;
+
+        }
         public List<Order> GetAll()
         {
             List<Order> list = new List<Order>();

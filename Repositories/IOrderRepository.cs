@@ -14,9 +14,9 @@ namespace BussinessObjects
         void Update(Order entity);
         void Save(Order entity);
         void Delete(int id);
-
         public List<Order> GetAllOrdersOfCustomer(string username);
-
         double GetTotalOfOrder(int id);
+        public List<Order> GetOrdersWithStatus(List<string> status);
+        public int GetAvailableProductQuantity(int id);
     }
 }
