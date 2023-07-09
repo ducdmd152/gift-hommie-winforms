@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GiftHommieWinforms
 {
-    public partial class frmStaff : Form
+    public partial class frmStaffManageProduct : Form
     {
-        public frmStaff()
+        public frmStaffManageProduct()
         {
             InitializeComponent();
-        }
-
-        private void btnAddToCart_Click(object sender, EventArgs e)
-        {
-            var frm = new frmStaffManageProduct();
-            frm.ShowDialog();
         }
     }
 }

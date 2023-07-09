@@ -136,3 +136,4 @@ C:\Users\X\OneDrive\Documents\GitHub\gift-hommie-winforms\GiftHommieWinforms\obj
 C:\Users\X\OneDrive\Documents\GitHub\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.pdb
 C:\Users\X\OneDrive\Documents\GitHub\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.genruntimeconfig.cache
 C:\Users\X\OneDrive\Documents\GitHub\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\ref\GiftHommieWinforms.dll
+C:\Users\X\OneDrive\Documents\GitHub\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmStaffManageProduct.resources
