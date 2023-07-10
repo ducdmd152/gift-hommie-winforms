@@ -24,10 +24,40 @@ namespace GiftHommieWinforms
             dgvProducts.CellDoubleClick += DgvProduct_CellDoubleClick;
         }
 
+
+        // Hàm này để lấy ID của Product từ DataGrdView
+        private int GetSelectedRowIdValue()
+        {
+            if (dgvProducts.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvProducts.SelectedRows[0];
+                DataGridViewCell idCell = selectedRow.Cells["Id"];
+
+                if (dgvProducts.Columns["Id"].Visible == false && idCell != null && idCell.Value != null
+                    && int.TryParse(idCell.Value.ToString(), out int result))
+                {
+                    return result;
+                }
+            }
+
+            // Nếu không thể chuyển đổi thành công hoặc không có giá trị, trả về giá trị mặc định (vd: -1)
+            return -1;
+        }
+
+
+        // Hàm này để hiển thị Product Detail và có thể Update Product
         private void DgvProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var frm =  new frmStaffManageProduct();
-            frm.ShowDialog();
+            var frm = new frmStaffManageProduct()
+            {
+                Product = productRepository.Get(GetSelectedRowIdValue()),
+                CreateOrUpdate = true
+            };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                HomeLoadData();
+            }
+
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -261,6 +291,33 @@ namespace GiftHommieWinforms
             else
             {
                 GlobalData.AuthenticatedUser = null;
+            }
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            DialogResult d;
+            try
+            {
+                Product p = productRepository.Get(GetSelectedRowIdValue());
+                if (p != null)
+                {
+                    d = MessageBox.Show("Bạn có thật sự muốn xóa hay không sản phẩm " + p.Name +"?", "Quản lý thông tin Product - Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1);
+                    if (d == DialogResult.OK)
+                    {
+                        productRepository.Delete(p.Id);
+                        HomeLoadData();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

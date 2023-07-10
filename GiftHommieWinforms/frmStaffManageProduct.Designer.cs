@@ -53,9 +53,9 @@
             // 
             lbProductName.AutoSize = true;
             lbProductName.Font = new System.Drawing.Font("Segoe UI", 19.8000011F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbProductName.Location = new System.Drawing.Point(308, 34);
+            lbProductName.Location = new System.Drawing.Point(270, 26);
             lbProductName.Name = "lbProductName";
-            lbProductName.Size = new System.Drawing.Size(250, 46);
+            lbProductName.Size = new System.Drawing.Size(202, 37);
             lbProductName.TabIndex = 0;
             lbProductName.Text = "Product Name";
             // 
@@ -63,9 +63,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(38, 85);
+            label1.Location = new System.Drawing.Point(33, 64);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(64, 28);
+            label1.Size = new System.Drawing.Size(52, 21);
             label1.TabIndex = 1;
             label1.Text = "Name";
             // 
@@ -73,9 +73,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(38, 157);
+            label2.Location = new System.Drawing.Point(33, 118);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(54, 28);
+            label2.Size = new System.Drawing.Size(44, 21);
             label2.TabIndex = 2;
             label2.Text = "Price";
             // 
@@ -83,9 +83,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(38, 241);
+            label3.Location = new System.Drawing.Point(33, 181);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(92, 28);
+            label3.Size = new System.Drawing.Size(73, 21);
             label3.TabIndex = 3;
             label3.Text = "Available";
             // 
@@ -93,9 +93,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(38, 318);
+            label4.Location = new System.Drawing.Point(33, 238);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(88, 28);
+            label4.Size = new System.Drawing.Size(70, 21);
             label4.TabIndex = 4;
             label4.Text = "Quantity";
             // 
@@ -103,63 +103,69 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(38, 467);
+            label5.Location = new System.Drawing.Point(33, 350);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(112, 28);
+            label5.Size = new System.Drawing.Size(89, 21);
             label5.TabIndex = 5;
             label5.Text = "Description";
             // 
             // txtName
             // 
-            txtName.Location = new System.Drawing.Point(175, 89);
+            txtName.Location = new System.Drawing.Point(153, 67);
+            txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
             txtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtName.Size = new System.Drawing.Size(195, 27);
+            txtName.Size = new System.Drawing.Size(171, 23);
             txtName.TabIndex = 6;
             txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPrice
             // 
-            txtPrice.Location = new System.Drawing.Point(175, 161);
+            txtPrice.Location = new System.Drawing.Point(153, 121);
+            txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtPrice.Name = "txtPrice";
             txtPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtPrice.Size = new System.Drawing.Size(195, 27);
+            txtPrice.Size = new System.Drawing.Size(171, 23);
             txtPrice.TabIndex = 7;
             txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAvailable
             // 
-            txtAvailable.Location = new System.Drawing.Point(175, 241);
+            txtAvailable.Location = new System.Drawing.Point(153, 181);
+            txtAvailable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtAvailable.Name = "txtAvailable";
             txtAvailable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtAvailable.Size = new System.Drawing.Size(195, 27);
+            txtAvailable.Size = new System.Drawing.Size(171, 23);
             txtAvailable.TabIndex = 8;
             txtAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new System.Drawing.Point(175, 318);
+            txtQuantity.Location = new System.Drawing.Point(153, 238);
+            txtQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtQuantity.Size = new System.Drawing.Size(195, 27);
+            txtQuantity.Size = new System.Drawing.Size(171, 23);
             txtQuantity.TabIndex = 9;
             txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDesciption
             // 
-            txtDesciption.Location = new System.Drawing.Point(175, 471);
+            txtDesciption.Location = new System.Drawing.Point(153, 353);
+            txtDesciption.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtDesciption.Multiline = true;
             txtDesciption.Name = "txtDesciption";
             txtDesciption.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtDesciption.Size = new System.Drawing.Size(622, 100);
+            txtDesciption.Size = new System.Drawing.Size(545, 76);
             txtDesciption.TabIndex = 0;
             txtDesciption.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pbProductAvatar
             // 
-            pbProductAvatar.Location = new System.Drawing.Point(557, 89);
+            pbProductAvatar.Location = new System.Drawing.Point(487, 67);
+            pbProductAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             pbProductAvatar.Name = "pbProductAvatar";
-            pbProductAvatar.Size = new System.Drawing.Size(240, 271);
+            pbProductAvatar.Size = new System.Drawing.Size(210, 203);
             pbProductAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbProductAvatar.TabIndex = 86;
             pbProductAvatar.TabStop = false;
@@ -167,19 +173,22 @@
             // btnSave
             // 
             btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSave.Location = new System.Drawing.Point(281, 663);
+            btnSave.Location = new System.Drawing.Point(246, 497);
+            btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(100, 44);
+            btnSave.Size = new System.Drawing.Size(88, 33);
             btnSave.TabIndex = 87;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // button1
             // 
             button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            button1.Location = new System.Drawing.Point(491, 663);
+            button1.Location = new System.Drawing.Point(430, 497);
+            button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(100, 44);
+            button1.Size = new System.Drawing.Size(88, 33);
             button1.TabIndex = 88;
             button1.Text = "Close";
             button1.UseVisualStyleBackColor = true;
@@ -188,18 +197,19 @@
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label6.Location = new System.Drawing.Point(42, 602);
+            label6.Location = new System.Drawing.Point(37, 452);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(97, 28);
+            label6.Size = new System.Drawing.Size(78, 21);
             label6.TabIndex = 89;
             label6.Text = "Image Url";
             // 
             // txtImgUrl
             // 
-            txtImgUrl.Location = new System.Drawing.Point(175, 606);
+            txtImgUrl.Location = new System.Drawing.Point(153, 454);
+            txtImgUrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtImgUrl.Name = "txtImgUrl";
             txtImgUrl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtImgUrl.Size = new System.Drawing.Size(343, 27);
+            txtImgUrl.Size = new System.Drawing.Size(301, 23);
             txtImgUrl.TabIndex = 90;
             txtImgUrl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -208,26 +218,27 @@
             cbProductCategory.BackColor = System.Drawing.Color.White;
             cbProductCategory.FormattingEnabled = true;
             cbProductCategory.Items.AddRange(new object[] { "Select the category" });
-            cbProductCategory.Location = new System.Drawing.Point(175, 395);
+            cbProductCategory.Location = new System.Drawing.Point(153, 296);
+            cbProductCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cbProductCategory.Name = "cbProductCategory";
-            cbProductCategory.Size = new System.Drawing.Size(290, 28);
+            cbProductCategory.Size = new System.Drawing.Size(254, 23);
             cbProductCategory.TabIndex = 91;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label7.Location = new System.Drawing.Point(38, 395);
+            label7.Location = new System.Drawing.Point(33, 296);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(92, 28);
+            label7.Size = new System.Drawing.Size(73, 21);
             label7.TabIndex = 92;
             label7.Text = "Category";
             // 
             // frmStaffManageProduct
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(900, 775);
+            ClientSize = new System.Drawing.Size(788, 581);
             Controls.Add(label7);
             Controls.Add(cbProductCategory);
             Controls.Add(txtImgUrl);
@@ -246,8 +257,10 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lbProductName);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             Name = "frmStaffManageProduct";
             Text = "frmStaffManageProduct";
+            Load += frmStaffManageProduct_Load;
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).EndInit();
             ResumeLayout(false);
             PerformLayout();

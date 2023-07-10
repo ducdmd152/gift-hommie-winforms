@@ -161,6 +161,7 @@ namespace DataAccessObjects
                 using (var context = new HommieStoreContext())
                 {
                     Product entity = Instance.Get(id);
+                   // Product entity = context.Products.SingleOrDefault(p => p.Id == id);
                     if (entity == null)
                     {
                         throw new Exception("Entity is not exist.");
