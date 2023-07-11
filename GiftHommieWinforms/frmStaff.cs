@@ -48,7 +48,7 @@ namespace GiftHommieWinforms
         // Hàm này để hiển thị Product Detail và có thể Update Product
         private void DgvProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var frm = new frmStaffManageProduct()
+            frmStaffManageProduct frm = new frmStaffManageProduct()
             {
                 Product = productRepository.Get(GetSelectedRowIdValue()),
                 CreateOrUpdate = true
@@ -62,8 +62,16 @@ namespace GiftHommieWinforms
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            var frm = new frmStaffManageProduct();
-            frm.ShowDialog();
+            frmStaffManageProduct frm = new frmStaffManageProduct()
+            {
+                CreateOrUpdate = false,
+                Product = new Product() { }
+            };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                HomeLoadData();
+            }
+
         }
 
         private void frmStaff_Load(object sender, EventArgs e)

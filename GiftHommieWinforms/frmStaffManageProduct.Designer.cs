@@ -123,11 +123,13 @@
             // 
             txtPrice.Location = new System.Drawing.Point(153, 121);
             txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtPrice.Multiline = true;
             txtPrice.Name = "txtPrice";
             txtPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             txtPrice.Size = new System.Drawing.Size(171, 23);
             txtPrice.TabIndex = 7;
             txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+         
             // 
             // txtQuantity
             // 
@@ -138,6 +140,7 @@
             txtQuantity.Size = new System.Drawing.Size(171, 23);
             txtQuantity.TabIndex = 9;
             txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+         
             // 
             // txtDesciption
             // 
@@ -182,6 +185,7 @@
             button1.TabIndex = 88;
             button1.Text = "Close";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label6
             // 
@@ -233,6 +237,7 @@
             cbAvailable.Name = "cbAvailable";
             cbAvailable.Size = new System.Drawing.Size(171, 23);
             cbAvailable.TabIndex = 93;
+            cbAvailable.Text = "True";
             // 
             // frmStaffManageProduct
             // 

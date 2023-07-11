@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,8 +28,19 @@ namespace GiftHommieWinforms
 
         private void frmStaffManageProduct_Load(object sender, EventArgs e)
         {
-            LoadCategoryList();
-            LoadDataToUpdate();
+            //Udpate
+            if (CreateOrUpdate == true)
+            {
+                LoadCategoryList();
+                LoadDataToUpdate();
+
+            }
+            // Create
+            else
+            {
+                ClearDataToCreate();
+                LoadCategoryList();
+            }
         }
 
 
@@ -51,6 +63,21 @@ namespace GiftHommieWinforms
                                 "ImageLocation", bindingSource, "Avatar", true));
 
         }
+
+        private void ClearDataToCreate()
+        {
+            txtName.DataBindings.Clear();
+            txtPrice.DataBindings.Clear();
+            cbAvailable.DataBindings.Clear();
+            txtDesciption.DataBindings.Clear();
+            txtQuantity.DataBindings.Clear();
+            txtImgUrl.DataBindings.Clear();
+            //Category c = productRepository.GetCategoryById(Product.CategoryId);
+            cbProductCategory.DataBindings.Clear();
+            pbProductAvatar.DataBindings.Clear();
+        }
+
+
         private void LoadCategoryList()
         {
             try
@@ -67,6 +94,10 @@ namespace GiftHommieWinforms
             }
         }
 
+        private  bool CheckCharacter(String input) {
+            string pattern = @"\D"; // Ký tự chữ cái không phải là số
+            return !Regex.IsMatch(input, pattern);
+        }
         private bool ValidateInputs()
         {
             if (
@@ -83,7 +114,19 @@ namespace GiftHommieWinforms
                 MessageBox.Show("Hãy điền đầy đủ thông tin", "Thiếu Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+            if (CheckCharacter(txtPrice.Text) != true )
+              {
+                 MessageBox.Show("Vui lòng chỉ nhập số trong ô Quantity và Price .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 txtPrice.Clear();
+                  return false;
+                }
+            if (CheckCharacter(txtQuantity.Text) != true) {
+                MessageBox.Show("Vui lòng chỉ nhập số trong ô Quantity và Price .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtQuantity.Clear();
+                return false;
 
+            }
+  
             return true;
         }
 
@@ -109,7 +152,7 @@ namespace GiftHommieWinforms
                 if (CreateOrUpdate == true)
                 {
                     DialogResult d;
-                    d = MessageBox.Show($"Bạn sẽ lưu thông tin Product {p.Name}", "Quản lý thông tin Product - Thay Đổi Dữ Liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
+                    d = MessageBox.Show($"Save Product Info {p.Name}", "Product Management - Update Product", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button1);
 
                     if (d == DialogResult.OK)
@@ -119,31 +162,63 @@ namespace GiftHommieWinforms
                     }
 
                 }
+                else
+                {
+                    DialogResult d;
+                    d = MessageBox.Show($"Save Product Info {p.Name}", "Product Management - Add Product", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1);
 
-
+                    if (d == DialogResult.OK)
+                    {
+                        productRepository.Add(p);
+                        DialogResult = DialogResult.OK;
+                    }
+                }
 
             }
         }
 
         private void txtImgUrl_TextChanged(object sender, EventArgs e)
         {
-            if (count >= 1)
+            if (CreateOrUpdate == true)
             {
-                Product.Avatar = txtImgUrl.Text;
-                LoadDataToUpdate();
-                LoadCategoryList();
+                if (count >= 1)
+                {
+                    Product.Avatar = txtImgUrl.Text;
+                    LoadDataToUpdate();
+                    LoadCategoryList();
+                }
+                else
+                {
+                    count++;
+                }
             }
             else
             {
-                count++;
+                Product.Avatar = txtImgUrl.Text;
+                LoadImg();
             }
+
+
         }
 
-        private void LoadWhenImgChange()
+        private void LoadImg()
         {
-
-
+            pbProductAvatar.DataBindings.Clear();
+            bindingSource.DataSource = new BindingSource();
+            bindingSource.DataSource = Product;
+            pbProductAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
+                                "ImageLocation", bindingSource, "Avatar", true));
 
         }
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
