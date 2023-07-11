@@ -44,7 +44,9 @@
             txtName = new System.Windows.Forms.TextBox();
             label8 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            dgvCheckout = new System.Windows.Forms.DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCheckout).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -52,7 +54,7 @@
             label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(374, 34);
+            label1.Location = new System.Drawing.Point(407, 34);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(232, 54);
             label1.TabIndex = 0;
@@ -78,6 +80,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(dgvCheckout);
             panel1.Controls.Add(txtTotal);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtAddress);
@@ -93,9 +96,9 @@
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label2);
             panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel1.Location = new System.Drawing.Point(0, 107);
+            panel1.Location = new System.Drawing.Point(0, 105);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1009, 307);
+            panel1.Size = new System.Drawing.Size(1075, 619);
             panel1.TabIndex = 15;
             // 
             // txtTotal
@@ -209,11 +212,28 @@
             label2.TabIndex = 1;
             label2.Text = "NAME:";
             // 
+            // dgvCheckout
+            // 
+            dgvCheckout.AllowUserToAddRows = false;
+            dgvCheckout.AllowUserToDeleteRows = false;
+            dgvCheckout.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCheckout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCheckout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            dgvCheckout.Location = new System.Drawing.Point(0, 375);
+            dgvCheckout.Margin = new System.Windows.Forms.Padding(4);
+            dgvCheckout.Name = "dgvCheckout";
+            dgvCheckout.ReadOnly = true;
+            dgvCheckout.RowHeadersWidth = 51;
+            dgvCheckout.RowTemplate.Height = 29;
+            dgvCheckout.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvCheckout.Size = new System.Drawing.Size(1075, 244);
+            dgvCheckout.TabIndex = 24;
+            // 
             // frmCheckout
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1009, 414);
+            ClientSize = new System.Drawing.Size(1075, 724);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "frmCheckout";
@@ -221,6 +241,7 @@
             Load += frmCheckout_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCheckout).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +268,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvCheckout;
     }
 }

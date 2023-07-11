@@ -40,9 +40,6 @@ namespace GiftHommieWinforms
 
         private void tabcontrolCustomer_Click(object sender, EventArgs e)
         {
-
-
-
         }
 
         private void frmCustomer_Load(object sender, EventArgs e)
@@ -648,6 +645,17 @@ namespace GiftHommieWinforms
 
 
         //================= TAB CART AREA =========================
+        //CHOOSEN MEMORY
+        private Dictionary<int, bool> memory = new Dictionary<int, bool>();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadCart();
+        }
+
+        private void txtFilterName_TextChanged(object sender, EventArgs e)
+        {
+            SetCartVisible();
+        }
         //ADD TO CART
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
@@ -671,7 +679,14 @@ namespace GiftHommieWinforms
                 }
             }
         }
-
+        private void LoadChoosenItems()
+        {
+            foreach (DataGridViewRow row in dgvCarts.Rows)
+            {
+                int cartId = (int)row.Cells["Id"].Value;
+                row.Cells["Check"].Value = (memory.ContainsKey(cartId)) ? memory[cartId] : false;
+            }
+        }
         private void SetCartCurrentProduct()
         {
             lbCartName.Text = "";
@@ -700,19 +715,33 @@ namespace GiftHommieWinforms
             {
                 int productId = (int)((Cart)bindingSource.Current).ProductId;
                 txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
-
-
         }
         private void SetCartVisible()
         {
+            List<Cart> list = cartRepository.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
+            bindingSource = new BindingSource();
+
+            foreach (Cart cart in list)
+                cart.Product = productRepository.Get((int)cart.ProductId);
+
+            list = list.Where(c => c.Product.Name.Contains(txtCartFilterName.Text)).ToList();
+            bindingSource.DataSource = list;
+            dgvCarts.DataSource = bindingSource;
+
             dgvCarts.Columns["ID"].Visible = false;
             dgvCarts.Columns["Username"].Visible = false;
             dgvCarts.Columns["ProductId"].Visible = false;
             dgvCarts.Columns["UsernameNavigation"].Visible = false;
+            
+            //SET DEFAULT VALUE FOR CHECKBOX
+            LoadChoosenItems();
+            SetCartCurrentProduct();
+            LoadCartTotal();
         }
 
         //REFRESH CART
@@ -720,23 +749,11 @@ namespace GiftHommieWinforms
         //TRONG LOADCART CO SAN REFRESH CART
         private void LoadCart()
         {
-            RefreshUserCart();
-            List<Cart> list = cartRepository.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
-            bindingSource = new BindingSource();
+            if (RefreshUserCart())
+                MessageBox.Show("YOUR CART HAS BEEN CHANGE");
 
-            foreach (Cart cart in list)
-                cart.Product = productRepository.Get((int)cart.ProductId);
-
-            bindingSource.DataSource = list;
-            dgvCarts.DataSource = bindingSource;
-            //SET DEFAULT VALUE FOR CHECKBOX
-            foreach (DataGridViewRow items in dgvCarts.Rows)
-            {
-                if (items != null)
-                    items.Cells["Check"].Value = false;
-            }
-            SetCartCurrentProduct();
             SetCartVisible();
+            LoadCartTotal();
         }
 
         private void tabCart_Click(object sender, EventArgs e)
@@ -745,28 +762,28 @@ namespace GiftHommieWinforms
             // example:
             MessageBox.Show("Welcome to cart");
             LoadCart();
-            SetCartVisible();
+            //SetCartVisible();
         }
         //CART CHECKOUT
+
+        //REMOVE CART ITEM
+        private void RemoveCartItem(int id)
+        {
+            cartRepository.DeleteCartById(id);
+            memory[id] = false;
+        }
+
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             List<Cart> list = new List<Cart>();
-            foreach (DataGridViewRow item in dgvCarts.Rows)
+            LoadCart();
+
+            foreach (int id in memory.Keys.Where(k => memory[k]))
             {
-                if ((bool)item.Cells["Check"].Value == true)
-                {
-                    if ((int)item.Cells["Id"].Value <= 0)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        int id = (int)item.Cells["Id"].Value;
-                        list.Add(cartRepository
+                list.Add(cartRepository
                             .GetCartById(GlobalData.AuthenticatedUser.Username, id));
-                    }
-                }  
             }
+
             if (list.Count > 0)
             {
                 var form = new frmCheckout
@@ -774,14 +791,16 @@ namespace GiftHommieWinforms
                     CartList = list,
                     Total = double.Parse(txtCartTotal.Text)
                 };
+               
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("BUY SUCCESSFULLY");
 
                     foreach (Cart item in list)
                     {
-                        cartRepository.DeleteCartById(item.Id);
+                       RemoveCartItem(item.Id);
                     }
+
                     LoadCart();
                 }
             }
@@ -801,11 +820,13 @@ namespace GiftHommieWinforms
             {
                 c = e.ColumnIndex;
                 r = e.RowIndex;
-                var b = dgvCarts.Rows[r].Cells[c].Value;
-                bool check;
-                dgvCarts.Rows[r].Cells[c].Value = !((bool)dgvCarts.Rows[r].Cells[c].Value);
-                check = (bool)dgvCarts.Rows[r].Cells[c].Value;
 
+                dgvCarts.Rows[r].Cells[c].Value = !((bool)dgvCarts.Rows[r].Cells[c].Value);
+               
+                bool check = (bool)dgvCarts.Rows[r].Cells[c].Value;
+                int cartId = (int)dgvCarts.Rows[r].Cells["Id"].Value;
+
+                memory[cartId] = check;
                 LoadCartTotal();
             }
         }
@@ -830,18 +851,19 @@ namespace GiftHommieWinforms
                 bindingSource.Position = index;
                 lblCartIndex.Text = (index + 1).ToString();
             }
-
         }
         //LOAD TOTAL PRICE OF CART
         private void LoadCartTotal()
         {
             txtCartTotal.Text = "0";
 
-            foreach (DataGridViewRow row in GetAllCartDataGridViewRows(true))
+            foreach (int cartId in memory.Keys.Where(k => memory[k]))
             {
+                Cart cart = cartRepository.GetCartById(GlobalData.AuthenticatedUser.Username, cartId);
+
                 txtCartTotal.Text = (int.Parse(txtCartTotal.Text)
-                    + int.Parse(row.Cells["Quantity"].Value.ToString())
-                    * ((Product)row.Cells["Product"].Value).Price).ToString();
+                    + cart.Quantity
+                    * (productRepository.Get((int)cart.ProductId).Price)).ToString();
             }
         }
         private void btnIncrease_Click(object sender, EventArgs e)
@@ -885,7 +907,6 @@ namespace GiftHommieWinforms
                     cart.Quantity = quantity - 1;
                     cart.LastUpdatedTime = DateTime.Now;
                     LoadCartTotal();
-                    //txtCartTotal.Text = (int.Parse(txtCartTotal.Text) - cart.Product.Price).ToString();
                 }
             }
             catch (Exception ex)
@@ -917,7 +938,8 @@ namespace GiftHommieWinforms
                 {
                     try
                     {
-                        cartRepository.DeleteCartById(int.Parse(row.Cells["Id"].Value.ToString()));
+                        //cartRepository.DeleteCartById(int.Parse(row.Cells["Id"].Value.ToString()));
+                        RemoveCartItem((int)row.Cells["Id"].Value);
                     }
                     catch (Exception ex)
                     {
@@ -965,11 +987,6 @@ namespace GiftHommieWinforms
         private void txtCartTotal_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadCart();
         }
     }
 

@@ -125,7 +125,7 @@
             label17 = new System.Windows.Forms.Label();
             cbFilterCategory = new System.Windows.Forms.ComboBox();
             label18 = new System.Windows.Forms.Label();
-            txtFilterName = new System.Windows.Forms.TextBox();
+            txtCartFilterName = new System.Windows.Forms.TextBox();
             label19 = new System.Windows.Forms.Label();
             button1 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
@@ -1273,7 +1273,7 @@
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(1203, 354);
+            btnClose.Location = new System.Drawing.Point(1203, 353);
             btnClose.Margin = new System.Windows.Forms.Padding(4);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(106, 36);
@@ -1338,7 +1338,7 @@
             groupBox4.Controls.Add(label17);
             groupBox4.Controls.Add(cbFilterCategory);
             groupBox4.Controls.Add(label18);
-            groupBox4.Controls.Add(txtFilterName);
+            groupBox4.Controls.Add(txtCartFilterName);
             groupBox4.Controls.Add(label19);
             groupBox4.Controls.Add(button1);
             groupBox4.Controls.Add(button2);
@@ -1414,14 +1414,15 @@
             label18.TabIndex = 50;
             label18.Text = "Category";
             // 
-            // txtFilterName
+            // txtCartFilterName
             // 
-            txtFilterName.BackColor = System.Drawing.Color.White;
-            txtFilterName.Location = new System.Drawing.Point(11, 151);
-            txtFilterName.Margin = new System.Windows.Forms.Padding(4);
-            txtFilterName.Name = "txtFilterName";
-            txtFilterName.Size = new System.Drawing.Size(362, 31);
-            txtFilterName.TabIndex = 0;
+            txtCartFilterName.BackColor = System.Drawing.Color.White;
+            txtCartFilterName.Location = new System.Drawing.Point(11, 151);
+            txtCartFilterName.Margin = new System.Windows.Forms.Padding(4);
+            txtCartFilterName.Name = "txtCartFilterName";
+            txtCartFilterName.Size = new System.Drawing.Size(362, 31);
+            txtCartFilterName.TabIndex = 0;
+            txtCartFilterName.TextChanged += txtFilterName_TextChanged;
             // 
             // label19
             // 
@@ -1746,7 +1747,7 @@
             // button6
             // 
             button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button6.Location = new System.Drawing.Point(2391, 731);
+            button6.Location = new System.Drawing.Point(2391, 730);
             button6.Margin = new System.Windows.Forms.Padding(4);
             button6.Name = "button6";
             button6.Size = new System.Drawing.Size(106, 36);
@@ -1936,7 +1937,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbFilterCategory;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtFilterName;
+        private System.Windows.Forms.TextBox txtCartFilterName;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

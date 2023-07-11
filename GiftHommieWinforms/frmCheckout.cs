@@ -18,6 +18,7 @@ namespace GiftHommieWinforms
         private IOrderRepository orderRepository = new OrderRepository();
         private IProductRepository productRepository = new ProductRepository();
         public List<Cart> CartList;
+        private double DEFAULT_SHIPPING_FEE = 20000;
         public double Total;
         private string DEFAULT_STATUS = "PENDING";
         public frmCheckout()
@@ -42,6 +43,7 @@ namespace GiftHommieWinforms
                 LastUpdatedTime = DateTime.Now,
                 Name = txtName.Text,
                 Address = txtAddress.Text,
+                ShippingFee = DEFAULT_SHIPPING_FEE,
                 OrderTime = DateTime.Now,
                 Message = txtMessage.Text,
                 Status = DEFAULT_STATUS,
@@ -50,12 +52,27 @@ namespace GiftHommieWinforms
             };
         }
 
-        private void frmCheckout_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             txtName.Text = GlobalData.AuthenticatedUser.Name;
             txtAddress.Text = GlobalData.AuthenticatedUser.Address;
             txtPhone.Text = GlobalData.AuthenticatedUser.Phone;
             txtTotal.Text = Total.ToString();
+
+            dgvCheckout.DataSource = CartList;
+
+            foreach (Cart cart in CartList)
+                cart.Product = productRepository.Get((int)cart.ProductId);
+
+            dgvCheckout.Columns["ID"].Visible = false;
+            dgvCheckout.Columns["Username"].Visible = false;
+            dgvCheckout.Columns["ProductId"].Visible = false;
+            dgvCheckout.Columns["UsernameNavigation"].Visible = false;
+        }
+
+        private void frmCheckout_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,6 +93,7 @@ namespace GiftHommieWinforms
                         Quantity = cart.Quantity,
                     });
                 }
+
                 order.OrderDetails = details;
                 orderRepository.Add(order);
             }
