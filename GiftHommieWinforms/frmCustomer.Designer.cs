@@ -1106,6 +1106,7 @@
             btnAddToCart.TabIndex = 3;
             btnAddToCart.Text = "Add To Cart";
             btnAddToCart.UseVisualStyleBackColor = false;
+            btnAddToCart.Click += btnAddToCart_Click;
             // 
             // gbSelect
             // 
@@ -1272,7 +1273,7 @@
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(1203, 355);
+            btnClose.Location = new System.Drawing.Point(1203, 354);
             btnClose.Margin = new System.Windows.Forms.Padding(4);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(106, 36);
@@ -1745,7 +1746,7 @@
             // button6
             // 
             button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button6.Location = new System.Drawing.Point(2391, 732);
+            button6.Location = new System.Drawing.Point(2391, 731);
             button6.Margin = new System.Windows.Forms.Padding(4);
             button6.Name = "button6";
             button6.Size = new System.Drawing.Size(106, 36);

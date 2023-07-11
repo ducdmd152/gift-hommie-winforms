@@ -136,3 +136,4 @@ D:\GiftHubdotNet\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-window
 D:\GiftHubdotNet\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.pdb
 D:\GiftHubdotNet\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.genruntimeconfig.cache
 D:\GiftHubdotNet\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\ref\GiftHommieWinforms.dll
+D:\GiftHubdotNet\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmCheckout.resources

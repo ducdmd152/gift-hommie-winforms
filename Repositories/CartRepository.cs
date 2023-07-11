@@ -16,6 +16,9 @@ namespace Repositories
 
         public List<Cart> GetAllCartItemsByUsername(string username) => CartDAO.Instance.GetAllCartItems().Where(c => c.Username == username).ToList();
 
+        public Cart GetCartById(string username, int id) => GetAllCartItemsByUsername(username)
+                                            .SingleOrDefault(c => c.Id == id);
+
         public bool RefreshAllCart(string username)
         {
             List<Cart> list = GetAllCartItemsByUsername(username);
@@ -39,6 +42,8 @@ namespace Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void Save(Cart cart) => CartDAO.Instance.Save(cart);
 
         public void UpdateCartQuantityById(int id, int quantity) => CartDAO.Instance.UpdateCartQuantityById(id, quantity);
     }

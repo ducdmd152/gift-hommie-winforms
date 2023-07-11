@@ -42,16 +42,43 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+        public void Save(Cart cart)
+        {
+            try
+            {
+                using (var context = new HommieStoreContext())
+                {
 
+                    Cart c = context.Carts.SingleOrDefault(o => o.Username == cart.Username && o.ProductId == cart.ProductId) as Cart;
+                        
+                    if (c != null)
+                    {
+                        c.LastUpdatedTime = DateTime.Now;
+                        c.Quantity++;
+                    }
+                    else
+                    {
+                        cart.LastUpdatedTime = DateTime.Now;
+                        context.Carts.Add(cart);
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void UpdateCartQuantityById(int id, int quantity)
         {
             try
             {
                 using (var context = new HommieStoreContext())
                 {
-                    Cart cart = context.Carts.SingleOrDefault(c => c.Id == id);
+                    Cart cart = context.Carts.Find(id);
+                    cart.LastUpdatedTime = DateTime.Now;
                     cart.Quantity = quantity;
-                    context.Carts.Update(cart);
                     context.SaveChanges();
                 }
             }

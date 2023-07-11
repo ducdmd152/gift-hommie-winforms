@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -127,8 +128,9 @@ namespace DataAccessObjects
                         throw new Exception("Duplicated entity (id).");
                     }
 
-                    context.Orders.Add(entity);
+                    EntityEntry<Order> o = context.Orders.Add(entity);
                     context.SaveChanges();
+
                 }
             }
             catch (Exception ex)

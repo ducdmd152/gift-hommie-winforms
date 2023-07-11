@@ -648,6 +648,30 @@ namespace GiftHommieWinforms
 
 
         //================= TAB CART AREA =========================
+        //ADD TO CART
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ADD TO CART SUCCESSFULLY") == DialogResult.OK)
+            {
+                try
+                {
+                    int productId = ((Product)bindingSource.Current).Id;
+                    Cart cart = new Cart
+                    {
+                        Username = GlobalData.AuthenticatedUser.Username,
+                        ProductId = productId,
+                        Quantity = 1,
+                    };
+
+                    cartRepository.Save(cart);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
         private void SetCartCurrentProduct()
         {
             lbCartName.Text = "";
@@ -670,10 +694,17 @@ namespace GiftHommieWinforms
             txtCartPrice.DataBindings.Add("Text", bindingSource, "Product.Price");
             txtCartQuantity.DataBindings.Add("Text", bindingSource, "Quantity");
             txtCartDescription.DataBindings.Add("Text", bindingSource, "Product.Description");
-            //Sua available sau
-            txtCartAvailable.DataBindings.Add("Text", bindingSource, "Product.Quantity");
             pbCartAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
                                 "ImageLocation", bindingSource, "Product.Avatar", true));
+            try
+            {
+                int productId = (int)((Cart)bindingSource.Current).ProductId;
+                txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
+            } catch (Exception ex)
+            {
+
+            }
+
 
         }
         private void SetCartVisible()
@@ -723,14 +754,43 @@ namespace GiftHommieWinforms
             foreach (DataGridViewRow item in dgvCarts.Rows)
             {
                 if ((bool)item.Cells["Check"].Value == true)
-                    //CODE;
-                    ;
+                {
+                    if ((int)item.Cells["Id"].Value <= 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        int id = (int)item.Cells["Id"].Value;
+                        list.Add(cartRepository
+                            .GetCartById(GlobalData.AuthenticatedUser.Username, id));
+                    }
+                }  
             }
+            if (list.Count > 0)
+            {
+                var form = new frmCheckout
+                {
+                    CartList = list,
+                    Total = double.Parse(txtCartTotal.Text)
+                };
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("BUY SUCCESSFULLY");
 
+                    foreach (Cart item in list)
+                    {
+                        cartRepository.DeleteCartById(item.Id);
+                    }
+                    LoadCart();
+                }
+            }
         }
         private void dgvCarts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int productId = (int)((Cart)bindingSource.Current).ProductId;
             lblCartIndex.Text = (bindingSource.Position + 1).ToString();
+            txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
         }
 
         private void dgvCarts_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -790,13 +850,14 @@ namespace GiftHommieWinforms
             {
                 int quantity = int.Parse(txtCartQuantity.Text);
                 int productId = (int)(bindingSource.Current as Cart).ProductId;
-                
+
                 if (quantity < orderRepository.GetAvailableProductQuantity(productId))
                 {
                     Cart cart = bindingSource.Current as Cart;
                     txtCartQuantity.Text = (quantity + 1).ToString();
                     cartRepository.UpdateCartQuantityById(cart.Id, quantity + 1);
                     cart.Quantity = quantity + 1;
+                    cart.LastUpdatedTime = DateTime.Now;
                     LoadCartTotal();
                 }
                 else
@@ -822,6 +883,7 @@ namespace GiftHommieWinforms
                     txtCartQuantity.Text = (quantity - 1).ToString();
                     cartRepository.UpdateCartQuantityById(cart.Id, quantity - 1);
                     cart.Quantity = quantity - 1;
+                    cart.LastUpdatedTime = DateTime.Now;
                     LoadCartTotal();
                     //txtCartTotal.Text = (int.Parse(txtCartTotal.Text) - cart.Product.Price).ToString();
                 }
