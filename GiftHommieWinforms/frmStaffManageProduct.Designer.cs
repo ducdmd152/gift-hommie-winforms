@@ -36,7 +36,6 @@
             label5 = new System.Windows.Forms.Label();
             txtName = new System.Windows.Forms.TextBox();
             txtPrice = new System.Windows.Forms.TextBox();
-            txtAvailable = new System.Windows.Forms.TextBox();
             txtQuantity = new System.Windows.Forms.TextBox();
             txtDesciption = new System.Windows.Forms.TextBox();
             pbProductAvatar = new System.Windows.Forms.PictureBox();
@@ -46,6 +45,7 @@
             txtImgUrl = new System.Windows.Forms.TextBox();
             cbProductCategory = new System.Windows.Forms.ComboBox();
             label7 = new System.Windows.Forms.Label();
+            cbAvailable = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).BeginInit();
             SuspendLayout();
             // 
@@ -129,16 +129,6 @@
             txtPrice.TabIndex = 7;
             txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtAvailable
-            // 
-            txtAvailable.Location = new System.Drawing.Point(153, 181);
-            txtAvailable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            txtAvailable.Name = "txtAvailable";
-            txtAvailable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtAvailable.Size = new System.Drawing.Size(171, 23);
-            txtAvailable.TabIndex = 8;
-            txtAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtQuantity
             // 
             txtQuantity.Location = new System.Drawing.Point(153, 238);
@@ -212,6 +202,7 @@
             txtImgUrl.Size = new System.Drawing.Size(301, 23);
             txtImgUrl.TabIndex = 90;
             txtImgUrl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtImgUrl.TextChanged += txtImgUrl_TextChanged;
             // 
             // cbProductCategory
             // 
@@ -234,11 +225,21 @@
             label7.TabIndex = 92;
             label7.Text = "Category";
             // 
+            // cbAvailable
+            // 
+            cbAvailable.FormattingEnabled = true;
+            cbAvailable.Items.AddRange(new object[] { "True", "False" });
+            cbAvailable.Location = new System.Drawing.Point(153, 179);
+            cbAvailable.Name = "cbAvailable";
+            cbAvailable.Size = new System.Drawing.Size(171, 23);
+            cbAvailable.TabIndex = 93;
+            // 
             // frmStaffManageProduct
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(788, 581);
+            Controls.Add(cbAvailable);
             Controls.Add(label7);
             Controls.Add(cbProductCategory);
             Controls.Add(txtImgUrl);
@@ -248,7 +249,6 @@
             Controls.Add(pbProductAvatar);
             Controls.Add(txtDesciption);
             Controls.Add(txtQuantity);
-            Controls.Add(txtAvailable);
             Controls.Add(txtPrice);
             Controls.Add(txtName);
             Controls.Add(label5);
@@ -276,7 +276,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtAvailable;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtDesciption;
         private System.Windows.Forms.PictureBox pbProductAvatar;
@@ -286,5 +285,6 @@
         private System.Windows.Forms.TextBox txtImgUrl;
         private System.Windows.Forms.ComboBox cbProductCategory;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbAvailable;
     }
 }

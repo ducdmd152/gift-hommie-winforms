@@ -20,7 +20,8 @@ namespace GiftHommieWinforms
         }
         private IProductRepository productRepository = new ProductRepository();
         public Product Product { get; set; }
-
+        private BindingSource bindingSource = new BindingSource();
+        int count = 0;
         // Create = false, Update = true
         public Boolean CreateOrUpdate { get; set; }
 
@@ -33,14 +34,22 @@ namespace GiftHommieWinforms
 
         private void LoadDataToUpdate()
         {
+            // Clear ảnh củ nếu có thay đổi
+            pbProductAvatar.DataBindings.Clear();
+
+            bindingSource.DataSource = new BindingSource();
+            bindingSource.DataSource = Product;
             txtName.Text = Product.Name;
             txtPrice.Text = Convert.ToString(Product.Price);
-            txtAvailable.Text = Convert.ToString(Product.Status);
+            cbAvailable.Text = Convert.ToString(Product.Status);
             txtDesciption.Text = Product.Description;
             txtQuantity.Text = Convert.ToString(Product.Quantity);
             txtImgUrl.Text = Product.Avatar;
             Category c = productRepository.GetCategoryById(Product.CategoryId);
             cbProductCategory.Text = c.Name;
+            pbProductAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
+                                "ImageLocation", bindingSource, "Avatar", true));
+
         }
         private void LoadCategoryList()
         {
@@ -66,7 +75,7 @@ namespace GiftHommieWinforms
                 string.IsNullOrEmpty(txtImgUrl.Text) ||
                 string.IsNullOrEmpty(txtQuantity.Text) ||
                 string.IsNullOrEmpty(txtDesciption.Text) ||
-                string.IsNullOrEmpty(txtAvailable.Text)
+                string.IsNullOrEmpty(cbAvailable.Text)
 
                 )
 
@@ -92,7 +101,7 @@ namespace GiftHommieWinforms
                     Quantity = int.Parse(txtQuantity.Text),
                     Avatar = txtImgUrl.Text,
                     Description = txtDesciption.Text,
-                    Status = bool.Parse(txtAvailable.Text),
+                    Status = bool.Parse(cbAvailable.Text),
                     CategoryId = int.Parse(cbProductCategory.SelectedValue.ToString())
                 };
 
@@ -114,6 +123,27 @@ namespace GiftHommieWinforms
 
 
             }
+        }
+
+        private void txtImgUrl_TextChanged(object sender, EventArgs e)
+        {
+            if (count >= 1)
+            {
+                Product.Avatar = txtImgUrl.Text;
+                LoadDataToUpdate();
+                LoadCategoryList();
+            }
+            else
+            {
+                count++;
+            }
+        }
+
+        private void LoadWhenImgChange()
+        {
+
+
+
         }
     }
 }

@@ -95,13 +95,12 @@ namespace GiftHommieWinforms
 
         private void HomeLoadData()
         {
-            List<Product> products = productRepository.GetAllWithFilter(
+            List<Product> products = productRepository.GetAllWithFilterWithoutStatus(
                 "",
                 txtProductNameSearch.Text,
                 txtUnitPriceMinSearch.Text, txtUnitPriceMaxSearch.Text,
                 txtUnitsInStockMinSearch.Text, txtUnitsInStockMaxSearch.Text,
-                ToIntOrZero(cbProductCategory.SelectedValue.ToString()),
-                true
+                ToIntOrZero(cbProductCategory.SelectedValue.ToString())
                 );
             if (cbProductSort.SelectedIndex == 1)
             {
@@ -111,23 +110,16 @@ namespace GiftHommieWinforms
             {
                 products = products.OrderByDescending(p => p.Price).ToList();
             }
-
             HomeLoadDataToGridView(products);
-
-
         }
-
         private void HomeLoadDataToGridView(IEnumerable<Product> products)
         {
             if (products == null)
                 products = new List<Product>()
                 {
                 };
-
             try
             {
-
-
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = products;
 
@@ -166,9 +158,7 @@ namespace GiftHommieWinforms
             txtDesc.DataBindings.Add("Text", bindingSource, "Description");
             pbProductAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
                                 "ImageLocation", bindingSource, "Avatar", true));
-
         }
-
         private void HomeClearText()
         {
             lbProductName.Text = string.Empty;
