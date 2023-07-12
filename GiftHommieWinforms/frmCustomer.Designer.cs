@@ -121,9 +121,9 @@
             groupBox4 = new System.Windows.Forms.GroupBox();
             txtCartTotal = new System.Windows.Forms.TextBox();
             lbCartTotal = new System.Windows.Forms.Label();
-            cbSorting = new System.Windows.Forms.ComboBox();
+            cbCartSorting = new System.Windows.Forms.ComboBox();
             label17 = new System.Windows.Forms.Label();
-            cbFilterCategory = new System.Windows.Forms.ComboBox();
+            cbCartFilterCategory = new System.Windows.Forms.ComboBox();
             label18 = new System.Windows.Forms.Label();
             txtCartFilterName = new System.Windows.Forms.TextBox();
             label19 = new System.Windows.Forms.Label();
@@ -1273,7 +1273,7 @@
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(1203, 353);
+            btnClose.Location = new System.Drawing.Point(1203, 352);
             btnClose.Margin = new System.Windows.Forms.Padding(4);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(106, 36);
@@ -1334,9 +1334,9 @@
             groupBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             groupBox4.Controls.Add(txtCartTotal);
             groupBox4.Controls.Add(lbCartTotal);
-            groupBox4.Controls.Add(cbSorting);
+            groupBox4.Controls.Add(cbCartSorting);
             groupBox4.Controls.Add(label17);
-            groupBox4.Controls.Add(cbFilterCategory);
+            groupBox4.Controls.Add(cbCartFilterCategory);
             groupBox4.Controls.Add(label18);
             groupBox4.Controls.Add(txtCartFilterName);
             groupBox4.Controls.Add(label19);
@@ -1372,16 +1372,16 @@
             lbCartTotal.TabIndex = 53;
             lbCartTotal.Text = "TOTAL: ";
             // 
-            // cbSorting
+            // cbCartSorting
             // 
-            cbSorting.BackColor = System.Drawing.Color.White;
-            cbSorting.FormattingEnabled = true;
-            cbSorting.Items.AddRange(new object[] { "Sort by", "Price asc", "Price desc" });
-            cbSorting.Location = new System.Drawing.Point(11, 328);
-            cbSorting.Margin = new System.Windows.Forms.Padding(4);
-            cbSorting.Name = "cbSorting";
-            cbSorting.Size = new System.Drawing.Size(362, 33);
-            cbSorting.TabIndex = 51;
+            cbCartSorting.BackColor = System.Drawing.Color.White;
+            cbCartSorting.FormattingEnabled = true;
+            cbCartSorting.Items.AddRange(new object[] { "Sort by", "Price asc", "Price desc" });
+            cbCartSorting.Location = new System.Drawing.Point(11, 328);
+            cbCartSorting.Margin = new System.Windows.Forms.Padding(4);
+            cbCartSorting.Name = "cbCartSorting";
+            cbCartSorting.Size = new System.Drawing.Size(362, 33);
+            cbCartSorting.TabIndex = 51;
             // 
             // label17
             // 
@@ -1393,16 +1393,16 @@
             label17.TabIndex = 52;
             label17.Text = "Sorting";
             // 
-            // cbFilterCategory
+            // cbCartFilterCategory
             // 
-            cbFilterCategory.BackColor = System.Drawing.Color.White;
-            cbFilterCategory.FormattingEnabled = true;
-            cbFilterCategory.Items.AddRange(new object[] { "Select the category" });
-            cbFilterCategory.Location = new System.Drawing.Point(11, 238);
-            cbFilterCategory.Margin = new System.Windows.Forms.Padding(4);
-            cbFilterCategory.Name = "cbFilterCategory";
-            cbFilterCategory.Size = new System.Drawing.Size(362, 33);
-            cbFilterCategory.TabIndex = 3;
+            cbCartFilterCategory.BackColor = System.Drawing.Color.White;
+            cbCartFilterCategory.FormattingEnabled = true;
+            cbCartFilterCategory.Items.AddRange(new object[] { "Select the category" });
+            cbCartFilterCategory.Location = new System.Drawing.Point(11, 238);
+            cbCartFilterCategory.Margin = new System.Windows.Forms.Padding(4);
+            cbCartFilterCategory.Name = "cbCartFilterCategory";
+            cbCartFilterCategory.Size = new System.Drawing.Size(362, 33);
+            cbCartFilterCategory.TabIndex = 3;
             // 
             // label18
             // 
@@ -1747,7 +1747,7 @@
             // button6
             // 
             button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button6.Location = new System.Drawing.Point(2391, 730);
+            button6.Location = new System.Drawing.Point(2391, 729);
             button6.Margin = new System.Windows.Forms.Padding(4);
             button6.Name = "button6";
             button6.Size = new System.Drawing.Size(106, 36);
@@ -1933,9 +1933,9 @@
         private System.Windows.Forms.TabPage tabCart;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox cbSorting;
+        private System.Windows.Forms.ComboBox cbCartSorting;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cbFilterCategory;
+        private System.Windows.Forms.ComboBox cbCartFilterCategory;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtCartFilterName;
         private System.Windows.Forms.Label label19;
