@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // frmStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmStaff";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmStaff";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1000, 562);
+            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Name = "frmStaff";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "frmStaff";
+            Load += frmStaff_Load;
+            ResumeLayout(false);
         }
 
         #endregion

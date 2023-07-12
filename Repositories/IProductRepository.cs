@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussinessObjects
+namespace BusinessObjects
 {
     public interface IProductRepository
     {

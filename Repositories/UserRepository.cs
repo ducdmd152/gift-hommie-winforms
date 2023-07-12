@@ -3,7 +3,7 @@ using DataAccessObjects;
 using System;
 using System.Collections.Generic;
 
-namespace BussinessObjects
+namespace BusinessObjects
 {
     public class UserRepository : IUserRepository
     {

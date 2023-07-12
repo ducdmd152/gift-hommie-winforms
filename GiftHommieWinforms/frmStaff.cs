@@ -16,5 +16,10 @@ namespace GiftHommieWinforms
         {
             InitializeComponent();
         }
+
+        private void frmStaff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
