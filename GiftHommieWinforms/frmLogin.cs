@@ -4,7 +4,7 @@ using GiftHommieWinforms;
 using System;
 using System.Windows.Forms;
 
-namespace SaleManagementWinApp
+namespace GiftHommieWinforms
 {
     public partial class frmLogin : Form
     {

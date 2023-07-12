@@ -1,4 +1,4 @@
-﻿namespace SaleManagementWinApp
+﻿namespace GiftHommieWinforms
 {
     partial class frmLogin
     {

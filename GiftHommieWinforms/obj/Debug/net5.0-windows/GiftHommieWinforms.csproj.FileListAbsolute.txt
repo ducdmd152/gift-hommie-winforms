@@ -263,7 +263,6 @@ C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\bin\Debu
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\bin\Debug\net5.0-windows\DataAccessObjects.pdb
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.csproj.AssemblyReference.cache
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmCustomer.resources
-C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\SaleManagementWinApp.frmLogin.resources
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmStaff.resources
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmStaffManageProduct.resources
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.csproj.GenerateResource.cache
@@ -278,3 +277,5 @@ C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debu
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\ref\GiftHommieWinforms.dll
 C:\Users\X\OneDrive\Documents\GitHub\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmStaffOrderDetail.resources
+C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmLogin.resources
+C:\Users\Admin\OneDrive\Desktop\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmStaffOrderDetail.resources
