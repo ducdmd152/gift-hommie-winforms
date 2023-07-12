@@ -21,9 +21,8 @@ namespace SaleManagementWinApp
                 User user = null;
                 try
                 {
-                txtEmail.Text = "quyettran";
-                txtPassword.Text = "123456";
 
+               
 
                     user = userRepository.Authenticate(txtEmail.Text, txtPassword.Text);
                     if(user != null)
