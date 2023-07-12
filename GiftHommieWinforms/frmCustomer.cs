@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using BussinessObjects;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace GiftHommieWinforms
 {
     public partial class frmCustomer : Form
     {
+        ICartRepository cartRepository = new CartRepository();
         private IProductRepository productRepository = new ProductRepository();
         private IOrderRepository orderRepository = new OrderRepository();
         private BindingSource bindingSource = null;
@@ -33,12 +35,14 @@ namespace GiftHommieWinforms
                 //};
                 //this.Hide();
                 //frmLogin.ShowDialog();
-            }                
+            }
         }
 
         private void tabcontrolCustomer_Click(object sender, EventArgs e)
         {
-            
+
+
+
         }
 
         private void frmCustomer_Load(object sender, EventArgs e)
@@ -102,10 +106,10 @@ namespace GiftHommieWinforms
             {
                 products = products.OrderByDescending(p => p.Price).ToList();
             }
-                
+
             HomeLoadDataToGridView(products);
 
-            
+
         }
 
         private void HomeLoadDataToGridView(IEnumerable<Product> products)
@@ -117,7 +121,7 @@ namespace GiftHommieWinforms
 
             try
             {
-                
+
 
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = products;
@@ -185,7 +189,7 @@ namespace GiftHommieWinforms
 
         private void txtProductNameSearch_TextChanged(object sender, EventArgs e)
         {
-            HomeLoadData();            
+            HomeLoadData();
         }
 
         private void cbProductCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -257,7 +261,7 @@ namespace GiftHommieWinforms
         private void btnBack_Click(object sender, EventArgs e)
         {
             int index = bindingSource.Position - 1 < 0 ? 0 : bindingSource.Position - 1;
-            bindingSource.Position = index;                
+            bindingSource.Position = index;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -297,7 +301,7 @@ namespace GiftHommieWinforms
         private void tabMyOrder_Click(object sender, EventArgs e)
         {
             OrderInitDataForSearchComponent();
-            OrderLoadData();            
+            OrderLoadData();
         }
 
         private void OrderInitDataForSearchComponent()
@@ -327,7 +331,7 @@ namespace GiftHommieWinforms
                                 o.OrderTime >= dtpStartDate.Value && o.OrderTime < dtpEndDate.Value)
                                 && (o.Id.ToString().Contains(txtOrderSearch.Text) || o.Name.ToLower().Contains(txtOrderSearch.Text.ToLower()))
                                 && (cbOrderStatus.SelectedIndex == 0 || o.Status.Equals(cbOrderStatus.SelectedItem?.ToString()))
-                            )                                                        
+                            )
                             .ToList();
 
             if (orderTimeDescMode)
@@ -349,7 +353,7 @@ namespace GiftHommieWinforms
                 Order order = bindingSource.Current as Order;
                 orderDetails = order.OrderDetails;
             }
-           
+
             OrderDetailLoadDataToGridView(orderDetails);
 
 
@@ -372,7 +376,7 @@ namespace GiftHommieWinforms
                 dgvOrders.DataSource = bindingSource;
                 //dgvOrders.Columns["Id"].Visible = false;
                 dgvOrders.Columns["Username"].Visible = false;
-                
+
                 dgvOrders.Columns["LastUpdatedTime"].Visible = false;
                 dgvOrders.Columns["User"].Visible = false;
                 dgvOrders.Columns["OrderDetails"].Visible = false;
@@ -406,7 +410,7 @@ namespace GiftHommieWinforms
                 {
                 };
 
-            foreach(OrderDetail detail in orderDetails)
+            foreach (OrderDetail detail in orderDetails)
             {
                 Product product = productRepository.Get(detail.ProductId.Value);
                 detail.Product = product;
@@ -434,14 +438,14 @@ namespace GiftHommieWinforms
 
                 //Calculate and assign the total value for each row
                 foreach (DataGridViewRow row in dgvOrderDetails.Rows)
-                    {
-                        int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
-                        decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+                {
+                    int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+                    decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
 
-                        decimal total = quantity * price;
+                    decimal total = quantity * price;
 
-                        row.Cells["Total"].Value = total;
-                    }
+                    row.Cells["Total"].Value = total;
+                }
                 dgvOrderDetails.Columns["Total"].DisplayIndex = 4;
                 dgvOrderDetails.Columns["Total"].DataPropertyName = "Total";
 
@@ -526,7 +530,7 @@ namespace GiftHommieWinforms
 
         private void tabcontrolCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabcontrolCustomer.SelectedIndex == 0)
+            if (tabcontrolCustomer.SelectedIndex == 0)
             {
                 tabHome_Click(sender, e);
             }
@@ -612,7 +616,7 @@ namespace GiftHommieWinforms
             OrderLoadData();
         }
 
-        
+
 
         private void btnCleanAllFilterOrder_Click(object sender, EventArgs e)
         {
@@ -627,7 +631,7 @@ namespace GiftHommieWinforms
             if (confirmResult == DialogResult.No)
             {
                 // do nothing
-            }                
+            }
             else if (dgvOrders.DataSource != null && bindingSource.Count > 0)
             {
                 Order order = bindingSource.Current as Order;
@@ -643,17 +647,104 @@ namespace GiftHommieWinforms
         // END OF TAB HOME & ORDER AREA -------------------------------------------
 
 
-        // TAB CART AREA
+        //================= TAB CART AREA =========================
+        private void setCartVisible()
+        {
+            dgvCarts.Columns["ID"].Visible = false;
+            dgvCarts.Columns["Username"].Visible = false;
+            dgvCarts.Columns["ProductId"].Visible = false;
+            dgvCarts.Columns["UsernameNavigation"].Visible = false;
+
+            foreach (DataGridViewRow items in dgvCarts.Rows)
+            {
+                if (items != null)
+                    items.Cells["Check"].Value = false;
+            }
+
+
+        }
+        private void LoadCart()
+        {
+            List<Cart> list = cartRepository.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
+            bindingSource = new BindingSource();
+            bindingSource.DataSource = list;
+
+            foreach (Cart cart in list)
+                cart.Product = productRepository.Get((int)cart.ProductId);
+
+            dgvCarts.DataSource = bindingSource;
+            setCurrentProduct();
+        }
+
         private void tabCart_Click(object sender, EventArgs e)
         {
             // trig when click move to tab // START CODE IN HERE
             // example:
             MessageBox.Show("Welcome to cart");
+            LoadCart();
+            setCartVisible();
         }
 
+        private void setCurrentProduct()
+        {
 
+            lbCartName.DataBindings.Clear();
+            txtCartPrice.DataBindings.Clear();
+            txtCartQuantity.DataBindings.Clear();
+            txtCartAvailable.DataBindings.Clear();
+            pbCartAvatar.DataBindings.Clear();
 
-        // TAB PROFILE AREA
+            ////gbProduct.DataBindings.Add("Text", orderDetailBindingSource, "Name");
+            lbCartName.DataBindings.Add("Text", bindingSource, "Product.Name");
+            txtCartPrice.DataBindings.Add("Text", bindingSource, "Product.Price");
+            txtCartQuantity.DataBindings.Add("Text", bindingSource, "Quantity");
+            txtCartDescription.DataBindings.Add("Text", bindingSource, "Product.Description");
+            //Sua available sau
+            txtCartAvailable.DataBindings.Add("Text", bindingSource, "Product.Quantity");
+            pbCartAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
+                                "ImageLocation", bindingSource, "Product.Avatar", true));
+
+        }
+        //CART CHECKOUT
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+
+            List<Cart> list = new List<Cart>();
+            foreach (DataGridViewRow item in dgvCarts.Rows)
+            {
+                if ((bool)item.Cells["Check"].Value == true)
+                    ;
+            }
+
+        }
+        private void dgvCarts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int c, r;
+            if (e.ColumnIndex == 0)
+            {
+                c = e.ColumnIndex;
+                r = e.RowIndex;
+                var b = dgvCarts.Rows[r].Cells[c].Value;
+                bool check;
+                dgvCarts.Rows[r].Cells[c].Value = !((bool)dgvCarts.Rows[r].Cells[c].Value);
+                check = (bool)dgvCarts.Rows[r].Cells[c].Value;
+
+                string total = txtCartTotal.Text;
+
+                if (total == "")
+                    total = "0";
+
+                Cart cart = (Cart)bindingSource.Current;
+
+                if (check == false)
+                    txtCartTotal.Text = (int.Parse(total) - cart.Product.Price * cart.Quantity).ToString();
+                else
+                    txtCartTotal.Text = (int.Parse(total) + cart.Product.Price * cart.Quantity).ToString();
+
+            }
+        }
+        //===================================================================
+        // ======================= TAB PROFILE AREA =============================
         private void tabMyProfile_Click(object sender, EventArgs e)
         {
             // trig when click move to tab // START CODE IN HERE
@@ -661,7 +752,60 @@ namespace GiftHommieWinforms
             MessageBox.Show("Welcome to profile");
         }
 
-        
+        private void splitContainer7_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void splitContainer8_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCarts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtCartTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIncrease_Click(object sender, EventArgs e)
+        {
+            int quantity = int.Parse(txtCartQuantity.Text);
+
+            if (quantity >= 1)
+            {
+                txtCartQuantity.Text = (quantity + 1).ToString();
+            }
+        }
+
+        private void btnDecrease_Click(object sender, EventArgs e)
+        {
+            int quantity = int.Parse(txtCartQuantity.Text);
+
+            if (quantity > 1)
+            {
+                txtCartQuantity.Text = (quantity - 1).ToString();
+            }
+        }
     }
 
 
