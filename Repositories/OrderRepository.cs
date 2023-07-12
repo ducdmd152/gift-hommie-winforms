@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BussinessObjects
+namespace Repositories
 {
     public class OrderRepository : IOrderRepository
     {
