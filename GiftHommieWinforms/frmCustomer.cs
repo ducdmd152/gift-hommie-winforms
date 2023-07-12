@@ -15,6 +15,7 @@ namespace GiftHommieWinforms
         private BindingSource bindingSource = null;
         private BindingSource orderDetailBindingSource = null;
         private bool orderTimeDescMode = true;
+        private IUserRepository userRepository = new UserRepository();
         public frmCustomer()
         {
             InitializeComponent();
@@ -951,12 +952,7 @@ namespace GiftHommieWinforms
         }
         //===================================================================
         // ======================= TAB PROFILE AREA =============================
-        private void tabMyProfile_Click(object sender, EventArgs e)
-        {
-            // trig when click move to tab // START CODE IN HERE
-            // example:
-            MessageBox.Show("Welcome to profile");
-        }
+
 
         private void splitContainer7_SplitterMoved(object sender, SplitterEventArgs e)
         {
@@ -986,6 +982,43 @@ namespace GiftHommieWinforms
         private void txtCartTotal_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        //--------------------------profile--------------------------------------------
+        private void tabMyProfile_Click(object sender, EventArgs e)
+        {
+            // trig when click move to tab // START CODE IN HERE
+            // example:
+            MessageBox.Show("Welcome to profile");
+            LoadUserProfile();
+        }
+
+        private void LoadUserProfile()
+        {
+            User user = userRepository.Get(GlobalData.AuthenticatedUser.Username);
+            if (user == null)
+            {
+                MessageBox.Show("something went wrong");
+            }
+            else
+            {
+                txtUserName.Text = user.Username;
+                txtEmail.Text = user.Email;
+                txtRole.Text = user.Role;
+                txtName.Text = user.Name;
+                txtGender.Text = user.Gender == 1 ? "Male" : "Female";
+                txtPhone.Text = user.Phone;
+                txtAddress.Text = user.Address;
+                txtYob.Text = user.Yob.ToString();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtUserName.ReadOnly = false;
+            txtName.ReadOnly = false;
+            txtPhone.ReadOnly = false;
+            txtAddress.ReadOnly = false;
+            txtYob.ReadOnly = false;
         }
     }
 
