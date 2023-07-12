@@ -40,9 +40,6 @@ namespace GiftHommieWinforms
 
         private void tabcontrolCustomer_Click(object sender, EventArgs e)
         {
-
-
-
         }
 
         private void frmCustomer_Load(object sender, EventArgs e)
@@ -648,32 +645,115 @@ namespace GiftHommieWinforms
 
 
         //================= TAB CART AREA =========================
-        private void setCartVisible()
+        //CHOOSEN MEMORY
+        private Dictionary<int, bool> memory = new Dictionary<int, bool>();
+        private void button1_Click(object sender, EventArgs e)
         {
-            dgvCarts.Columns["ID"].Visible = false;
-            dgvCarts.Columns["Username"].Visible = false;
-            dgvCarts.Columns["ProductId"].Visible = false;
-            dgvCarts.Columns["UsernameNavigation"].Visible = false;
-
-            foreach (DataGridViewRow items in dgvCarts.Rows)
-            {
-                if (items != null)
-                    items.Cells["Check"].Value = false;
-            }
-
-
+            LoadCart();
         }
-        private void LoadCart()
+
+        private void txtFilterName_TextChanged(object sender, EventArgs e)
+        {
+            SetCartVisible();
+        }
+        //ADD TO CART
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ADD TO CART SUCCESSFULLY") == DialogResult.OK)
+            {
+                try
+                {
+                    int productId = ((Product)bindingSource.Current).Id;
+                    Cart cart = new Cart
+                    {
+                        Username = GlobalData.AuthenticatedUser.Username,
+                        ProductId = productId,
+                        Quantity = 1,
+                    };
+
+                    cartRepository.Save(cart);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void LoadChoosenItems()
+        {
+            foreach (DataGridViewRow row in dgvCarts.Rows)
+            {
+                int cartId = (int)row.Cells["Id"].Value;
+                row.Cells["Check"].Value = (memory.ContainsKey(cartId)) ? memory[cartId] : false;
+            }
+        }
+        private void SetCartCurrentProduct()
+        {
+            lbCartName.Text = "";
+            txtCartPrice.Text = "";
+            txtCartQuantity.Text = "";
+            txtCartAvailable.Text = "";
+            pbCartAvatar.ImageLocation = "";
+            txtCartDescription.Text = "";
+
+            lbCartName.DataBindings.Clear();
+            txtCartPrice.DataBindings.Clear();
+            txtCartQuantity.DataBindings.Clear();
+            txtCartAvailable.DataBindings.Clear();
+            pbCartAvatar.DataBindings.Clear();
+            txtCartDescription.DataBindings.Clear();
+
+            txtCartTotal.Text = "0";
+            lblCartIndex.Text = "1";
+            lbCartName.DataBindings.Add("Text", bindingSource, "Product.Name");
+            txtCartPrice.DataBindings.Add("Text", bindingSource, "Product.Price");
+            txtCartQuantity.DataBindings.Add("Text", bindingSource, "Quantity");
+            txtCartDescription.DataBindings.Add("Text", bindingSource, "Product.Description");
+            pbCartAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
+                                "ImageLocation", bindingSource, "Product.Avatar", true));
+            try
+            {
+                int productId = (int)((Cart)bindingSource.Current).ProductId;
+                txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void SetCartVisible()
         {
             List<Cart> list = cartRepository.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
             bindingSource = new BindingSource();
-            bindingSource.DataSource = list;
 
             foreach (Cart cart in list)
                 cart.Product = productRepository.Get((int)cart.ProductId);
 
+            list = list.Where(c => c.Product.Name.Contains(txtCartFilterName.Text)).ToList();
+            bindingSource.DataSource = list;
             dgvCarts.DataSource = bindingSource;
-            setCurrentProduct();
+
+            dgvCarts.Columns["ID"].Visible = false;
+            dgvCarts.Columns["Username"].Visible = false;
+            dgvCarts.Columns["ProductId"].Visible = false;
+            dgvCarts.Columns["UsernameNavigation"].Visible = false;
+            
+            //SET DEFAULT VALUE FOR CHECKBOX
+            LoadChoosenItems();
+            SetCartCurrentProduct();
+            LoadCartTotal();
+        }
+
+        //REFRESH CART
+        private bool RefreshUserCart() => cartRepository.RefreshAllCart(GlobalData.AuthenticatedUser.Username);
+        //TRONG LOADCART CO SAN REFRESH CART
+        private void LoadCart()
+        {
+            if (RefreshUserCart())
+                MessageBox.Show("YOUR CART HAS BEEN CHANGE");
+
+            SetCartVisible();
+            LoadCartTotal();
         }
 
         private void tabCart_Click(object sender, EventArgs e)
@@ -682,66 +762,193 @@ namespace GiftHommieWinforms
             // example:
             MessageBox.Show("Welcome to cart");
             LoadCart();
-            setCartVisible();
-        }
-
-        private void setCurrentProduct()
-        {
-
-            lbCartName.DataBindings.Clear();
-            txtCartPrice.DataBindings.Clear();
-            txtCartQuantity.DataBindings.Clear();
-            txtCartAvailable.DataBindings.Clear();
-            pbCartAvatar.DataBindings.Clear();
-
-            ////gbProduct.DataBindings.Add("Text", orderDetailBindingSource, "Name");
-            lbCartName.DataBindings.Add("Text", bindingSource, "Product.Name");
-            txtCartPrice.DataBindings.Add("Text", bindingSource, "Product.Price");
-            txtCartQuantity.DataBindings.Add("Text", bindingSource, "Quantity");
-            txtCartDescription.DataBindings.Add("Text", bindingSource, "Product.Description");
-            //Sua available sau
-            txtCartAvailable.DataBindings.Add("Text", bindingSource, "Product.Quantity");
-            pbCartAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
-                                "ImageLocation", bindingSource, "Product.Avatar", true));
-
+            //SetCartVisible();
         }
         //CART CHECKOUT
+
+        //REMOVE CART ITEM
+        private void RemoveCartItem(int id)
+        {
+            cartRepository.DeleteCartById(id);
+            memory[id] = false;
+        }
+
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-
             List<Cart> list = new List<Cart>();
-            foreach (DataGridViewRow item in dgvCarts.Rows)
+            LoadCart();
+
+            foreach (int id in memory.Keys.Where(k => memory[k]))
             {
-                if ((bool)item.Cells["Check"].Value == true)
-                    ;
+                list.Add(cartRepository
+                            .GetCartById(GlobalData.AuthenticatedUser.Username, id));
             }
 
+            if (list.Count > 0)
+            {
+                var form = new frmCheckout
+                {
+                    CartList = list,
+                    Total = double.Parse(txtCartTotal.Text)
+                };
+               
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("BUY SUCCESSFULLY");
+
+                    foreach (Cart item in list)
+                    {
+                       RemoveCartItem(item.Id);
+                    }
+
+                    LoadCart();
+                }
+            }
         }
         private void dgvCarts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int productId = (int)((Cart)bindingSource.Current).ProductId;
+            lblCartIndex.Text = (bindingSource.Position + 1).ToString();
+            txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
+        }
+
+        private void dgvCarts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblCartIndex.Text = (bindingSource.Position + 1).ToString();
             int c, r;
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && dgvCarts.RowCount > 0)
             {
                 c = e.ColumnIndex;
                 r = e.RowIndex;
-                var b = dgvCarts.Rows[r].Cells[c].Value;
-                bool check;
+
                 dgvCarts.Rows[r].Cells[c].Value = !((bool)dgvCarts.Rows[r].Cells[c].Value);
-                check = (bool)dgvCarts.Rows[r].Cells[c].Value;
+               
+                bool check = (bool)dgvCarts.Rows[r].Cells[c].Value;
+                int cartId = (int)dgvCarts.Rows[r].Cells["Id"].Value;
 
-                string total = txtCartTotal.Text;
+                memory[cartId] = check;
+                LoadCartTotal();
+            }
+        }
 
-                if (total == "")
-                    total = "0";
+        private void btnCartBack_Click(object sender, EventArgs e)
+        {
+            if (bindingSource.Position > 0)
+            {
+                int index = bindingSource.Position - 1;
 
-                Cart cart = (Cart)bindingSource.Current;
+                bindingSource.Position = index;
+                lblCartIndex.Text = (index + 1).ToString();
+            }
+        }
 
-                if (check == false)
-                    txtCartTotal.Text = (int.Parse(total) - cart.Product.Price * cart.Quantity).ToString();
+        private void btnCartNext_Click(object sender, EventArgs e)
+        {
+            if (bindingSource.Position < dgvCarts.RowCount - 1)
+            {
+                int index = bindingSource.Position + 1;
+
+                bindingSource.Position = index;
+                lblCartIndex.Text = (index + 1).ToString();
+            }
+        }
+        //LOAD TOTAL PRICE OF CART
+        private void LoadCartTotal()
+        {
+            txtCartTotal.Text = "0";
+
+            foreach (int cartId in memory.Keys.Where(k => memory[k]))
+            {
+                Cart cart = cartRepository.GetCartById(GlobalData.AuthenticatedUser.Username, cartId);
+
+                txtCartTotal.Text = (int.Parse(txtCartTotal.Text)
+                    + cart.Quantity
+                    * (productRepository.Get((int)cart.ProductId).Price)).ToString();
+            }
+        }
+        private void btnIncrease_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int quantity = int.Parse(txtCartQuantity.Text);
+                int productId = (int)(bindingSource.Current as Cart).ProductId;
+
+                if (quantity < orderRepository.GetAvailableProductQuantity(productId))
+                {
+                    Cart cart = bindingSource.Current as Cart;
+                    txtCartQuantity.Text = (quantity + 1).ToString();
+                    cartRepository.UpdateCartQuantityById(cart.Id, quantity + 1);
+                    cart.Quantity = quantity + 1;
+                    cart.LastUpdatedTime = DateTime.Now;
+                    LoadCartTotal();
+                }
                 else
-                    txtCartTotal.Text = (int.Parse(total) + cart.Product.Price * cart.Quantity).ToString();
+                {
+                    MessageBox.Show("QUANTITY CANNOT MORE THAN AVAILABLE");
+                }
+            }
+            catch (Exception ex)
+            {
 
             }
+        }
+
+        private void btnDecrease_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int quantity = int.Parse(txtCartQuantity.Text);
+
+                if (quantity > 1)
+                {
+                    Cart cart = bindingSource.Current as Cart;
+                    txtCartQuantity.Text = (quantity - 1).ToString();
+                    cartRepository.UpdateCartQuantityById(cart.Id, quantity - 1);
+                    cart.Quantity = quantity - 1;
+                    cart.LastUpdatedTime = DateTime.Now;
+                    LoadCartTotal();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        //GET ALL DATA GRID VIEW ROWS WITH STATUS OF CHECKBOX
+        private List<DataGridViewRow> GetAllCartDataGridViewRows(bool status)
+        {
+
+            List<DataGridViewRow> rows = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dgvCarts.Rows)
+            {
+                if ((bool)row.Cells["Check"].Value == true)
+                    rows.Add(row);
+            }
+            return rows;
+        }
+
+        private void btnCartDelete_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> list = GetAllCartDataGridViewRows(true);
+
+            if (list.Count > 0 && MessageBox.Show("DO YOU WANT TO DELETE CART ITEMS?", "CONFIRM", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+                foreach (DataGridViewRow row in list)
+                {
+                    try
+                    {
+                        //cartRepository.DeleteCartById(int.Parse(row.Cells["Id"].Value.ToString()));
+                        RemoveCartItem((int)row.Cells["Id"].Value);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                LoadCart();
+            }
+
         }
         //===================================================================
         // ======================= TAB PROFILE AREA =============================
@@ -777,38 +984,10 @@ namespace GiftHommieWinforms
 
         }
 
-        private void dgvCarts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void txtCartTotal_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void btnIncrease_Click(object sender, EventArgs e)
-        {
-            int quantity = int.Parse(txtCartQuantity.Text);
-
-            if (quantity >= 1)
-            {
-                txtCartQuantity.Text = (quantity + 1).ToString();
-            }
-        }
-
-        private void btnDecrease_Click(object sender, EventArgs e)
-        {
-            int quantity = int.Parse(txtCartQuantity.Text);
-
-            if (quantity > 1)
-            {
-                txtCartQuantity.Text = (quantity - 1).ToString();
-            }
-        }
     }
-
-
-
 
 }

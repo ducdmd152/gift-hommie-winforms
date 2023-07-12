@@ -9,8 +9,6 @@ namespace DataAccessObjects
 {
     public class CartDAO
     {
-
-
         // Singleton Pattern
         private CartDAO() { }
         private static CartDAO instance = null;
@@ -29,15 +27,13 @@ namespace DataAccessObjects
                 }
             }
         }
-
-        public List<Cart> GetAllCartItemsByUsername(string username)
+        public List<Cart> GetAllCartItems()
         {
             try
             {
-
                 using(var context = new HommieStoreContext())
                 {
-                    return context.Carts.Where(c => c.Username == username).ToList();
+                    return context.Carts.ToList();
                 }
 
             }
@@ -46,6 +42,67 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+        public void Save(Cart cart)
+        {
+            try
+            {
+                using (var context = new HommieStoreContext())
+                {
 
+                    Cart c = context.Carts.SingleOrDefault(o => o.Username == cart.Username && o.ProductId == cart.ProductId) as Cart;
+                        
+                    if (c != null)
+                    {
+                        c.LastUpdatedTime = DateTime.Now;
+                        c.Quantity++;
+                    }
+                    else
+                    {
+                        cart.LastUpdatedTime = DateTime.Now;
+                        context.Carts.Add(cart);
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void UpdateCartQuantityById(int id, int quantity)
+        {
+            try
+            {
+                using (var context = new HommieStoreContext())
+                {
+                    Cart cart = context.Carts.Find(id);
+                    cart.LastUpdatedTime = DateTime.Now;
+                    cart.Quantity = quantity;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteCartById(int id)
+        {
+            try
+            {
+                using (var context = new HommieStoreContext())
+                {
+                    Cart cart = context.Carts.SingleOrDefault(c => c.Id == id);
+                    context.Carts.Remove(cart);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,8 +14,6 @@ namespace BusinessObjects
         public virtual Product Product { get; set; }
         public int? Quantity { get; set; }
         public DateTime? LastUpdatedTime { get; set; }
-
-        
         public virtual User UsernameNavigation { get; set; }
     }
 }
