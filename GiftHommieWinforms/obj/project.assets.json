@@ -6223,11 +6223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GiftHubdotNet\\gift-hommie-winforms\\GiftHommieWinforms\\GiftHommieWinforms.csproj",
+      "projectUniqueName": "D:\\GiftHubdotNet\\GiftHommieWinforms\\GiftHommieWinforms.csproj",
       "projectName": "GiftHommieWinforms",
-      "projectPath": "D:\\GiftHubdotNet\\gift-hommie-winforms\\GiftHommieWinforms\\GiftHommieWinforms.csproj",
+      "projectPath": "D:\\GiftHubdotNet\\GiftHommieWinforms\\GiftHommieWinforms.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\GiftHubdotNet\\gift-hommie-winforms\\GiftHommieWinforms\\obj\\",
+      "outputPath": "D:\\GiftHubdotNet\\GiftHommieWinforms\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6244,8 +6244,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\GiftHubdotNet\\gift-hommie-winforms\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\GiftHubdotNet\\gift-hommie-winforms\\Repositories\\Repositories.csproj"
+            "D:\\GiftHubdotNet\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\GiftHubdotNet\\Repositories\\Repositories.csproj"
             }
           }
         }
@@ -6265,8 +6265,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -6278,7 +6277,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

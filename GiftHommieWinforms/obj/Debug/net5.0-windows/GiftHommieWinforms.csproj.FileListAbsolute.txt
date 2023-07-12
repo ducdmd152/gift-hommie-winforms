@@ -140,7 +140,6 @@ D:\GiftHubdotNet\gift-hommie-winforms\GiftHommieWinforms\obj\Debug\net5.0-window
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.csproj.AssemblyReference.cache
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmCheckout.resources
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmCustomer.resources
-D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\SaleManagementWinApp.frmLogin.resources
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmStaff.resources
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.csproj.GenerateResource.cache
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.GeneratedMSBuildEditorConfig.editorconfig
@@ -207,3 +206,4 @@ D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\refint\GiftHommieWi
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.pdb
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.genruntimeconfig.cache
 D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\ref\GiftHommieWinforms.dll
+D:\GiftHubdotNet\GiftHommieWinforms\obj\Debug\net5.0-windows\GiftHommieWinforms.frmLogin.resources

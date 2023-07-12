@@ -6272,11 +6272,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GiftHubdotNet\\gift-hommie-winforms\\BusinessObjects\\BusinessObjects.csproj",
+      "projectUniqueName": "D:\\GiftHubdotNet\\BusinessObjects\\BusinessObjects.csproj",
       "projectName": "BusinessObjects",
-      "projectPath": "D:\\GiftHubdotNet\\gift-hommie-winforms\\BusinessObjects\\BusinessObjects.csproj",
+      "projectPath": "D:\\GiftHubdotNet\\BusinessObjects\\BusinessObjects.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\GiftHubdotNet\\gift-hommie-winforms\\BusinessObjects\\obj\\",
+      "outputPath": "D:\\GiftHubdotNet\\BusinessObjects\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6330,8 +6330,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -6340,7 +6339,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }
