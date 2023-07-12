@@ -300,7 +300,7 @@ namespace GiftHommieWinforms
                 Product p = productRepository.Get(GetSelectedRowIdValue());
                 if (p != null)
                 {
-                    d = MessageBox.Show("Bạn có thật sự muốn xóa hay không sản phẩm " + p.Name +"?", "Quản lý thông tin Product - Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
+                    d = MessageBox.Show("Bạn có thật sự muốn xóa hay không sản phẩm " + p.Name + "?", "Quản lý thông tin Product - Xóa dữ liệu", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button1);
                     if (d == DialogResult.OK)
                     {
