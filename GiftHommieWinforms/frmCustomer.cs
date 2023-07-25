@@ -743,7 +743,7 @@ namespace GiftHommieWinforms
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         //LOAD LIST FILTER
@@ -939,7 +939,7 @@ namespace GiftHommieWinforms
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         //LOAD CART INDEX PAGE
@@ -971,7 +971,7 @@ namespace GiftHommieWinforms
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         private void LoadCartTotal()
