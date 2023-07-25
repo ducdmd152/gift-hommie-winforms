@@ -147,6 +147,7 @@
             txtSearchOrder = new System.Windows.Forms.TextBox();
             btnOrderSearch = new System.Windows.Forms.Button();
             btnSortOrder = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBoxSearch.SuspendLayout();
@@ -196,6 +197,7 @@
             txtUnitPriceMaxSearch.TabIndex = 1;
             txtUnitPriceMaxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitPriceMaxSearch.TextChanged += txtUnitPriceMaxSearch_TextChanged;
+            txtUnitPriceMaxSearch.KeyPress += txtUnitPriceMaxSearch_KeyPress;
             // 
             // txtUnitPriceMinSearch
             // 
@@ -206,6 +208,7 @@
             txtUnitPriceMinSearch.TabIndex = 0;
             txtUnitPriceMinSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitPriceMinSearch.TextChanged += txtUnitPriceMinSearch_TextChanged;
+            txtUnitPriceMinSearch.KeyPress += txtUnitPriceMinSearch_KeyPress;
             // 
             // cbProductSort
             // 
@@ -295,6 +298,7 @@
             txtUnitsInStockMinSearch.TabIndex = 0;
             txtUnitsInStockMinSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitsInStockMinSearch.TextChanged += txtUnitsInStockMinSearch_TextChanged;
+            txtUnitsInStockMinSearch.KeyPress += txtUnitsInStockMinSearch_KeyPress;
             // 
             // btnReset
             // 
@@ -331,6 +335,7 @@
             txtUnitsInStockMaxSearch.TabIndex = 1;
             txtUnitsInStockMaxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitsInStockMaxSearch.TextChanged += txtUnitsInStockMaxSearch_TextChanged;
+            txtUnitsInStockMaxSearch.KeyPress += txtUnitsInStockMaxSearch_KeyPress;
             // 
             // label2
             // 
@@ -632,7 +637,7 @@
             // button1
             // 
             button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button1.Location = new System.Drawing.Point(848, 275);
+            button1.Location = new System.Drawing.Point(848, 280);
             button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(74, 22);
@@ -663,7 +668,7 @@
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(1655, 493);
+            btnClose.Location = new System.Drawing.Point(1655, 498);
             btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(74, 22);
@@ -703,6 +708,7 @@
             // 
             // tabOrder
             // 
+            tabOrder.Controls.Add(button2);
             tabOrder.Controls.Add(btnCreateOrder);
             tabOrder.Controls.Add(VbtnViewOrderDetail);
             tabOrder.Controls.Add(groupBox5);
@@ -1157,7 +1163,7 @@
             tabPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             tabPage1.Location = new System.Drawing.Point(4, 24);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            tabPage1.Padding = new System.Windows.Forms.Padding(3);
             tabPage1.Size = new System.Drawing.Size(1249, 544);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "Profile";
@@ -1562,6 +1568,18 @@
             btnSortOrder.Text = "Sort In Ascending Date Order";
             btnSortOrder.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.Silver;
+            button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button2.Location = new System.Drawing.Point(1113, 308);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(128, 33);
+            button2.TabIndex = 121;
+            button2.Text = "Edit Shipping Fee";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1741,5 +1759,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label phonedup;
         private System.Windows.Forms.Label emaildup;
+        private System.Windows.Forms.Button button2;
     }
 }

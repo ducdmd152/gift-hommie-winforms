@@ -124,15 +124,17 @@ namespace GiftHommieWinforms
                 txtPrice.Text = Product.Price.ToString();
                 return false;
             }
-            else {
-                if (int.Parse(txtPrice.Text) <= 0) {
+            else
+            {
+                if (int.Parse(txtPrice.Text) <= 0)
+                {
                     MessageBox.Show("Please enter only the number in the Price box that is greater than or equal to 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtPrice.Clear();
                     txtPrice.Text = Product.Price.ToString();
                     return false;
 
                 }
-            
+
             }
 
             if (CheckCharacter(txtQuantity.Text) != true)
@@ -250,5 +252,14 @@ namespace GiftHommieWinforms
             this.Close();
         }
 
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

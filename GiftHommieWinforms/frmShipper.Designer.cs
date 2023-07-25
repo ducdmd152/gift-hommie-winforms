@@ -58,6 +58,11 @@
             txtTotal = new System.Windows.Forms.TextBox();
             txtPhone = new System.Windows.Forms.TextBox();
             txtxAddress = new System.Windows.Forms.TextBox();
+            label9 = new System.Windows.Forms.Label();
+            txtFee = new System.Windows.Forms.TextBox();
+            txtallPrice = new System.Windows.Forms.TextBox();
+            label12 = new System.Windows.Forms.Label();
+            button3 = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTakeOrder).BeginInit();
             groupBox2.SuspendLayout();
@@ -198,11 +203,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(268, 312);
+            label3.Location = new System.Drawing.Point(243, 312);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(64, 21);
+            label3.Size = new System.Drawing.Size(100, 21);
             label3.TabIndex = 125;
-            label3.Text = "All Total";
+            label3.Text = "Product Total";
             // 
             // tbCountItem
             // 
@@ -324,7 +329,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(38, 410);
+            label4.Location = new System.Drawing.Point(37, 398);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(51, 20);
             label4.TabIndex = 2;
@@ -334,7 +339,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(364, 410);
+            label5.Location = new System.Drawing.Point(320, 398);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(66, 20);
             label5.TabIndex = 3;
@@ -344,7 +349,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label6.Location = new System.Drawing.Point(36, 524);
+            label6.Location = new System.Drawing.Point(35, 440);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(53, 20);
             label6.TabIndex = 4;
@@ -354,17 +359,19 @@
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label7.Location = new System.Drawing.Point(364, 524);
+            label7.Location = new System.Drawing.Point(290, 527);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(44, 20);
+            label7.Size = new System.Drawing.Size(43, 20);
             label7.TabIndex = 5;
-            label7.Text = "Total";
+            label7.Text = "Price";
+            label7.Click += label7_Click;
             // 
             // txtname
             // 
-            txtname.Location = new System.Drawing.Point(107, 410);
+            txtname.Location = new System.Drawing.Point(106, 398);
             txtname.Name = "txtname";
-            txtname.Size = new System.Drawing.Size(211, 23);
+            txtname.ReadOnly = true;
+            txtname.Size = new System.Drawing.Size(171, 23);
             txtname.TabIndex = 6;
             // 
             // txtTotal
@@ -372,32 +379,93 @@
             txtTotal.BackColor = System.Drawing.Color.Yellow;
             txtTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             txtTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            txtTotal.Location = new System.Drawing.Point(445, 516);
+            txtTotal.Location = new System.Drawing.Point(340, 516);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new System.Drawing.Size(211, 49);
+            txtTotal.Size = new System.Drawing.Size(124, 49);
             txtTotal.TabIndex = 8;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new System.Drawing.Point(107, 524);
+            txtPhone.Location = new System.Drawing.Point(106, 440);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new System.Drawing.Size(211, 23);
+            txtPhone.ReadOnly = true;
+            txtPhone.Size = new System.Drawing.Size(180, 23);
             txtPhone.TabIndex = 9;
             // 
             // txtxAddress
             // 
-            txtxAddress.Location = new System.Drawing.Point(445, 400);
+            txtxAddress.Location = new System.Drawing.Point(401, 388);
             txtxAddress.Multiline = true;
             txtxAddress.Name = "txtxAddress";
+            txtxAddress.ReadOnly = true;
             txtxAddress.Size = new System.Drawing.Size(419, 49);
             txtxAddress.TabIndex = 10;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label9.Location = new System.Drawing.Point(15, 533);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(98, 20);
+            label9.TabIndex = 11;
+            label9.Text = "Shipping Fee";
+            // 
+            // txtFee
+            // 
+            txtFee.BackColor = System.Drawing.Color.Yellow;
+            txtFee.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            txtFee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            txtFee.Location = new System.Drawing.Point(125, 516);
+            txtFee.Multiline = true;
+            txtFee.Name = "txtFee";
+            txtFee.Size = new System.Drawing.Size(124, 49);
+            txtFee.TabIndex = 12;
+            // 
+            // txtallPrice
+            // 
+            txtallPrice.BackColor = System.Drawing.Color.Yellow;
+            txtallPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            txtallPrice.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            txtallPrice.Location = new System.Drawing.Point(653, 478);
+            txtallPrice.Multiline = true;
+            txtallPrice.Name = "txtallPrice";
+            txtallPrice.Size = new System.Drawing.Size(211, 87);
+            txtallPrice.TabIndex = 14;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label12.Location = new System.Drawing.Point(604, 516);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(44, 20);
+            label12.TabIndex = 15;
+            label12.Text = "Total";
+            // 
+            // button3
+            // 
+            button3.BackColor = System.Drawing.SystemColors.ControlDark;
+            button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button3.Location = new System.Drawing.Point(153, 481);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(68, 29);
+            button3.TabIndex = 7;
+            button3.Text = "Edit fee";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // frmShipper
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1330, 577);
+            Controls.Add(button3);
+            Controls.Add(label12);
+            Controls.Add(txtallPrice);
+            Controls.Add(txtFee);
+            Controls.Add(label9);
             Controls.Add(txtxAddress);
             Controls.Add(txtPhone);
             Controls.Add(txtTotal);
@@ -456,5 +524,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnF;
         private System.Windows.Forms.Button btnSuc;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtFee;
+        private System.Windows.Forms.TextBox txtallPrice;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button3;
     }
 }

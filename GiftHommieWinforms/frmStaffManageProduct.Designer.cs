@@ -129,6 +129,7 @@
             txtPrice.Size = new System.Drawing.Size(171, 23);
             txtPrice.TabIndex = 7;
             txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtPrice.KeyPress += txtPrice_KeyPress;
             // 
             // txtQuantity
             // 
@@ -139,6 +140,7 @@
             txtQuantity.Size = new System.Drawing.Size(171, 23);
             txtQuantity.TabIndex = 9;
             txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtQuantity.KeyPress += txtQuantity_KeyPress;
             // 
             // txtDesciption
             // 

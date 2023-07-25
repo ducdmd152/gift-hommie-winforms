@@ -171,6 +171,7 @@ namespace GiftHommieWinforms
                 dgvProducts.Columns["Id"].Visible = false;
                 dgvProducts.Columns["Avatar"].Visible = false;
                 dgvProducts.Columns["Status"].Visible = false;
+                dgvProducts.Columns["Quantity"].Visible = false;
                 dgvProducts.Columns["Carts"].Visible = false;
                 dgvProducts.Columns["Category"].Visible = false;
                 dgvProducts.Columns["CategoryId"].Visible = false;
@@ -831,7 +832,8 @@ namespace GiftHommieWinforms
             {
                 return true;
             }
-            else if (userRepository.CheckEmail(txtEmail.Text) != true) {
+            else if (userRepository.CheckEmail(txtEmail.Text) != true)
+            {
                 return true;
             }
             return false;
@@ -877,13 +879,14 @@ namespace GiftHommieWinforms
                     ChangeReadOnly();
                     LoadUserProfile();
                 }
-            }else
+            }
+            else
             {
                 MessageBox.Show("Please Check Value Input Again");
 
             }
-            
-            
+
+
 
 
         }
@@ -897,7 +900,7 @@ namespace GiftHommieWinforms
             OrderLoadData();
         }
 
-       
+
         //====================shipper=================
         private void tabShipper_Click(object sender, EventArgs e)
         {
@@ -1059,6 +1062,40 @@ namespace GiftHommieWinforms
         private void phonedup_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUnitPriceMinSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtUnitPriceMaxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtUnitsInStockMinSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtUnitsInStockMaxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Order order = orderRepository.Get(GetSelectedRowOrderIdValue());
+            frmEditFee frm = new frmEditFee()
+            {
+                ordertmp = order
+            };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                OrderInitDataForSearchComponent();
+                OrderLoadData();
+            }
         }
 
 
