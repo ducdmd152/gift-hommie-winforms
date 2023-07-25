@@ -419,7 +419,7 @@ namespace GiftHommieWinforms
             try
             {
                 bindingSource = new BindingSource();
-                bindingSource.DataSource = orders;
+                bindingSource.DataSource = orders.OrderByDescending(o => o.OrderTime).ToList();
 
                 dgvOrders.DataSource = null;
                 dgvOrders.DataSource = bindingSource;
@@ -907,7 +907,7 @@ namespace GiftHommieWinforms
                 {
                 };
             bindingSourceOrderShipper = new BindingSource();
-            bindingSourceOrderShipper.DataSource = orders;
+            bindingSourceOrderShipper.DataSource = orders.OrderByDescending(o => o.OrderTime).ToList();
             dgvOrderShipping.DataSource = null;
             dgvOrderShipping.DataSource = bindingSourceOrderShipper;
             setRowNumber(dgvOrderShipping);
