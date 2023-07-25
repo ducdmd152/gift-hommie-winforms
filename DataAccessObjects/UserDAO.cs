@@ -193,5 +193,23 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+
+        public bool CheckPhoneExist(string phone)
+        {
+            User entity = null;
+            try
+            {
+                using (var context = new HommieStoreContext())
+                {
+                    entity = context.Users.SingleOrDefault(item =>  item.Phone.Equals(phone));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return entity != null;
+        }
     }
 }
