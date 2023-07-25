@@ -37,7 +37,6 @@
             label16 = new System.Windows.Forms.Label();
             txtOrderMessage = new System.Windows.Forms.TextBox();
             label13 = new System.Windows.Forms.Label();
-            txtOrderShippingFee = new System.Windows.Forms.TextBox();
             txtOrderReceiver = new System.Windows.Forms.TextBox();
             lbOrderShippingFee = new System.Windows.Forms.Label();
             txtOrderTotal = new System.Windows.Forms.TextBox();
@@ -63,6 +62,7 @@
             btnRefuse = new System.Windows.Forms.Button();
             btnConfirm = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
+            txtOrderShippingFee = new System.Windows.Forms.TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStaffOrderDetail).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbOrderProductAvatar).BeginInit();
@@ -71,6 +71,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            groupBox1.Controls.Add(txtOrderShippingFee);
             groupBox1.Controls.Add(rComment);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(cbOrderStatus);
@@ -79,7 +80,6 @@
             groupBox1.Controls.Add(label16);
             groupBox1.Controls.Add(txtOrderMessage);
             groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(txtOrderShippingFee);
             groupBox1.Controls.Add(txtOrderReceiver);
             groupBox1.Controls.Add(lbOrderShippingFee);
             groupBox1.Controls.Add(txtOrderTotal);
@@ -120,7 +120,7 @@
             // cbOrderStatus
             // 
             cbOrderStatus.FormattingEnabled = true;
-            cbOrderStatus.Items.AddRange(new object[] { "PENDING", "CONFIRMED", "DELIVERYING", "SUCCESSFUL", "CANCALLED", "REFUSED", "FAIL" });
+            cbOrderStatus.Items.AddRange(new object[] { "ORDERED", "DELIVERYING", "SUCCESSFUL", "CANCALLED", "REFUSED", "FAIL" });
             cbOrderStatus.Location = new System.Drawing.Point(508, 172);
             cbOrderStatus.Name = "cbOrderStatus";
             cbOrderStatus.Size = new System.Drawing.Size(121, 23);
@@ -172,15 +172,6 @@
             label13.Size = new System.Drawing.Size(53, 15);
             label13.TabIndex = 174;
             label13.Text = "Message";
-            // 
-            // txtOrderShippingFee
-            // 
-            txtOrderShippingFee.Location = new System.Drawing.Point(508, 129);
-            txtOrderShippingFee.Name = "txtOrderShippingFee";
-            txtOrderShippingFee.ReadOnly = true;
-            txtOrderShippingFee.Size = new System.Drawing.Size(189, 23);
-            txtOrderShippingFee.TabIndex = 164;
-            txtOrderShippingFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtOrderReceiver
             // 
@@ -437,6 +428,13 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // txtOrderShippingFee
+            // 
+            txtOrderShippingFee.Location = new System.Drawing.Point(507, 126);
+            txtOrderShippingFee.Name = "txtOrderShippingFee";
+            txtOrderShippingFee.Size = new System.Drawing.Size(190, 23);
+            txtOrderShippingFee.TabIndex = 179;
+            // 
             // frmStaffOrderDetail
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -478,7 +476,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtOrderMessage;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtOrderShippingFee;
         private System.Windows.Forms.TextBox txtOrderReceiver;
         private System.Windows.Forms.Label lbOrderShippingFee;
         private System.Windows.Forms.TextBox txtOrderTotal;
@@ -509,5 +506,6 @@
         private System.Windows.Forms.RichTextBox rComment;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtOrderShippingFee;
     }
 }

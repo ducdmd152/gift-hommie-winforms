@@ -45,8 +45,8 @@ namespace GiftHommieWinforms
         {
             if (orders == null)
                 orders = new List<Order>();
-                {
-                };
+            {
+            };
             bindingSourceOrderShipper = new BindingSource();
             bindingSourceOrderShipper.DataSource = orders.OrderByDescending(o => o.OrderTime).ToList();
             dgvTakeOrder.DataSource = null;
@@ -66,9 +66,22 @@ namespace GiftHommieWinforms
             dgvTakeOrder.Columns["User"].Visible = false;
             dgvTakeOrder.Columns["OrderDetails"].Visible = false;
 
+
+
+
             if (orders.Count() > 0)
             {
                 Order order = orders.First();
+                txtOrderPrice.DataBindings.Clear();
+                txtOrderQuantity.DataBindings.Clear();
+                lbOrderProductName.DataBindings.Clear();
+                pbOrderProductAvatar.DataBindings.Clear();
+
+                txtname.DataBindings.Clear();
+                txtPhone.DataBindings.Clear();
+                txtxAddress.DataBindings.Clear();
+                txtTotal.DataBindings.Clear();
+                txtFee.DataBindings.Clear();
                 LoadProductOrderInfo(order);
                 if (order.Status.Equals("DELIVERYING"))
                 {
@@ -160,9 +173,11 @@ namespace GiftHommieWinforms
             pbOrderProductAvatar.DataBindings.Clear();
 
             txtname.DataBindings.Clear();
-            txtPhone.DataBindings.Clear(); 
-            txtxAddress.DataBindings.Clear();   
+            txtPhone.DataBindings.Clear();
+            txtxAddress.DataBindings.Clear();
             txtTotal.DataBindings.Clear();
+            txtFee.DataBindings.Clear();
+
             int tmp = (int)((OrderDetail)bindingSource.Current).ProductId;
 
             Product p = productRepository.Get(tmp);
@@ -174,8 +189,10 @@ namespace GiftHommieWinforms
             txtOrderPrice.DataBindings.Add("Text", bindingSource, "Price");
             pbOrderProductAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
                                 "ImageLocation", bindingSourceProduct, "Avatar", true));
-
+            // txtFee.DataBindings.Add("Text", bindingSource, "ShippingFee");
             // tbCountItem.Text = 
+
+            txtFee.Text = order.ShippingFee.ToString();
             int count = 0;
             double? Alltotal = 0;
             foreach (OrderDetail o in order.OrderDetails)
@@ -183,7 +200,7 @@ namespace GiftHommieWinforms
                 count = (int)(count + o.Quantity);
                 Alltotal = Alltotal + (o.Price * o.Quantity);
             }
-
+            //Alltotal = Alltotal + double.Parse(txtFee.Text);
             tbCountItem.Text = count.ToString();
             tbAllTotal.Text = Alltotal.ToString();
             User user = GlobalData.AuthenticatedUser;
@@ -192,6 +209,9 @@ namespace GiftHommieWinforms
             txtPhone.Text = order.Phone;
             txtxAddress.Text = order.Address;
             txtTotal.Text = Alltotal.ToString();
+
+            double? allPrice = Alltotal + double.Parse(txtFee.Text);
+            txtallPrice.Text = allPrice.ToString();
 
 
 
@@ -232,7 +252,8 @@ namespace GiftHommieWinforms
 
                 }
             }
-            else {
+            else
+            {
                 button1.Visible = false;
                 button2.Visible = false;
                 label8.Visible = false;
@@ -243,7 +264,7 @@ namespace GiftHommieWinforms
                 txtPhone.DataBindings.Clear();
                 txtxAddress.DataBindings.Clear();
                 txtTotal.DataBindings.Clear();
-
+                txtFee.DataBindings.Clear();
 
             }
 
@@ -426,6 +447,24 @@ namespace GiftHommieWinforms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Order order = orderRepository.Get(GetSelectedRowOrderIdValue());
+            frmEditFee frm = new frmEditFee()
+            {
+                ordertmp = order
+            };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrderToDelivery();
             }
         }
     }

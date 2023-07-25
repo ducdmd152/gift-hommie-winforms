@@ -202,6 +202,7 @@ namespace GiftHommieWinforms
                 {
                     Order.Status = cbOrderStatus.Text;
                     Order.Comment = rComment.Text;
+                    Order.ShippingFee = double.Parse(txtOrderShippingFee.Text);
                     orderRepository.Save(Order);
                     DialogResult = DialogResult.OK;
                     OrderDetailLoadDataToGridView(orderDetails);
@@ -224,6 +225,9 @@ namespace GiftHommieWinforms
             this.Close();
         }
 
-
+        private void txtOrderShippingFee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
