@@ -112,7 +112,7 @@ namespace GiftHommieWinforms
             {
                 Order order = GetCurrentOrder();
                 List<OrderDetail> details = GetCurrentOrderDetail();
-                
+
 
                 order.OrderDetails = details;
                 orderRepository.Add(order);
