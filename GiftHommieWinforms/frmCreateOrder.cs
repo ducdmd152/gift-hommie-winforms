@@ -436,7 +436,7 @@ namespace GiftHommieWinforms
                     else
                         order = new Order()
                         {
-                            Name = IsGuest(selectedUser) ? "Guest" : selectedUser.Name,
+                            Name = IsGuest(selectedUser) ? "Khách vãng lai" : selectedUser.Name,
                             Phone = IsGuest(selectedUser) ? "" : selectedUser.Phone,
                             Address = IsGuest(selectedUser) ? "" : selectedUser.Address,
                             Comment = "Buy at showroom.",
@@ -481,6 +481,14 @@ namespace GiftHommieWinforms
                 txtReceiver.Text = selectedUser.Name;
                 txtPhone.Text = selectedUser.Phone;
                 txtAddress.Text = selectedUser.Address;
+                btnNewCustomer.Enabled = false;
+            }
+            else
+            {
+                txtReceiver.Text = string.Empty;
+                txtPhone.Text = string.Empty;
+                txtAddress.Text = string.Empty;
+                btnNewCustomer.Enabled = true;
             }
         }
 
