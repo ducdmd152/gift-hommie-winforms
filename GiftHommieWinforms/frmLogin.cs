@@ -21,6 +21,8 @@ namespace GiftHommieWinforms
             User user = null;
             try
             {
+                //txtEmail.Text = "quyettran";
+                //txtPassword.Text = "123456";
                 if (txtEmail.Text.Length == 0)
                     throw new Exception("Please enter the email/username/phone!");
                 if (txtPassword.Text.Length == 0)

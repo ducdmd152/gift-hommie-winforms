@@ -735,26 +735,26 @@ namespace GiftHommieWinforms
                 )
 
             {
-                MessageBox.Show("Hãy điền đầy đủ thông tin", "Thiếu Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill out the information completely", "Lack of information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             if (CheckCharacterOfPhone(txtPhone.Text) != true)
             {
-                MessageBox.Show("Vui lòng chỉ nhập số trong ô Phone từ 9 đến 12 số .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please only enter the number in the Phone box from 9 to 12 digits .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPhone.Clear();
                 return false;
             }
 
             if (CheckName(txtName.Text) == true)
             {
-                MessageBox.Show("Tên không chứa chữ số .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Names cannot contain digits .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtName.Clear();
                 return false;
             }
 
             if (CheckCharacterOfYob(txtYob.Text) != true)
             {
-                MessageBox.Show("Vui lòng chỉ nhập đúng năm sinh  .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter only the correct year of birth  .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtYob.Clear();
                 return false;
 
@@ -774,10 +774,14 @@ namespace GiftHommieWinforms
                 txtYob.ReadOnly = false;
                 btnSave.Visible = true;
                 txtEmail.ReadOnly = false;
+                phonedup.Visible = false;
+                emaildup.Visible = false;
             }
             else
             {
                 btnEdit.Text = "Edit";
+                phonedup.Visible = false;
+                emaildup.Visible = false;
                 ChangeReadOnly();
                 LoadUserProfile();
             }
@@ -795,7 +799,21 @@ namespace GiftHommieWinforms
         {
             User Oldemail = GlobalData.AuthenticatedUser;
 
-            if (userRepository.CheckEmail(txtEmail.Text) != true || txtEmail.Text.Equals(Oldemail.Email) || userRepository.CheckEmail(txtPhone.Text) != true)
+            if (txtEmail.Text.Equals(Oldemail.Email))
+            {
+                return true;
+            }
+            else if (userRepository.CheckEmail(txtEmail.Text) != true) {
+                return true;
+            }
+            return false;
+        }
+
+        private bool CheckDupplicatedPhone()
+        {
+            User Oldemail = GlobalData.AuthenticatedUser;
+
+            if (txtPhone.Text.Equals(Oldemail.Phone) || userRepository.CheckPhone(txtPhone.Text) != true)
             {
                 return true;
             }
@@ -803,7 +821,7 @@ namespace GiftHommieWinforms
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ValidateInputs() == true && CheckDupplicated() == true)
+            if (ValidateInputs() == true && CheckDupplicated() == true && CheckDupplicatedPhone() == true)
             {
                 User user = new User()
                 {
@@ -831,11 +849,13 @@ namespace GiftHommieWinforms
                     ChangeReadOnly();
                     LoadUserProfile();
                 }
-            }
-            else
+            }else
             {
-                MessageBox.Show("Dupplicated Value");
+                MessageBox.Show("Please Check Value Input Again");
+
             }
+            
+            
 
 
         }
@@ -849,21 +869,7 @@ namespace GiftHommieWinforms
             OrderLoadData();
         }
 
-        private void btnAddToCreateOrder_Click(object sender, EventArgs e)
-        {
-            btnCancelCreateOrder.Visible = true;
-            btnAddToCreateOrder.Text = "Add To Create Order";
-        }
-
-        private void btnCancelCreateOrder_Click(object sender, EventArgs e)
-        {
-            if (btnAddToCreateOrder.Visible == true)
-            {
-                btnAddToCreateOrder.Text = "Create Order";
-                btnCancelCreateOrder.Visible = false;
-            }
-
-        }
+       
         //====================shipper=================
         private void tabShipper_Click(object sender, EventArgs e)
         {
@@ -1002,11 +1008,11 @@ namespace GiftHommieWinforms
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-            String Oldemail = GlobalData.AuthenticatedUser.Phone;
-            if (userRepository.CheckEmail(txtPhone.Text) == true)
+            String OldPhone = GlobalData.AuthenticatedUser.Phone;
+            if (userRepository.CheckPhone(txtPhone.Text) == true)
             {
                 count++;
-                if (count > 1 && Oldemail != txtPhone.Text)
+                if (count > 1 && OldPhone != txtPhone.Text)
                 {
                     phonedup.Visible = true;
                 }

@@ -36,6 +36,8 @@ namespace Repositories
         }
 
         public bool CheckEmail(string usernameOrEmail) => UserDAO.Instance.Exist(usernameOrEmail);
-    
+
+        public bool CheckPhone(string phone) => UserDAO.Instance.CheckPhoneExist(phone);
+        
     }
 }

@@ -44,11 +44,11 @@ namespace GiftHommieWinforms
         private void LoadDataToGridView(IEnumerable<Order> orders)
         {
             if (orders == null)
-                orders = new List<Order>()
+                orders = new List<Order>();
                 {
                 };
             bindingSourceOrderShipper = new BindingSource();
-            bindingSourceOrderShipper.DataSource = orders;
+            bindingSourceOrderShipper.DataSource = orders.OrderByDescending(o => o.OrderTime).ToList();
             dgvTakeOrder.DataSource = null;
             dgvTakeOrder.DataSource = bindingSourceOrderShipper;
             setRowNumber(dgvTakeOrder);
