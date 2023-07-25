@@ -213,7 +213,7 @@ namespace GiftHommieWinforms
         private void txtProductNameSearch_TextChanged(object sender, EventArgs e)
         {
             HomeLoadData();
-            
+
         }
 
         private void cbProductCategory_SelectedIndexChanged(object sender, EventArgs e)

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             tabMyProfile = new System.Windows.Forms.TabPage();
+            phonedup = new System.Windows.Forms.Label();
+            emaildup = new System.Windows.Forms.Label();
             pbCustomerAvatar = new System.Windows.Forms.PictureBox();
             btnSave = new System.Windows.Forms.Button();
             btnEdit = new System.Windows.Forms.Button();
@@ -172,8 +174,6 @@
             dgvCarts = new System.Windows.Forms.DataGridView();
             Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             button6 = new System.Windows.Forms.Button();
-            emaildup = new System.Windows.Forms.Label();
-            phonedup = new System.Windows.Forms.Label();
             tabMyProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbCustomerAvatar).BeginInit();
             tabMyOrder.SuspendLayout();
@@ -267,6 +267,28 @@
             tabMyProfile.TabIndex = 3;
             tabMyProfile.Text = "My Profile";
             tabMyProfile.Click += tabMyProfile_Click;
+            // 
+            // phonedup
+            // 
+            phonedup.AutoSize = true;
+            phonedup.ForeColor = System.Drawing.Color.Red;
+            phonedup.Location = new System.Drawing.Point(599, 93);
+            phonedup.Name = "phonedup";
+            phonedup.Size = new System.Drawing.Size(119, 15);
+            phonedup.TabIndex = 92;
+            phonedup.Text = "Phone has been used";
+            phonedup.Visible = false;
+            // 
+            // emaildup
+            // 
+            emaildup.AutoSize = true;
+            emaildup.ForeColor = System.Drawing.Color.Red;
+            emaildup.Location = new System.Drawing.Point(186, 156);
+            emaildup.Name = "emaildup";
+            emaildup.Size = new System.Drawing.Size(114, 15);
+            emaildup.TabIndex = 91;
+            emaildup.Text = "Email has been used";
+            emaildup.Visible = false;
             // 
             // pbCustomerAvatar
             // 
@@ -1480,7 +1502,7 @@
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(844, 213);
+            btnClose.Location = new System.Drawing.Point(844, 214);
             btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(74, 22);
@@ -1523,7 +1545,7 @@
             // 
             splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer7.Location = new System.Drawing.Point(3, 2);
-            splitContainer7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            splitContainer7.Margin = new System.Windows.Forms.Padding(2);
             splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -1546,6 +1568,7 @@
             groupBox4.Controls.Add(cbCartSorting);
             groupBox4.Controls.Add(label17);
             groupBox4.Controls.Add(cbCartFilterCategory);
+            groupBox4.Controls.Add(btnCheckout);
             groupBox4.Controls.Add(label18);
             groupBox4.Controls.Add(txtCartFilterName);
             groupBox4.Controls.Add(label19);
@@ -1564,7 +1587,7 @@
             // 
             txtCartTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             txtCartTotal.Location = new System.Drawing.Point(81, 248);
-            txtCartTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtCartTotal.Margin = new System.Windows.Forms.Padding(2);
             txtCartTotal.Name = "txtCartTotal";
             txtCartTotal.ReadOnly = true;
             txtCartTotal.Size = new System.Drawing.Size(181, 32);
@@ -1695,7 +1718,6 @@
             groupBox7.Controls.Add(btnIncrease);
             groupBox7.Controls.Add(txtCartQuantity);
             groupBox7.Controls.Add(label28);
-            groupBox7.Controls.Add(btnCheckout);
             groupBox7.Controls.Add(groupBox8);
             groupBox7.Controls.Add(txtCartAvailable);
             groupBox7.Controls.Add(txtCartPrice);
@@ -1730,7 +1752,7 @@
             // btnDecrease
             // 
             btnDecrease.Location = new System.Drawing.Point(821, 93);
-            btnDecrease.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnDecrease.Margin = new System.Windows.Forms.Padding(2);
             btnDecrease.Name = "btnDecrease";
             btnDecrease.Size = new System.Drawing.Size(30, 18);
             btnDecrease.TabIndex = 96;
@@ -1741,7 +1763,7 @@
             // btnIncrease
             // 
             btnIncrease.Location = new System.Drawing.Point(821, 74);
-            btnIncrease.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnIncrease.Margin = new System.Windows.Forms.Padding(2);
             btnIncrease.Name = "btnIncrease";
             btnIncrease.Size = new System.Drawing.Size(30, 16);
             btnIncrease.TabIndex = 95;
@@ -1774,10 +1796,11 @@
             // btnCheckout
             // 
             btnCheckout.BackColor = System.Drawing.Color.LemonChiffon;
-            btnCheckout.Location = new System.Drawing.Point(768, 24);
+            btnCheckout.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCheckout.Location = new System.Drawing.Point(51, 367);
             btnCheckout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new System.Drawing.Size(126, 28);
+            btnCheckout.Size = new System.Drawing.Size(152, 57);
             btnCheckout.TabIndex = 3;
             btnCheckout.Text = "Checkout";
             btnCheckout.UseVisualStyleBackColor = false;
@@ -1955,35 +1978,13 @@
             // button6
             // 
             button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button6.Location = new System.Drawing.Point(1675, 440);
+            button6.Location = new System.Drawing.Point(1675, 441);
             button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new System.Drawing.Size(74, 22);
             button6.TabIndex = 83;
             button6.Text = "Close";
             button6.UseVisualStyleBackColor = true;
-            // 
-            // emaildup
-            // 
-            emaildup.AutoSize = true;
-            emaildup.ForeColor = System.Drawing.Color.Red;
-            emaildup.Location = new System.Drawing.Point(186, 156);
-            emaildup.Name = "emaildup";
-            emaildup.Size = new System.Drawing.Size(114, 15);
-            emaildup.TabIndex = 91;
-            emaildup.Text = "Email has been used";
-            emaildup.Visible = false;
-            // 
-            // phonedup
-            // 
-            phonedup.AutoSize = true;
-            phonedup.ForeColor = System.Drawing.Color.Red;
-            phonedup.Location = new System.Drawing.Point(599, 93);
-            phonedup.Name = "phonedup";
-            phonedup.Size = new System.Drawing.Size(119, 15);
-            phonedup.TabIndex = 92;
-            phonedup.Text = "Phone has been used";
-            phonedup.Visible = false;
             // 
             // frmCustomer
             // 
