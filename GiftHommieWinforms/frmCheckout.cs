@@ -129,7 +129,7 @@ namespace GiftHommieWinforms
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)

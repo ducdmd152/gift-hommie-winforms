@@ -31,7 +31,6 @@
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             rbFemale = new System.Windows.Forms.RadioButton();
             txtPhone = new System.Windows.Forms.TextBox();
             txtAddress = new System.Windows.Forms.TextBox();
-            txtPassword = new System.Windows.Forms.TextBox();
             btnRegister = new System.Windows.Forms.Button();
             btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -84,17 +82,6 @@
             label3.Size = new System.Drawing.Size(71, 32);
             label3.TabIndex = 2;
             label3.Text = "Email";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(41, 381);
-            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(237, 32);
-            label4.TabIndex = 3;
-            label4.Text = "DEFAULT PASSWORD";
             // 
             // label5
             // 
@@ -225,6 +212,7 @@
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new System.Drawing.Size(235, 39);
             txtPhone.TabIndex = 15;
+            txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // txtAddress
             // 
@@ -236,21 +224,10 @@
             txtAddress.Size = new System.Drawing.Size(329, 105);
             txtAddress.TabIndex = 16;
             // 
-            // txtPassword
-            // 
-            txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtPassword.Location = new System.Drawing.Point(286, 378);
-            txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.ReadOnly = true;
-            txtPassword.Size = new System.Drawing.Size(208, 39);
-            txtPassword.TabIndex = 17;
-            txtPassword.Text = "123456";
-            // 
             // btnRegister
             // 
             btnRegister.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnRegister.Location = new System.Drawing.Point(342, 519);
+            btnRegister.Location = new System.Drawing.Point(342, 394);
             btnRegister.Margin = new System.Windows.Forms.Padding(4);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new System.Drawing.Size(152, 55);
@@ -262,7 +239,7 @@
             // btnReset
             // 
             btnReset.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnReset.Location = new System.Drawing.Point(555, 519);
+            btnReset.Location = new System.Drawing.Point(555, 394);
             btnReset.Margin = new System.Windows.Forms.Padding(4);
             btnReset.Name = "btnReset";
             btnReset.Size = new System.Drawing.Size(152, 55);
@@ -275,10 +252,9 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1190, 649);
+            ClientSize = new System.Drawing.Size(1190, 548);
             Controls.Add(btnReset);
             Controls.Add(btnRegister);
-            Controls.Add(txtPassword);
             Controls.Add(txtAddress);
             Controls.Add(txtPhone);
             Controls.Add(rbFemale);
@@ -292,7 +268,6 @@
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -310,7 +285,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -321,7 +295,6 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.RadioButton rbFemale;

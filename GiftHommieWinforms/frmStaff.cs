@@ -175,13 +175,39 @@ namespace GiftHommieWinforms
                 dgvProducts.Columns["Category"].Visible = false;
                 dgvProducts.Columns["CategoryId"].Visible = false;
                 dgvProducts.Columns["OrderDetails"].Visible = false;
+                //dgvProducts.Columns["Quantity"].Visible = false;
                 dgvProducts.Columns["isDelete"].Visible = false;
+
                 setRowNumber(dgvProducts);
+
+                // Add the column to the DataGridView
+                if (dgvProducts.Columns["Available"] == null)
+                    dgvProducts.Columns.Add("Available", "Available");
+
+                //Calculate and assign the total value for each row
+                foreach (DataGridViewRow row in dgvProducts.Rows)
+                {
+                    int id = Convert.ToInt32(row.Cells["Id"].Value);
+
+                    row.Cells["Available"].Value = orderRepository.GetAvailableProductQuantity(id);
+                }
+                dgvProducts.Columns["Available"].DisplayIndex = 4;
+                dgvProducts.Columns["Available"].DataPropertyName = "Available";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void LoadAvailableQuantity()
+        {
+            if (bindingSource.Current != null)
+            {
+                Product target = (Product)bindingSource.Current;
+                txtAvailable.Text = orderRepository.GetAvailableProductQuantity(target.Id).ToString();
+            }
+            else txtAvailable.Text = string.Empty;
         }
 
         private void HomeReBinding()
@@ -196,7 +222,7 @@ namespace GiftHommieWinforms
             gbProduct.DataBindings.Add("Text", bindingSource, "Name");
             lbProductName.DataBindings.Add("Text", bindingSource, "Name");
             txtPrice.DataBindings.Add("Text", bindingSource, "Price");
-            txtAvailable.DataBindings.Add("Text", bindingSource, "Quantity");
+            //txtAvailable.DataBindings.Add("Text", bindingSource, "Available");
             txtDesc.DataBindings.Add("Text", bindingSource, "Description");
             pbProductAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
                                 "ImageLocation", bindingSource, "Avatar", true));
@@ -290,6 +316,8 @@ namespace GiftHommieWinforms
 
         private void lbProductName_TextChanged(object sender, EventArgs e)
         {
+            LoadAvailableQuantity();
+
             txtCurrentIndex.Text = (bindingSource.Position + 1).ToString();
             btnBack.Enabled = (bindingSource.Position != 0);
             btnNext.Enabled = flagBtnNext_Click == true || bindingSource.Position + 1 < bindingSource.Count;
