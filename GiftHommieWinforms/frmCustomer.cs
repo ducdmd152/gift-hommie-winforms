@@ -138,6 +138,7 @@ namespace GiftHommieWinforms
                 dgvProducts.Columns["CategoryId"].Visible = false;
                 dgvProducts.Columns["OrderDetails"].Visible = false;
                 dgvProducts.Columns["isDelete"].Visible = false;
+                dgvProducts.Columns["Quantity"].Visible = false;
                 setRowNumber(dgvProducts);
 
 
