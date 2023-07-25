@@ -19,5 +19,6 @@ namespace Repositories
 
         // Check Duplicated
         bool CheckEmail(string usernameOrEmail);
+        bool CheckPhone(string phone);
     }
 }

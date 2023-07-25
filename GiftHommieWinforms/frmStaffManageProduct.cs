@@ -115,20 +115,44 @@ namespace GiftHommieWinforms
                 )
 
             {
-                MessageBox.Show("Hãy điền đầy đủ thông tin", "Thiếu Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill full information", "Lack of information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             if (CheckCharacter(txtPrice.Text) != true)
             {
-                MessageBox.Show("Vui lòng chỉ nhập số trong ô Quantity và Price .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPrice.Clear();
+                MessageBox.Show("Please enter Numbers that is greater than or equal to 0 in the Price fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPrice.Text = Product.Price.ToString();
                 return false;
             }
+            else {
+                if (int.Parse(txtPrice.Text) <= 0) {
+                    MessageBox.Show("Please enter only the number in the Price box that is greater than or equal to 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPrice.Clear();
+                    txtPrice.Text = Product.Price.ToString();
+                    return false;
+
+                }
+            
+            }
+
             if (CheckCharacter(txtQuantity.Text) != true)
             {
-                MessageBox.Show("Vui lòng chỉ nhập số trong ô Quantity và Price .", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter only Numbers that is greater than or equal to 0 in the Quantity fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtQuantity.Clear();
+                txtQuantity.Text = Product.Quantity.ToString();
                 return false;
+
+            }
+            else
+            {
+                if (int.Parse(txtQuantity.Text) <= 0)
+                {
+                    MessageBox.Show("Please enter only the number in the Quantity box that is greater than or equal to 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPrice.Clear();
+                    txtPrice.Text = Product.Price.ToString();
+                    return false;
+
+                }
 
             }
 
@@ -150,7 +174,8 @@ namespace GiftHommieWinforms
                     Avatar = txtImgUrl.Text,
                     Description = txtDesciption.Text,
                     Status = bool.Parse(cbAvailable.Text),
-                    CategoryId = int.Parse(cbProductCategory.SelectedValue.ToString())
+                    CategoryId = int.Parse(cbProductCategory.SelectedValue.ToString()),
+                    IsDelete = false
                 };
 
                 // Update
