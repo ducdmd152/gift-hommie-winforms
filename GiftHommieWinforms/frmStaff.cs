@@ -996,10 +996,18 @@ namespace GiftHommieWinforms
                     d = MessageBox.Show("Bạn có thật sự muốn giao đơn hàng này không ?", "Quản lý shipper", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button1);
 
-                    if (d == DialogResult.OK)
+                    if (d == DialogResult.OK  && order.Status == "ORDERED")
                     {
                         orderRepository.Save(order);
                         LoadOrderShipping();
+                    }
+                    else if(order.Status=="FAIL" || order.Status == "CANCELLED")
+                    {
+                        MessageBox.Show("Đơn hàng này đã bị hủy");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đơn hàng này đã được giao");
                     }
                 }
                 else
