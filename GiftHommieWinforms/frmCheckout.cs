@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Schema;
@@ -71,7 +72,46 @@ namespace GiftHommieWinforms
 
             return details;
         }
+        private bool CheckCharacterOfPhone(String input)
+        {
+            string pattern = @"^\d{9,12}$"; // Ký tự chữ cái không phải là số
+            return Regex.IsMatch(input, pattern);
+        }
+        private bool CheckPhone(String input)
+        {
+            if (!CheckCharacterOfPhone(txtPhone.Text))
+            {
+                txtPhone.Focus();
+                throw new Exception("PLEASE TYPE THE PHONE NUMBER FROM 9 to 12 DIGITS");
+            }
 
+            if (input[0] != '0')
+            {
+                txtPhone.Focus();
+                throw new Exception("WRONG FORMAT OF PHONE");
+            }
+
+            return true;
+        }
+
+        private bool CheckName(String input)
+        {
+            if (input.Trim().Length <= 5)
+            {
+                txtName.Focus();
+                throw new Exception("NAME WAS TOO SHORT");
+            }
+
+
+            string pattern = @"\d"; // Ký tự chữ cái không phải là số
+            if (Regex.IsMatch(input, pattern))
+            {
+                txtName.Focus();
+                throw new Exception("WRONG FORMAT OF NAME");
+            }
+
+            return true;
+        }
         private void LoadData()
         {
             txtName.Text = GlobalData.AuthenticatedUser.Name;
@@ -110,12 +150,18 @@ namespace GiftHommieWinforms
             List<OrderDetail> detals = new List<OrderDetail>();
             try
             {
+                CheckName(txtName.Text.Trim());
+
+                CheckPhone(txtPhone.Text);
+
                 Order order = GetCurrentOrder();
                 List<OrderDetail> details = GetCurrentOrderDetail();
 
 
                 order.OrderDetails = details;
                 orderRepository.Add(order);
+
+                DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
@@ -177,6 +223,11 @@ namespace GiftHommieWinforms
                     return;
                 }
             }
+        }
+
+        private void txtName_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

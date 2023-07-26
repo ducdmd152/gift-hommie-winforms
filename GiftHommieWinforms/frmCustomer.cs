@@ -689,6 +689,12 @@ namespace GiftHommieWinforms
             txtCartFilterName.Text = "";
             memory.Clear();
         }
+
+        private void lbCartName_TextChanged(object sender, EventArgs e)
+        {
+            LoadCartAvailable();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CartPageReset();
@@ -763,15 +769,6 @@ namespace GiftHommieWinforms
             txtCartDescription.DataBindings.Add("Text", bindingSource, "Product.Description");
             pbCartAvatar.DataBindings.Add(new System.Windows.Forms.Binding(
                                 "ImageLocation", bindingSource, "Product.Avatar", true));
-            try
-            {
-                int productId = (int)((Cart)bindingSource.Current).ProductId;
-                txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         //LOAD LIST FILTER
         private List<Cart> CartFilterTheDataGridView(List<Cart> list)
@@ -886,6 +883,19 @@ namespace GiftHommieWinforms
             }
         }
 
+        private void LoadCartAvailable()
+        {
+            try
+            {
+                int productId = (int)(bindingSource.Current as Cart).ProductId;
+                txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
         //CART CLICK
         private void dgvCarts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -893,7 +903,6 @@ namespace GiftHommieWinforms
             {
                 int productId = (int)((Cart)bindingSource.Current).ProductId;
                 lblCartIndex.Text = (bindingSource.Position + 1).ToString();
-                txtCartAvailable.Text = orderRepository.GetAvailableProductQuantity(productId).ToString();
             }
             catch
             {
@@ -945,6 +954,10 @@ namespace GiftHommieWinforms
         {
             try
             {
+                if (bindingSource.Current == null)
+                {
+                    return;
+                }
                 int quantity = int.Parse(txtCartQuantity.Text);
                 int productId = (int)(bindingSource.Current as Cart).ProductId;
 
@@ -953,10 +966,6 @@ namespace GiftHommieWinforms
                     Cart cart = bindingSource.Current as Cart;
                     int p = bindingSource.Position;
                     cartRepository.UpdateCartQuantityById(cart.Id, quantity + 1);
-                    /*cart.Quantity = quantity + 1;
-                    cart.LastUpdatedTime = DateTime.Now;
-                    LoadCartTotal();
-                    //SetCartVisible();*/
                     LoadCart();
                     bindingSource.Position = p;
                     lblCartIndex.Text = (p + 1).ToString();
@@ -966,7 +975,7 @@ namespace GiftHommieWinforms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
         //LOAD CART INDEX PAGE
@@ -980,6 +989,11 @@ namespace GiftHommieWinforms
         {
             try
             {
+                if (bindingSource.Current == null)
+                {
+                    return;
+                }
+
                 int quantity = int.Parse(txtCartQuantity.Text);
 
                 if (quantity > 1)
@@ -987,10 +1001,6 @@ namespace GiftHommieWinforms
                     Cart cart = bindingSource.Current as Cart;
                     int p = bindingSource.Position;
                     cartRepository.UpdateCartQuantityById(cart.Id, quantity - 1);
-                    /*cart.Quantity = quantity + 1;
-                    cart.LastUpdatedTime = DateTime.Now;
-                    LoadCartTotal();
-                    //SetCartVisible();*/
                     LoadCart();
                     bindingSource.Position = p;
                     lblCartIndex.Text = (p + 1).ToString();
@@ -998,7 +1008,7 @@ namespace GiftHommieWinforms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
         private void LoadCartTotal()
@@ -1037,6 +1047,9 @@ namespace GiftHommieWinforms
         private void btnCartDelete_Click(object sender, EventArgs e)
         {
             List<int> list = memory.Keys.Where(i => memory[i]).ToList();
+
+            if (list.Count <= 0)
+                return;
 
             if (list.Count > 0 && MessageBox.Show("DO YOU WANT TO DELETE CART ITEMS?", "CONFIRM", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

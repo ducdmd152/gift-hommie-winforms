@@ -145,6 +145,7 @@
             cbCartSorting = new System.Windows.Forms.ComboBox();
             label17 = new System.Windows.Forms.Label();
             cbCartFilterCategory = new System.Windows.Forms.ComboBox();
+            btnCheckout = new System.Windows.Forms.Button();
             label18 = new System.Windows.Forms.Label();
             txtCartFilterName = new System.Windows.Forms.TextBox();
             label19 = new System.Windows.Forms.Label();
@@ -157,7 +158,6 @@
             btnIncrease = new System.Windows.Forms.Button();
             txtCartQuantity = new System.Windows.Forms.TextBox();
             label28 = new System.Windows.Forms.Label();
-            btnCheckout = new System.Windows.Forms.Button();
             groupBox8 = new System.Windows.Forms.GroupBox();
             lblCartIndex = new System.Windows.Forms.TextBox();
             btnCartBack = new System.Windows.Forms.Button();
@@ -259,11 +259,11 @@
             tabMyProfile.Controls.Add(label21);
             tabMyProfile.Controls.Add(label20);
             tabMyProfile.Controls.Add(lbUserName);
-            tabMyProfile.Location = new System.Drawing.Point(4, 24);
-            tabMyProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tabMyProfile.Location = new System.Drawing.Point(4, 34);
+            tabMyProfile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tabMyProfile.Name = "tabMyProfile";
-            tabMyProfile.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            tabMyProfile.Size = new System.Drawing.Size(1232, 539);
+            tabMyProfile.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tabMyProfile.Size = new System.Drawing.Size(1763, 907);
             tabMyProfile.TabIndex = 3;
             tabMyProfile.Text = "My Profile";
             tabMyProfile.Click += tabMyProfile_Click;
@@ -272,9 +272,10 @@
             // 
             phonedup.AutoSize = true;
             phonedup.ForeColor = System.Drawing.Color.Red;
-            phonedup.Location = new System.Drawing.Point(599, 93);
+            phonedup.Location = new System.Drawing.Point(856, 155);
+            phonedup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             phonedup.Name = "phonedup";
-            phonedup.Size = new System.Drawing.Size(119, 15);
+            phonedup.Size = new System.Drawing.Size(181, 25);
             phonedup.TabIndex = 92;
             phonedup.Text = "Phone has been used";
             phonedup.Visible = false;
@@ -283,19 +284,20 @@
             // 
             emaildup.AutoSize = true;
             emaildup.ForeColor = System.Drawing.Color.Red;
-            emaildup.Location = new System.Drawing.Point(186, 156);
+            emaildup.Location = new System.Drawing.Point(266, 260);
+            emaildup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             emaildup.Name = "emaildup";
-            emaildup.Size = new System.Drawing.Size(114, 15);
+            emaildup.Size = new System.Drawing.Size(173, 25);
             emaildup.TabIndex = 91;
             emaildup.Text = "Email has been used";
             emaildup.Visible = false;
             // 
             // pbCustomerAvatar
             // 
-            pbCustomerAvatar.Location = new System.Drawing.Point(943, 89);
-            pbCustomerAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            pbCustomerAvatar.Location = new System.Drawing.Point(1347, 148);
+            pbCustomerAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pbCustomerAvatar.Name = "pbCustomerAvatar";
-            pbCustomerAvatar.Size = new System.Drawing.Size(210, 208);
+            pbCustomerAvatar.Size = new System.Drawing.Size(300, 347);
             pbCustomerAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbCustomerAvatar.TabIndex = 86;
             pbCustomerAvatar.TabStop = false;
@@ -303,10 +305,10 @@
             // btnSave
             // 
             btnSave.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSave.Location = new System.Drawing.Point(638, 401);
-            btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSave.Location = new System.Drawing.Point(911, 668);
+            btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(80, 38);
+            btnSave.Size = new System.Drawing.Size(114, 63);
             btnSave.TabIndex = 36;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -315,10 +317,10 @@
             // btnEdit
             // 
             btnEdit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnEdit.Location = new System.Drawing.Point(455, 401);
-            btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnEdit.Location = new System.Drawing.Point(650, 668);
+            btnEdit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new System.Drawing.Size(114, 38);
+            btnEdit.Size = new System.Drawing.Size(163, 63);
             btnEdit.TabIndex = 35;
             btnEdit.Text = "Edit Profile";
             btnEdit.UseVisualStyleBackColor = true;
@@ -327,93 +329,94 @@
             // txtAddress
             // 
             txtAddress.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtAddress.Location = new System.Drawing.Point(570, 235);
-            txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtAddress.Location = new System.Drawing.Point(814, 392);
+            txtAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.ReadOnly = true;
-            txtAddress.Size = new System.Drawing.Size(307, 64);
+            txtAddress.Size = new System.Drawing.Size(437, 104);
             txtAddress.TabIndex = 34;
             // 
             // txtYob
             // 
             txtYob.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtYob.Location = new System.Drawing.Point(570, 169);
-            txtYob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtYob.Location = new System.Drawing.Point(814, 282);
+            txtYob.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtYob.Name = "txtYob";
             txtYob.ReadOnly = true;
-            txtYob.Size = new System.Drawing.Size(175, 32);
+            txtYob.Size = new System.Drawing.Size(248, 44);
             txtYob.TabIndex = 33;
             // 
             // txtPhone
             // 
             txtPhone.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtPhone.Location = new System.Drawing.Point(570, 110);
-            txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtPhone.Location = new System.Drawing.Point(814, 183);
+            txtPhone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtPhone.Name = "txtPhone";
             txtPhone.ReadOnly = true;
-            txtPhone.Size = new System.Drawing.Size(175, 32);
+            txtPhone.Size = new System.Drawing.Size(248, 44);
             txtPhone.TabIndex = 32;
             txtPhone.TextChanged += txtPhone_TextChanged;
             // 
             // txtGender
             // 
             txtGender.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtGender.Location = new System.Drawing.Point(164, 340);
-            txtGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtGender.Location = new System.Drawing.Point(234, 567);
+            txtGender.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtGender.Name = "txtGender";
             txtGender.ReadOnly = true;
-            txtGender.Size = new System.Drawing.Size(175, 32);
+            txtGender.Size = new System.Drawing.Size(248, 44);
             txtGender.TabIndex = 31;
             // 
             // txtName
             // 
             txtName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtName.Location = new System.Drawing.Point(164, 279);
-            txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtName.Location = new System.Drawing.Point(234, 465);
+            txtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.ReadOnly = true;
-            txtName.Size = new System.Drawing.Size(175, 32);
+            txtName.Size = new System.Drawing.Size(248, 44);
             txtName.TabIndex = 30;
             // 
             // txtRole
             // 
             txtRole.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtRole.Location = new System.Drawing.Point(164, 230);
-            txtRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtRole.Location = new System.Drawing.Point(234, 383);
+            txtRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtRole.Name = "txtRole";
             txtRole.ReadOnly = true;
-            txtRole.Size = new System.Drawing.Size(175, 32);
+            txtRole.Size = new System.Drawing.Size(248, 44);
             txtRole.TabIndex = 29;
             // 
             // txtEmail
             // 
             txtEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtEmail.Location = new System.Drawing.Point(164, 173);
-            txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtEmail.Location = new System.Drawing.Point(234, 288);
+            txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtEmail.Name = "txtEmail";
             txtEmail.ReadOnly = true;
-            txtEmail.Size = new System.Drawing.Size(175, 32);
+            txtEmail.Size = new System.Drawing.Size(248, 44);
             txtEmail.TabIndex = 28;
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtUserName
             // 
             txtUserName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtUserName.Location = new System.Drawing.Point(164, 110);
-            txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtUserName.Location = new System.Drawing.Point(234, 183);
+            txtUserName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtUserName.Name = "txtUserName";
             txtUserName.ReadOnly = true;
-            txtUserName.Size = new System.Drawing.Size(175, 32);
+            txtUserName.Size = new System.Drawing.Size(248, 44);
             txtUserName.TabIndex = 27;
             // 
             // label31
             // 
             label31.AutoSize = true;
             label31.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label31.Location = new System.Drawing.Point(421, 235);
+            label31.Location = new System.Drawing.Point(601, 392);
+            label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(79, 25);
+            label31.Size = new System.Drawing.Size(116, 38);
             label31.TabIndex = 26;
             label31.Text = "Address";
             // 
@@ -421,9 +424,10 @@
             // 
             label30.AutoSize = true;
             label30.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label30.Location = new System.Drawing.Point(421, 174);
+            label30.Location = new System.Drawing.Point(601, 290);
+            label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(115, 25);
+            label30.Size = new System.Drawing.Size(168, 38);
             label30.TabIndex = 25;
             label30.Text = "Year of Birth";
             // 
@@ -431,9 +435,10 @@
             // 
             label29.AutoSize = true;
             label29.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label29.Location = new System.Drawing.Point(421, 116);
+            label29.Location = new System.Drawing.Point(601, 193);
+            label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(66, 25);
+            label29.Size = new System.Drawing.Size(96, 38);
             label29.TabIndex = 24;
             label29.Text = "Phone";
             // 
@@ -441,9 +446,10 @@
             // 
             label27.AutoSize = true;
             label27.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label27.Location = new System.Drawing.Point(34, 345);
+            label27.Location = new System.Drawing.Point(49, 575);
+            label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(74, 25);
+            label27.Size = new System.Drawing.Size(108, 38);
             label27.TabIndex = 23;
             label27.Text = "Gender";
             // 
@@ -451,9 +457,10 @@
             // 
             label23.AutoSize = true;
             label23.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label23.Location = new System.Drawing.Point(34, 284);
+            label23.Location = new System.Drawing.Point(49, 473);
+            label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(62, 25);
+            label23.Size = new System.Drawing.Size(91, 38);
             label23.TabIndex = 22;
             label23.Text = "Name";
             // 
@@ -461,9 +468,10 @@
             // 
             label22.AutoSize = true;
             label22.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label22.Location = new System.Drawing.Point(34, 235);
+            label22.Location = new System.Drawing.Point(49, 392);
+            label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(48, 25);
+            label22.Size = new System.Drawing.Size(71, 38);
             label22.TabIndex = 21;
             label22.Text = "Role";
             // 
@@ -471,9 +479,10 @@
             // 
             label21.AutoSize = true;
             label21.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label21.Location = new System.Drawing.Point(34, 176);
+            label21.Location = new System.Drawing.Point(49, 293);
+            label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(58, 25);
+            label21.Size = new System.Drawing.Size(83, 38);
             label21.TabIndex = 20;
             label21.Text = "Email";
             // 
@@ -481,9 +490,10 @@
             // 
             label20.AutoSize = true;
             label20.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label20.Location = new System.Drawing.Point(34, 116);
+            label20.Location = new System.Drawing.Point(49, 193);
+            label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(105, 25);
+            label20.Size = new System.Drawing.Size(155, 38);
             label20.TabIndex = 19;
             label20.Text = "User Name";
             // 
@@ -491,20 +501,21 @@
             // 
             lbUserName.AutoSize = true;
             lbUserName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbUserName.Location = new System.Drawing.Point(424, 49);
+            lbUserName.Location = new System.Drawing.Point(606, 82);
+            lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbUserName.Name = "lbUserName";
-            lbUserName.Size = new System.Drawing.Size(210, 32);
+            lbUserName.Size = new System.Drawing.Size(308, 48);
             lbUserName.TabIndex = 18;
             lbUserName.Text = "User Information";
             // 
             // tabMyOrder
             // 
             tabMyOrder.Controls.Add(splitContainer3);
-            tabMyOrder.Location = new System.Drawing.Point(4, 24);
-            tabMyOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tabMyOrder.Location = new System.Drawing.Point(4, 34);
+            tabMyOrder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tabMyOrder.Name = "tabMyOrder";
-            tabMyOrder.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            tabMyOrder.Size = new System.Drawing.Size(1232, 539);
+            tabMyOrder.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tabMyOrder.Size = new System.Drawing.Size(1763, 907);
             tabMyOrder.TabIndex = 2;
             tabMyOrder.Text = "My Order";
             tabMyOrder.UseVisualStyleBackColor = true;
@@ -513,8 +524,8 @@
             // splitContainer3
             // 
             splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            splitContainer3.Location = new System.Drawing.Point(3, 2);
-            splitContainer3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer3.Location = new System.Drawing.Point(4, 3);
+            splitContainer3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer3.Name = "splitContainer3";
             splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -525,9 +536,9 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(splitContainer5);
-            splitContainer3.Size = new System.Drawing.Size(1226, 535);
-            splitContainer3.SplitterDistance = 217;
-            splitContainer3.SplitterWidth = 3;
+            splitContainer3.Size = new System.Drawing.Size(1755, 901);
+            splitContainer3.SplitterDistance = 365;
+            splitContainer3.SplitterWidth = 5;
             splitContainer3.TabIndex = 0;
             // 
             // splitContainer4
@@ -535,7 +546,7 @@
             splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer4.Location = new System.Drawing.Point(0, 0);
-            splitContainer4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -552,16 +563,17 @@
             splitContainer4.Panel2.Controls.Add(btnSearchOrder);
             splitContainer4.Panel2.Controls.Add(txtOrderSearch);
             splitContainer4.Panel2.Controls.Add(dgvOrders);
-            splitContainer4.Size = new System.Drawing.Size(1226, 217);
-            splitContainer4.SplitterDistance = 403;
+            splitContainer4.Size = new System.Drawing.Size(1755, 365);
+            splitContainer4.SplitterDistance = 576;
+            splitContainer4.SplitterWidth = 6;
             splitContainer4.TabIndex = 0;
             // 
             // btnSort
             // 
-            btnSort.Location = new System.Drawing.Point(86, 26);
-            btnSort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSort.Location = new System.Drawing.Point(123, 43);
+            btnSort.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnSort.Name = "btnSort";
-            btnSort.Size = new System.Drawing.Size(243, 40);
+            btnSort.Size = new System.Drawing.Size(347, 67);
             btnSort.TabIndex = 0;
             btnSort.Text = "Sort In Ascending Date Order";
             btnSort.UseVisualStyleBackColor = true;
@@ -574,9 +586,11 @@
             gbFilter.Controls.Add(lbStartDate);
             gbFilter.Controls.Add(dtpStartDate);
             gbFilter.Controls.Add(lbEndDate);
-            gbFilter.Location = new System.Drawing.Point(4, 75);
+            gbFilter.Location = new System.Drawing.Point(6, 125);
+            gbFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             gbFilter.Name = "gbFilter";
-            gbFilter.Size = new System.Drawing.Size(402, 128);
+            gbFilter.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            gbFilter.Size = new System.Drawing.Size(574, 213);
             gbFilter.TabIndex = 110;
             gbFilter.TabStop = false;
             gbFilter.Text = "Filt by Date";
@@ -584,9 +598,10 @@
             // btnFilter
             // 
             btnFilter.Enabled = false;
-            btnFilter.Location = new System.Drawing.Point(136, 99);
+            btnFilter.Location = new System.Drawing.Point(194, 165);
+            btnFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnFilter.Name = "btnFilter";
-            btnFilter.Size = new System.Drawing.Size(118, 23);
+            btnFilter.Size = new System.Drawing.Size(169, 38);
             btnFilter.TabIndex = 44;
             btnFilter.Text = "Auto Filting";
             btnFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -594,35 +609,39 @@
             // 
             // dtpEndDate
             // 
-            dtpEndDate.Location = new System.Drawing.Point(110, 66);
+            dtpEndDate.Location = new System.Drawing.Point(157, 110);
+            dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dtpEndDate.Name = "dtpEndDate";
-            dtpEndDate.Size = new System.Drawing.Size(230, 23);
+            dtpEndDate.Size = new System.Drawing.Size(327, 31);
             dtpEndDate.TabIndex = 1;
             dtpEndDate.ValueChanged += dtpRangeDate_ValueChanged;
             // 
             // lbStartDate
             // 
             lbStartDate.AutoSize = true;
-            lbStartDate.Location = new System.Drawing.Point(24, 34);
+            lbStartDate.Location = new System.Drawing.Point(34, 57);
+            lbStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbStartDate.Name = "lbStartDate";
-            lbStartDate.Size = new System.Drawing.Size(58, 15);
+            lbStartDate.Size = new System.Drawing.Size(90, 25);
             lbStartDate.TabIndex = 108;
             lbStartDate.Text = "Start Date";
             // 
             // dtpStartDate
             // 
-            dtpStartDate.Location = new System.Drawing.Point(110, 31);
+            dtpStartDate.Location = new System.Drawing.Point(157, 52);
+            dtpStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dtpStartDate.Name = "dtpStartDate";
-            dtpStartDate.Size = new System.Drawing.Size(230, 23);
+            dtpStartDate.Size = new System.Drawing.Size(327, 31);
             dtpStartDate.TabIndex = 0;
             dtpStartDate.ValueChanged += dtpRangeDate_ValueChanged;
             // 
             // lbEndDate
             // 
             lbEndDate.AutoSize = true;
-            lbEndDate.Location = new System.Drawing.Point(24, 70);
+            lbEndDate.Location = new System.Drawing.Point(34, 117);
+            lbEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbEndDate.Name = "lbEndDate";
-            lbEndDate.Size = new System.Drawing.Size(54, 15);
+            lbEndDate.Size = new System.Drawing.Size(84, 25);
             lbEndDate.TabIndex = 109;
             lbEndDate.Text = "End Date";
             // 
@@ -630,19 +649,19 @@
             // 
             cbOrderStatus.FormattingEnabled = true;
             cbOrderStatus.Items.AddRange(new object[] { "All status", "ORDERED", "DELIVERYING", "SUCCESSFUL", "SHIPPERRECEIVE", "CANCALLED", "FAIL" });
-            cbOrderStatus.Location = new System.Drawing.Point(387, 9);
-            cbOrderStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            cbOrderStatus.Location = new System.Drawing.Point(553, 15);
+            cbOrderStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cbOrderStatus.Name = "cbOrderStatus";
-            cbOrderStatus.Size = new System.Drawing.Size(133, 23);
+            cbOrderStatus.Size = new System.Drawing.Size(188, 33);
             cbOrderStatus.TabIndex = 2;
             cbOrderStatus.SelectedIndexChanged += cbOrderStatus_SelectedIndexChanged;
             // 
             // btnCleanAllFilterOrder
             // 
-            btnCleanAllFilterOrder.Location = new System.Drawing.Point(705, 4);
-            btnCleanAllFilterOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCleanAllFilterOrder.Location = new System.Drawing.Point(1007, 7);
+            btnCleanAllFilterOrder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnCleanAllFilterOrder.Name = "btnCleanAllFilterOrder";
-            btnCleanAllFilterOrder.Size = new System.Drawing.Size(105, 26);
+            btnCleanAllFilterOrder.Size = new System.Drawing.Size(150, 43);
             btnCleanAllFilterOrder.TabIndex = 3;
             btnCleanAllFilterOrder.Text = "Clean all filters";
             btnCleanAllFilterOrder.UseVisualStyleBackColor = false;
@@ -650,20 +669,20 @@
             // 
             // btnSearchOrder
             // 
-            btnSearchOrder.Location = new System.Drawing.Point(5, 9);
-            btnSearchOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnSearchOrder.Location = new System.Drawing.Point(7, 15);
+            btnSearchOrder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnSearchOrder.Name = "btnSearchOrder";
-            btnSearchOrder.Size = new System.Drawing.Size(67, 22);
+            btnSearchOrder.Size = new System.Drawing.Size(96, 37);
             btnSearchOrder.TabIndex = 0;
             btnSearchOrder.Text = "Search";
             btnSearchOrder.UseVisualStyleBackColor = false;
             // 
             // txtOrderSearch
             // 
-            txtOrderSearch.Location = new System.Drawing.Point(78, 10);
-            txtOrderSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtOrderSearch.Location = new System.Drawing.Point(111, 17);
+            txtOrderSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtOrderSearch.Name = "txtOrderSearch";
-            txtOrderSearch.Size = new System.Drawing.Size(289, 23);
+            txtOrderSearch.Size = new System.Drawing.Size(411, 31);
             txtOrderSearch.TabIndex = 1;
             txtOrderSearch.TextChanged += txtOrderSearch_TextChanged;
             // 
@@ -674,14 +693,14 @@
             dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOrders.Dock = System.Windows.Forms.DockStyle.Bottom;
-            dgvOrders.Location = new System.Drawing.Point(0, 43);
-            dgvOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dgvOrders.Location = new System.Drawing.Point(0, 76);
+            dgvOrders.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dgvOrders.Name = "dgvOrders";
             dgvOrders.ReadOnly = true;
             dgvOrders.RowHeadersWidth = 51;
             dgvOrders.RowTemplate.Height = 29;
             dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvOrders.Size = new System.Drawing.Size(817, 172);
+            dgvOrders.Size = new System.Drawing.Size(1171, 287);
             dgvOrders.TabIndex = 1;
             dgvOrders.DataSourceChanged += dgvOrders_DataSourceChanged;
             dgvOrders.SelectionChanged += dgvOrders_SelectionChanged;
@@ -691,7 +710,7 @@
             splitContainer5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer5.Location = new System.Drawing.Point(0, 0);
-            splitContainer5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer5.Name = "splitContainer5";
             // 
             // splitContainer5.Panel1
@@ -703,8 +722,9 @@
             // splitContainer5.Panel2
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer6);
-            splitContainer5.Size = new System.Drawing.Size(1226, 315);
-            splitContainer5.SplitterDistance = 405;
+            splitContainer5.Size = new System.Drawing.Size(1755, 531);
+            splitContainer5.SplitterDistance = 579;
+            splitContainer5.SplitterWidth = 6;
             splitContainer5.TabIndex = 0;
             // 
             // gbOrderProduct
@@ -718,11 +738,11 @@
             gbOrderProduct.Controls.Add(txtOrderPrice);
             gbOrderProduct.Controls.Add(txtOrderQuantity);
             gbOrderProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gbOrderProduct.Location = new System.Drawing.Point(0, 59);
-            gbOrderProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            gbOrderProduct.Location = new System.Drawing.Point(0, 106);
+            gbOrderProduct.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             gbOrderProduct.Name = "gbOrderProduct";
-            gbOrderProduct.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            gbOrderProduct.Size = new System.Drawing.Size(403, 254);
+            gbOrderProduct.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbOrderProduct.Size = new System.Drawing.Size(577, 423);
             gbOrderProduct.TabIndex = 99;
             gbOrderProduct.TabStop = false;
             gbOrderProduct.Text = "Product";
@@ -730,22 +750,22 @@
             // pbOrderProductAvatar
             // 
             pbOrderProductAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            pbOrderProductAvatar.Location = new System.Drawing.Point(14, 85);
-            pbOrderProductAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            pbOrderProductAvatar.Location = new System.Drawing.Point(20, 142);
+            pbOrderProductAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pbOrderProductAvatar.Name = "pbOrderProductAvatar";
-            pbOrderProductAvatar.Size = new System.Drawing.Size(143, 144);
+            pbOrderProductAvatar.Size = new System.Drawing.Size(203, 239);
             pbOrderProductAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbOrderProductAvatar.TabIndex = 86;
             pbOrderProductAvatar.TabStop = false;
             // 
             // txtOrderDetailTotal
             // 
-            txtOrderDetailTotal.Location = new System.Drawing.Point(260, 193);
-            txtOrderDetailTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtOrderDetailTotal.Location = new System.Drawing.Point(371, 322);
+            txtOrderDetailTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtOrderDetailTotal.Name = "txtOrderDetailTotal";
             txtOrderDetailTotal.ReadOnly = true;
             txtOrderDetailTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtOrderDetailTotal.Size = new System.Drawing.Size(87, 23);
+            txtOrderDetailTotal.Size = new System.Drawing.Size(123, 31);
             txtOrderDetailTotal.TabIndex = 2;
             txtOrderDetailTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -753,9 +773,10 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label11.Location = new System.Drawing.Point(178, 98);
+            label11.Location = new System.Drawing.Point(254, 163);
+            label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(47, 21);
+            label11.Size = new System.Drawing.Size(70, 32);
             label11.TabIndex = 93;
             label11.Text = "Price:";
             // 
@@ -763,9 +784,10 @@
             // 
             label14.AutoSize = true;
             label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label14.Location = new System.Drawing.Point(181, 190);
+            label14.Location = new System.Drawing.Point(259, 317);
+            label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(42, 21);
+            label14.Size = new System.Drawing.Size(65, 32);
             label14.TabIndex = 97;
             label14.Text = "Total";
             // 
@@ -773,9 +795,10 @@
             // 
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label10.Location = new System.Drawing.Point(178, 146);
+            label10.Location = new System.Drawing.Point(254, 243);
+            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(70, 21);
+            label10.Size = new System.Drawing.Size(106, 32);
             label10.TabIndex = 94;
             label10.Text = "Quantity";
             // 
@@ -783,31 +806,32 @@
             // 
             lbOrderProductName.AutoSize = true;
             lbOrderProductName.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lbOrderProductName.Location = new System.Drawing.Point(14, 30);
+            lbOrderProductName.Location = new System.Drawing.Point(20, 50);
+            lbOrderProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbOrderProductName.Name = "lbOrderProductName";
-            lbOrderProductName.Size = new System.Drawing.Size(160, 32);
+            lbOrderProductName.Size = new System.Drawing.Size(239, 48);
             lbOrderProductName.TabIndex = 96;
             lbOrderProductName.Text = "Product Name";
             // 
             // txtOrderPrice
             // 
-            txtOrderPrice.Location = new System.Drawing.Point(260, 99);
-            txtOrderPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtOrderPrice.Location = new System.Drawing.Point(371, 165);
+            txtOrderPrice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtOrderPrice.Name = "txtOrderPrice";
             txtOrderPrice.ReadOnly = true;
             txtOrderPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtOrderPrice.Size = new System.Drawing.Size(87, 23);
+            txtOrderPrice.Size = new System.Drawing.Size(123, 31);
             txtOrderPrice.TabIndex = 0;
             txtOrderPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtOrderQuantity
             // 
-            txtOrderQuantity.Location = new System.Drawing.Point(260, 148);
-            txtOrderQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtOrderQuantity.Location = new System.Drawing.Point(371, 247);
+            txtOrderQuantity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtOrderQuantity.Name = "txtOrderQuantity";
             txtOrderQuantity.ReadOnly = true;
             txtOrderQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtOrderQuantity.Size = new System.Drawing.Size(87, 23);
+            txtOrderQuantity.Size = new System.Drawing.Size(123, 31);
             txtOrderQuantity.TabIndex = 1;
             txtOrderQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -815,9 +839,10 @@
             // 
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label12.Location = new System.Drawing.Point(52, 10);
+            label12.Location = new System.Drawing.Point(74, 17);
+            label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(284, 32);
+            label12.Size = new System.Drawing.Size(411, 48);
             label12.TabIndex = 92;
             label12.Text = "Order Detail Information";
             // 
@@ -825,7 +850,7 @@
             // 
             splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer6.Location = new System.Drawing.Point(0, 0);
-            splitContainer6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer6.Name = "splitContainer6";
             splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -836,9 +861,9 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(dgvOrderDetails);
-            splitContainer6.Size = new System.Drawing.Size(815, 313);
-            splitContainer6.SplitterDistance = 182;
-            splitContainer6.SplitterWidth = 3;
+            splitContainer6.Size = new System.Drawing.Size(1168, 529);
+            splitContainer6.SplitterDistance = 307;
+            splitContainer6.SplitterWidth = 5;
             splitContainer6.TabIndex = 0;
             // 
             // gbOrderTarget
@@ -863,10 +888,10 @@
             gbOrderTarget.Controls.Add(txtOrderStatus);
             gbOrderTarget.Dock = System.Windows.Forms.DockStyle.Fill;
             gbOrderTarget.Location = new System.Drawing.Point(0, 0);
-            gbOrderTarget.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            gbOrderTarget.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             gbOrderTarget.Name = "gbOrderTarget";
-            gbOrderTarget.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            gbOrderTarget.Size = new System.Drawing.Size(815, 182);
+            gbOrderTarget.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbOrderTarget.Size = new System.Drawing.Size(1168, 307);
             gbOrderTarget.TabIndex = 107;
             gbOrderTarget.TabStop = false;
             gbOrderTarget.Text = "Order >> ID";
@@ -875,10 +900,10 @@
             // btnCancelOrder
             // 
             btnCancelOrder.BackColor = System.Drawing.Color.Khaki;
-            btnCancelOrder.Location = new System.Drawing.Point(690, 160);
-            btnCancelOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCancelOrder.Location = new System.Drawing.Point(986, 267);
+            btnCancelOrder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnCancelOrder.Name = "btnCancelOrder";
-            btnCancelOrder.Size = new System.Drawing.Size(119, 22);
+            btnCancelOrder.Size = new System.Drawing.Size(170, 37);
             btnCancelOrder.TabIndex = 8;
             btnCancelOrder.Text = "Cancel Order";
             btnCancelOrder.UseVisualStyleBackColor = false;
@@ -887,105 +912,117 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new System.Drawing.Point(443, 160);
+            label16.Location = new System.Drawing.Point(633, 267);
+            label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(39, 15);
+            label16.Size = new System.Drawing.Size(60, 25);
             label16.TabIndex = 7;
             label16.Text = "Status";
             // 
             // txtOrderMessage
             // 
-            txtOrderMessage.Location = new System.Drawing.Point(146, 117);
+            txtOrderMessage.Location = new System.Drawing.Point(209, 195);
+            txtOrderMessage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderMessage.Name = "txtOrderMessage";
             txtOrderMessage.ReadOnly = true;
-            txtOrderMessage.Size = new System.Drawing.Size(242, 23);
+            txtOrderMessage.Size = new System.Drawing.Size(344, 31);
             txtOrderMessage.TabIndex = 4;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(33, 119);
+            label13.Location = new System.Drawing.Point(47, 198);
+            label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(53, 15);
+            label13.Size = new System.Drawing.Size(82, 25);
             label13.TabIndex = 158;
             label13.Text = "Message";
             // 
             // txtOrderShippingFee
             // 
-            txtOrderShippingFee.Location = new System.Drawing.Point(600, 117);
+            txtOrderShippingFee.Location = new System.Drawing.Point(857, 195);
+            txtOrderShippingFee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderShippingFee.Name = "txtOrderShippingFee";
             txtOrderShippingFee.ReadOnly = true;
-            txtOrderShippingFee.Size = new System.Drawing.Size(189, 23);
+            txtOrderShippingFee.Size = new System.Drawing.Size(268, 31);
             txtOrderShippingFee.TabIndex = 5;
             txtOrderShippingFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtOrderReceiver
             // 
-            txtOrderReceiver.Location = new System.Drawing.Point(146, 38);
+            txtOrderReceiver.Location = new System.Drawing.Point(209, 63);
+            txtOrderReceiver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderReceiver.Name = "txtOrderReceiver";
             txtOrderReceiver.ReadOnly = true;
-            txtOrderReceiver.Size = new System.Drawing.Size(239, 23);
+            txtOrderReceiver.Size = new System.Drawing.Size(340, 31);
             txtOrderReceiver.TabIndex = 0;
             // 
             // lbOrderShippingFee
             // 
             lbOrderShippingFee.AutoSize = true;
-            lbOrderShippingFee.Location = new System.Drawing.Point(491, 119);
+            lbOrderShippingFee.Location = new System.Drawing.Point(701, 198);
+            lbOrderShippingFee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbOrderShippingFee.Name = "lbOrderShippingFee";
-            lbOrderShippingFee.Size = new System.Drawing.Size(75, 15);
+            lbOrderShippingFee.Size = new System.Drawing.Size(115, 25);
             lbOrderShippingFee.TabIndex = 156;
             lbOrderShippingFee.Text = "Shipping Fee";
             // 
             // txtOrderTotal
             // 
-            txtOrderTotal.Location = new System.Drawing.Point(263, 158);
+            txtOrderTotal.Location = new System.Drawing.Point(376, 263);
+            txtOrderTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderTotal.Name = "txtOrderTotal";
             txtOrderTotal.ReadOnly = true;
-            txtOrderTotal.Size = new System.Drawing.Size(154, 23);
+            txtOrderTotal.Size = new System.Drawing.Size(218, 31);
             txtOrderTotal.TabIndex = 6;
             txtOrderTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtOrderAddress
             // 
-            txtOrderAddress.Location = new System.Drawing.Point(146, 78);
+            txtOrderAddress.Location = new System.Drawing.Point(209, 130);
+            txtOrderAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderAddress.Name = "txtOrderAddress";
             txtOrderAddress.ReadOnly = true;
-            txtOrderAddress.Size = new System.Drawing.Size(242, 23);
+            txtOrderAddress.Size = new System.Drawing.Size(344, 31);
             txtOrderAddress.TabIndex = 2;
             // 
             // lbOrderDate
             // 
             lbOrderDate.AutoSize = true;
-            lbOrderDate.Location = new System.Drawing.Point(491, 37);
+            lbOrderDate.Location = new System.Drawing.Point(701, 62);
+            lbOrderDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbOrderDate.Name = "lbOrderDate";
-            lbOrderDate.Size = new System.Drawing.Size(66, 15);
+            lbOrderDate.Size = new System.Drawing.Size(101, 25);
             lbOrderDate.TabIndex = 148;
             lbOrderDate.Text = "Order Time";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(33, 80);
+            label9.Location = new System.Drawing.Point(47, 133);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(49, 15);
+            label9.Size = new System.Drawing.Size(77, 25);
             label9.TabIndex = 154;
             label9.Text = "Address";
             // 
             // lbTotal
             // 
             lbTotal.AutoSize = true;
-            lbTotal.Location = new System.Drawing.Point(200, 160);
+            lbTotal.Location = new System.Drawing.Point(286, 267);
+            lbTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbTotal.Name = "lbTotal";
-            lbTotal.Size = new System.Drawing.Size(32, 15);
+            lbTotal.Size = new System.Drawing.Size(49, 25);
             lbTotal.TabIndex = 143;
             lbTotal.Text = "Total";
             // 
             // txtOrderPhone
             // 
-            txtOrderPhone.Location = new System.Drawing.Point(599, 78);
+            txtOrderPhone.Location = new System.Drawing.Point(856, 130);
+            txtOrderPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderPhone.Name = "txtOrderPhone";
             txtOrderPhone.ReadOnly = true;
-            txtOrderPhone.Size = new System.Drawing.Size(190, 23);
+            txtOrderPhone.Size = new System.Drawing.Size(270, 31);
             txtOrderPhone.TabIndex = 3;
             txtOrderPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -994,36 +1031,39 @@
             dtpOrderTime.CustomFormat = "MMM dd, yyyy hh:ss";
             dtpOrderTime.Enabled = false;
             dtpOrderTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dtpOrderTime.Location = new System.Drawing.Point(600, 33);
-            dtpOrderTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            dtpOrderTime.Location = new System.Drawing.Point(857, 55);
+            dtpOrderTime.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             dtpOrderTime.Name = "dtpOrderTime";
-            dtpOrderTime.Size = new System.Drawing.Size(189, 23);
+            dtpOrderTime.Size = new System.Drawing.Size(268, 31);
             dtpOrderTime.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(491, 80);
+            label8.Location = new System.Drawing.Point(701, 133);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(41, 15);
+            label8.Size = new System.Drawing.Size(62, 25);
             label8.TabIndex = 152;
             label8.Text = "Phone";
             // 
             // lbReceiver
             // 
             lbReceiver.AutoSize = true;
-            lbReceiver.Location = new System.Drawing.Point(31, 38);
+            lbReceiver.Location = new System.Drawing.Point(44, 63);
+            lbReceiver.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbReceiver.Name = "lbReceiver";
-            lbReceiver.Size = new System.Drawing.Size(51, 15);
+            lbReceiver.Size = new System.Drawing.Size(76, 25);
             lbReceiver.TabIndex = 142;
             lbReceiver.Text = "Receiver";
             // 
             // txtOrderStatus
             // 
-            txtOrderStatus.Location = new System.Drawing.Point(491, 158);
+            txtOrderStatus.Location = new System.Drawing.Point(701, 263);
+            txtOrderStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtOrderStatus.Name = "txtOrderStatus";
             txtOrderStatus.ReadOnly = true;
-            txtOrderStatus.Size = new System.Drawing.Size(106, 23);
+            txtOrderStatus.Size = new System.Drawing.Size(150, 31);
             txtOrderStatus.TabIndex = 151;
             txtOrderStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1032,11 +1072,11 @@
             dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             dgvOrderDetails.Location = new System.Drawing.Point(0, 0);
-            dgvOrderDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dgvOrderDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dgvOrderDetails.Name = "dgvOrderDetails";
             dgvOrderDetails.RowHeadersWidth = 51;
             dgvOrderDetails.RowTemplate.Height = 29;
-            dgvOrderDetails.Size = new System.Drawing.Size(815, 128);
+            dgvOrderDetails.Size = new System.Drawing.Size(1168, 217);
             dgvOrderDetails.TabIndex = 0;
             dgvOrderDetails.DataSourceChanged += dgvOrderDetails_DataSourceChanged;
             dgvOrderDetails.SelectionChanged += dgvOrderDetails_SelectionChanged;
@@ -1044,11 +1084,11 @@
             // tabHome
             // 
             tabHome.Controls.Add(splitContainer1);
-            tabHome.Location = new System.Drawing.Point(4, 24);
-            tabHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tabHome.Location = new System.Drawing.Point(4, 34);
+            tabHome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tabHome.Name = "tabHome";
-            tabHome.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            tabHome.Size = new System.Drawing.Size(1232, 539);
+            tabHome.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tabHome.Size = new System.Drawing.Size(1763, 907);
             tabHome.TabIndex = 0;
             tabHome.Text = "Home";
             tabHome.UseVisualStyleBackColor = true;
@@ -1057,8 +1097,8 @@
             // splitContainer1
             // 
             splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            splitContainer1.Location = new System.Drawing.Point(3, 2);
-            splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer1.Location = new System.Drawing.Point(4, 3);
+            splitContainer1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1068,8 +1108,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new System.Drawing.Size(1226, 535);
-            splitContainer1.SplitterDistance = 290;
+            splitContainer1.Size = new System.Drawing.Size(1755, 901);
+            splitContainer1.SplitterDistance = 415;
+            splitContainer1.SplitterWidth = 6;
             splitContainer1.TabIndex = 87;
             // 
             // groupBoxSearch
@@ -1087,8 +1128,10 @@
             groupBoxSearch.Controls.Add(btnSearch);
             groupBoxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBoxSearch.Location = new System.Drawing.Point(0, 0);
+            groupBoxSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             groupBoxSearch.Name = "groupBoxSearch";
-            groupBoxSearch.Size = new System.Drawing.Size(290, 535);
+            groupBoxSearch.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            groupBoxSearch.Size = new System.Drawing.Size(415, 901);
             groupBoxSearch.TabIndex = 0;
             groupBoxSearch.TabStop = false;
             groupBoxSearch.Text = "Search";
@@ -1099,19 +1142,20 @@
             cbProductSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbProductSort.FormattingEnabled = true;
             cbProductSort.Items.AddRange(new object[] { "Sort by", "Price asc", "Price desc" });
-            cbProductSort.Location = new System.Drawing.Point(8, 196);
-            cbProductSort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            cbProductSort.Location = new System.Drawing.Point(11, 327);
+            cbProductSort.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cbProductSort.Name = "cbProductSort";
-            cbProductSort.Size = new System.Drawing.Size(254, 23);
+            cbProductSort.Size = new System.Drawing.Size(361, 33);
             cbProductSort.TabIndex = 51;
             cbProductSort.SelectedIndexChanged += cbProductSort_SelectedIndexChanged;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(5, 179);
+            label15.Location = new System.Drawing.Point(7, 298);
+            label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(45, 15);
+            label15.Size = new System.Drawing.Size(70, 25);
             label15.TabIndex = 52;
             label15.Text = "Sorting";
             // 
@@ -1121,47 +1165,49 @@
             cbProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbProductCategory.FormattingEnabled = true;
             cbProductCategory.Items.AddRange(new object[] { "Select the category" });
-            cbProductCategory.Location = new System.Drawing.Point(8, 142);
-            cbProductCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            cbProductCategory.Location = new System.Drawing.Point(11, 237);
+            cbProductCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cbProductCategory.Name = "cbProductCategory";
-            cbProductCategory.Size = new System.Drawing.Size(254, 23);
+            cbProductCategory.Size = new System.Drawing.Size(361, 33);
             cbProductCategory.TabIndex = 3;
             cbProductCategory.SelectedIndexChanged += cbProductCategory_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(5, 125);
+            label4.Location = new System.Drawing.Point(7, 208);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(55, 15);
+            label4.Size = new System.Drawing.Size(84, 25);
             label4.TabIndex = 50;
             label4.Text = "Category";
             // 
             // txtProductNameSearch
             // 
             txtProductNameSearch.BackColor = System.Drawing.Color.White;
-            txtProductNameSearch.Location = new System.Drawing.Point(8, 91);
-            txtProductNameSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtProductNameSearch.Location = new System.Drawing.Point(11, 152);
+            txtProductNameSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtProductNameSearch.Name = "txtProductNameSearch";
-            txtProductNameSearch.Size = new System.Drawing.Size(254, 23);
+            txtProductNameSearch.Size = new System.Drawing.Size(361, 31);
             txtProductNameSearch.TabIndex = 0;
             txtProductNameSearch.TextChanged += txtProductNameSearch_TextChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(5, 74);
+            label5.Location = new System.Drawing.Point(7, 123);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(84, 15);
+            label5.Size = new System.Drawing.Size(126, 25);
             label5.TabIndex = 48;
             label5.Text = "Product Name";
             // 
             // btnReset
             // 
-            btnReset.Location = new System.Drawing.Point(162, 29);
-            btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnReset.Location = new System.Drawing.Point(231, 48);
+            btnReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnReset.Name = "btnReset";
-            btnReset.Size = new System.Drawing.Size(100, 23);
+            btnReset.Size = new System.Drawing.Size(143, 38);
             btnReset.TabIndex = 7;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
@@ -1173,21 +1219,21 @@
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(txtUnitsInStockMinSearch);
-            groupBox2.Location = new System.Drawing.Point(8, 352);
-            groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBox2.Location = new System.Drawing.Point(11, 587);
+            groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            groupBox2.Size = new System.Drawing.Size(272, 94);
+            groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Size = new System.Drawing.Size(389, 157);
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             groupBox2.Text = "Units In Stock";
             // 
             // txtUnitsInStockMaxSearch
             // 
-            txtUnitsInStockMaxSearch.Location = new System.Drawing.Point(133, 63);
-            txtUnitsInStockMaxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtUnitsInStockMaxSearch.Location = new System.Drawing.Point(190, 105);
+            txtUnitsInStockMaxSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtUnitsInStockMaxSearch.Name = "txtUnitsInStockMaxSearch";
-            txtUnitsInStockMaxSearch.Size = new System.Drawing.Size(121, 23);
+            txtUnitsInStockMaxSearch.Size = new System.Drawing.Size(171, 31);
             txtUnitsInStockMaxSearch.TabIndex = 1;
             txtUnitsInStockMaxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitsInStockMaxSearch.TextChanged += txtUnitsInStockMaxSearch_TextChanged;
@@ -1196,27 +1242,29 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(14, 65);
+            label3.Location = new System.Drawing.Point(20, 108);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(105, 15);
+            label3.Size = new System.Drawing.Size(158, 25);
             label3.TabIndex = 2;
             label3.Text = "Units In Stock Max";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(14, 34);
+            label7.Location = new System.Drawing.Point(20, 57);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(103, 15);
+            label7.Size = new System.Drawing.Size(155, 25);
             label7.TabIndex = 0;
             label7.Text = "Units In Stock Min";
             // 
             // txtUnitsInStockMinSearch
             // 
-            txtUnitsInStockMinSearch.Location = new System.Drawing.Point(133, 34);
-            txtUnitsInStockMinSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtUnitsInStockMinSearch.Location = new System.Drawing.Point(190, 57);
+            txtUnitsInStockMinSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtUnitsInStockMinSearch.Name = "txtUnitsInStockMinSearch";
-            txtUnitsInStockMinSearch.Size = new System.Drawing.Size(121, 23);
+            txtUnitsInStockMinSearch.Size = new System.Drawing.Size(171, 31);
             txtUnitsInStockMinSearch.TabIndex = 0;
             txtUnitsInStockMinSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitsInStockMinSearch.TextChanged += txtUnitsInStockMinSearch_TextChanged;
@@ -1228,11 +1276,11 @@
             groupBox1.Controls.Add(txtUnitPriceMaxSearch);
             groupBox1.Controls.Add(txtUnitPriceMinSearch);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new System.Drawing.Point(8, 237);
-            groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBox1.Location = new System.Drawing.Point(11, 395);
+            groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            groupBox1.Size = new System.Drawing.Size(272, 94);
+            groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Size = new System.Drawing.Size(389, 157);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Unit Price";
@@ -1240,18 +1288,19 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(14, 34);
+            label6.Location = new System.Drawing.Point(20, 57);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(82, 15);
+            label6.Size = new System.Drawing.Size(121, 25);
             label6.TabIndex = 0;
             label6.Text = "Unit Price Min";
             // 
             // txtUnitPriceMaxSearch
             // 
-            txtUnitPriceMaxSearch.Location = new System.Drawing.Point(133, 65);
-            txtUnitPriceMaxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtUnitPriceMaxSearch.Location = new System.Drawing.Point(190, 108);
+            txtUnitPriceMaxSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtUnitPriceMaxSearch.Name = "txtUnitPriceMaxSearch";
-            txtUnitPriceMaxSearch.Size = new System.Drawing.Size(121, 23);
+            txtUnitPriceMaxSearch.Size = new System.Drawing.Size(171, 31);
             txtUnitPriceMaxSearch.TabIndex = 1;
             txtUnitPriceMaxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitPriceMaxSearch.TextChanged += txtUnitPriceMaxSearch_TextChanged;
@@ -1259,10 +1308,10 @@
             // 
             // txtUnitPriceMinSearch
             // 
-            txtUnitPriceMinSearch.Location = new System.Drawing.Point(133, 34);
-            txtUnitPriceMinSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtUnitPriceMinSearch.Location = new System.Drawing.Point(190, 57);
+            txtUnitPriceMinSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtUnitPriceMinSearch.Name = "txtUnitPriceMinSearch";
-            txtUnitPriceMinSearch.Size = new System.Drawing.Size(121, 23);
+            txtUnitPriceMinSearch.Size = new System.Drawing.Size(171, 31);
             txtUnitPriceMinSearch.TabIndex = 0;
             txtUnitPriceMinSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtUnitPriceMinSearch.TextChanged += txtUnitPriceMinSearch_TextChanged;
@@ -1271,18 +1320,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(14, 65);
+            label2.Location = new System.Drawing.Point(20, 108);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(84, 15);
+            label2.Size = new System.Drawing.Size(124, 25);
             label2.TabIndex = 2;
             label2.Text = "Unit Price Max";
             // 
             // btnSearch
             // 
             btnSearch.Enabled = false;
-            btnSearch.Location = new System.Drawing.Point(22, 29);
+            btnSearch.Location = new System.Drawing.Point(31, 48);
+            btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new System.Drawing.Size(124, 23);
+            btnSearch.Size = new System.Drawing.Size(177, 38);
             btnSearch.TabIndex = 0;
             btnSearch.Text = "Auto Filting";
             btnSearch.UseVisualStyleBackColor = true;
@@ -1291,7 +1342,7 @@
             // 
             splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer2.Location = new System.Drawing.Point(0, 0);
-            splitContainer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1303,9 +1354,9 @@
             // 
             splitContainer2.Panel2.Controls.Add(dgvProducts);
             splitContainer2.Panel2.Controls.Add(btnClose);
-            splitContainer2.Size = new System.Drawing.Size(932, 535);
-            splitContainer2.SplitterDistance = 278;
-            splitContainer2.SplitterWidth = 3;
+            splitContainer2.Size = new System.Drawing.Size(1334, 901);
+            splitContainer2.SplitterDistance = 468;
+            splitContainer2.SplitterWidth = 5;
             splitContainer2.TabIndex = 87;
             // 
             // gbProduct
@@ -1322,20 +1373,20 @@
             gbProduct.Controls.Add(pbProductAvatar);
             gbProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             gbProduct.Location = new System.Drawing.Point(0, 0);
-            gbProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            gbProduct.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             gbProduct.Name = "gbProduct";
-            gbProduct.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            gbProduct.Size = new System.Drawing.Size(932, 278);
+            gbProduct.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbProduct.Size = new System.Drawing.Size(1334, 468);
             gbProduct.TabIndex = 86;
             gbProduct.TabStop = false;
             // 
             // btnAddToCart
             // 
             btnAddToCart.BackColor = System.Drawing.Color.LemonChiffon;
-            btnAddToCart.Location = new System.Drawing.Point(751, 120);
-            btnAddToCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnAddToCart.Location = new System.Drawing.Point(1073, 200);
+            btnAddToCart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnAddToCart.Name = "btnAddToCart";
-            btnAddToCart.Size = new System.Drawing.Size(126, 28);
+            btnAddToCart.Size = new System.Drawing.Size(180, 47);
             btnAddToCart.TabIndex = 3;
             btnAddToCart.Text = "Add To Cart";
             btnAddToCart.UseVisualStyleBackColor = false;
@@ -1347,30 +1398,30 @@
             gbSelect.Controls.Add(btnBack);
             gbSelect.Controls.Add(btnNext);
             gbSelect.Dock = System.Windows.Forms.DockStyle.Bottom;
-            gbSelect.Location = new System.Drawing.Point(3, 236);
-            gbSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            gbSelect.Location = new System.Drawing.Point(4, 398);
+            gbSelect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             gbSelect.Name = "gbSelect";
-            gbSelect.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            gbSelect.Size = new System.Drawing.Size(926, 40);
+            gbSelect.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbSelect.Size = new System.Drawing.Size(1326, 67);
             gbSelect.TabIndex = 92;
             gbSelect.TabStop = false;
             // 
             // txtCurrentIndex
             // 
-            txtCurrentIndex.Location = new System.Drawing.Point(414, 14);
-            txtCurrentIndex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtCurrentIndex.Location = new System.Drawing.Point(591, 23);
+            txtCurrentIndex.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCurrentIndex.Name = "txtCurrentIndex";
             txtCurrentIndex.ReadOnly = true;
-            txtCurrentIndex.Size = new System.Drawing.Size(111, 23);
+            txtCurrentIndex.Size = new System.Drawing.Size(157, 31);
             txtCurrentIndex.TabIndex = 1;
             txtCurrentIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnBack
             // 
-            btnBack.Location = new System.Drawing.Point(283, 12);
-            btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnBack.Location = new System.Drawing.Point(404, 20);
+            btnBack.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(126, 23);
+            btnBack.Size = new System.Drawing.Size(180, 38);
             btnBack.TabIndex = 0;
             btnBack.Text = "<< Back";
             btnBack.UseVisualStyleBackColor = true;
@@ -1378,10 +1429,10 @@
             // 
             // btnNext
             // 
-            btnNext.Location = new System.Drawing.Point(529, 12);
-            btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnNext.Location = new System.Drawing.Point(756, 20);
+            btnNext.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnNext.Name = "btnNext";
-            btnNext.Size = new System.Drawing.Size(126, 23);
+            btnNext.Size = new System.Drawing.Size(180, 38);
             btnNext.TabIndex = 2;
             btnNext.Text = "Next >>";
             btnNext.UseVisualStyleBackColor = true;
@@ -1389,64 +1440,66 @@
             // 
             // txtAvailable
             // 
-            txtAvailable.Location = new System.Drawing.Point(557, 92);
-            txtAvailable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtAvailable.Location = new System.Drawing.Point(796, 153);
+            txtAvailable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtAvailable.Name = "txtAvailable";
             txtAvailable.ReadOnly = true;
             txtAvailable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtAvailable.Size = new System.Drawing.Size(97, 23);
+            txtAvailable.Size = new System.Drawing.Size(137, 31);
             txtAvailable.TabIndex = 2;
             txtAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPrice
             // 
-            txtPrice.Location = new System.Drawing.Point(318, 92);
-            txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtPrice.Location = new System.Drawing.Point(454, 153);
+            txtPrice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtPrice.Name = "txtPrice";
             txtPrice.ReadOnly = true;
             txtPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtPrice.Size = new System.Drawing.Size(97, 23);
+            txtPrice.Size = new System.Drawing.Size(137, 31);
             txtPrice.TabIndex = 1;
             txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(txtDesc);
-            groupBox3.Location = new System.Drawing.Point(254, 146);
-            groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBox3.Location = new System.Drawing.Point(363, 243);
+            groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            groupBox3.Size = new System.Drawing.Size(641, 86);
+            groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox3.Size = new System.Drawing.Size(916, 143);
             groupBox3.TabIndex = 89;
             groupBox3.TabStop = false;
             groupBox3.Text = "Description";
             // 
             // txtDesc
             // 
-            txtDesc.Location = new System.Drawing.Point(8, 20);
-            txtDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtDesc.Location = new System.Drawing.Point(11, 33);
+            txtDesc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtDesc.Multiline = true;
             txtDesc.Name = "txtDesc";
             txtDesc.ReadOnly = true;
-            txtDesc.Size = new System.Drawing.Size(626, 63);
+            txtDesc.Size = new System.Drawing.Size(893, 102);
             txtDesc.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(262, 146);
+            label1.Location = new System.Drawing.Point(374, 243);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(0, 21);
+            label1.Size = new System.Drawing.Size(0, 32);
             label1.TabIndex = 88;
             // 
             // lbAvailable
             // 
             lbAvailable.AutoSize = true;
             lbAvailable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lbAvailable.Location = new System.Drawing.Point(468, 91);
+            lbAvailable.Location = new System.Drawing.Point(669, 152);
+            lbAvailable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbAvailable.Name = "lbAvailable";
-            lbAvailable.Size = new System.Drawing.Size(76, 21);
+            lbAvailable.Size = new System.Drawing.Size(115, 32);
             lbAvailable.TabIndex = 87;
             lbAvailable.Text = "Available:";
             // 
@@ -1454,9 +1507,10 @@
             // 
             lbPrice.AutoSize = true;
             lbPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lbPrice.Location = new System.Drawing.Point(262, 91);
+            lbPrice.Location = new System.Drawing.Point(374, 152);
+            lbPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbPrice.Name = "lbPrice";
-            lbPrice.Size = new System.Drawing.Size(47, 21);
+            lbPrice.Size = new System.Drawing.Size(70, 32);
             lbPrice.TabIndex = 86;
             lbPrice.Text = "Price:";
             // 
@@ -1464,19 +1518,20 @@
             // 
             lbProductName.AutoSize = true;
             lbProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbProductName.Location = new System.Drawing.Point(254, 37);
+            lbProductName.Location = new System.Drawing.Point(363, 62);
+            lbProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbProductName.Name = "lbProductName";
-            lbProductName.Size = new System.Drawing.Size(194, 37);
+            lbProductName.Size = new System.Drawing.Size(284, 54);
             lbProductName.TabIndex = 0;
             lbProductName.Text = "Product Name";
             lbProductName.TextChanged += lbProductName_TextChanged;
             // 
             // pbProductAvatar
             // 
-            pbProductAvatar.Location = new System.Drawing.Point(15, 29);
-            pbProductAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            pbProductAvatar.Location = new System.Drawing.Point(21, 48);
+            pbProductAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pbProductAvatar.Name = "pbProductAvatar";
-            pbProductAvatar.Size = new System.Drawing.Size(210, 203);
+            pbProductAvatar.Size = new System.Drawing.Size(300, 338);
             pbProductAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbProductAvatar.TabIndex = 85;
             pbProductAvatar.TabStop = false;
@@ -1489,23 +1544,23 @@
             dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.Dock = System.Windows.Forms.DockStyle.Top;
             dgvProducts.Location = new System.Drawing.Point(0, 0);
-            dgvProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dgvProducts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersWidth = 51;
             dgvProducts.RowTemplate.Height = 29;
             dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new System.Drawing.Size(932, 223);
+            dgvProducts.Size = new System.Drawing.Size(1334, 372);
             dgvProducts.TabIndex = 0;
             dgvProducts.CellContentClick += dgvProducts_CellContentClick;
             // 
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(844, 214);
-            btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnClose.Location = new System.Drawing.Point(1209, 363);
+            btnClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(74, 22);
+            btnClose.Size = new System.Drawing.Size(106, 37);
             btnClose.TabIndex = 83;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
@@ -1519,10 +1574,10 @@
             tabcontrolCustomer.Controls.Add(tabMyProfile);
             tabcontrolCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             tabcontrolCustomer.Location = new System.Drawing.Point(0, 0);
-            tabcontrolCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tabcontrolCustomer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tabcontrolCustomer.Name = "tabcontrolCustomer";
             tabcontrolCustomer.SelectedIndex = 0;
-            tabcontrolCustomer.Size = new System.Drawing.Size(1240, 567);
+            tabcontrolCustomer.Size = new System.Drawing.Size(1771, 945);
             tabcontrolCustomer.TabIndex = 0;
             tabcontrolCustomer.TabStop = false;
             tabcontrolCustomer.SelectedIndexChanged += tabcontrolCustomer_SelectedIndexChanged;
@@ -1531,11 +1586,11 @@
             // tabCart
             // 
             tabCart.Controls.Add(splitContainer7);
-            tabCart.Location = new System.Drawing.Point(4, 24);
-            tabCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tabCart.Location = new System.Drawing.Point(4, 34);
+            tabCart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tabCart.Name = "tabCart";
-            tabCart.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            tabCart.Size = new System.Drawing.Size(1232, 539);
+            tabCart.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tabCart.Size = new System.Drawing.Size(1763, 907);
             tabCart.TabIndex = 1;
             tabCart.Text = "My Cart";
             tabCart.UseVisualStyleBackColor = true;
@@ -1544,8 +1599,7 @@
             // splitContainer7
             // 
             splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
-            splitContainer7.Location = new System.Drawing.Point(3, 2);
-            splitContainer7.Margin = new System.Windows.Forms.Padding(2);
+            splitContainer7.Location = new System.Drawing.Point(4, 3);
             splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -1555,9 +1609,8 @@
             // splitContainer7.Panel2
             // 
             splitContainer7.Panel2.Controls.Add(splitContainer8);
-            splitContainer7.Size = new System.Drawing.Size(1226, 535);
-            splitContainer7.SplitterDistance = 285;
-            splitContainer7.SplitterWidth = 3;
+            splitContainer7.Size = new System.Drawing.Size(1755, 901);
+            splitContainer7.SplitterDistance = 407;
             splitContainer7.TabIndex = 0;
             // 
             // groupBox4
@@ -1576,8 +1629,10 @@
             groupBox4.Controls.Add(button2);
             groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox4.Location = new System.Drawing.Point(0, 0);
+            groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new System.Drawing.Size(285, 535);
+            groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            groupBox4.Size = new System.Drawing.Size(407, 901);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "Search";
@@ -1586,11 +1641,10 @@
             // txtCartTotal
             // 
             txtCartTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            txtCartTotal.Location = new System.Drawing.Point(81, 248);
-            txtCartTotal.Margin = new System.Windows.Forms.Padding(2);
+            txtCartTotal.Location = new System.Drawing.Point(116, 413);
             txtCartTotal.Name = "txtCartTotal";
             txtCartTotal.ReadOnly = true;
-            txtCartTotal.Size = new System.Drawing.Size(181, 32);
+            txtCartTotal.Size = new System.Drawing.Size(257, 45);
             txtCartTotal.TabIndex = 54;
             txtCartTotal.TextChanged += txtCartTotal_TextChanged;
             // 
@@ -1598,10 +1652,9 @@
             // 
             lbCartTotal.AutoSize = true;
             lbCartTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbCartTotal.Location = new System.Drawing.Point(6, 249);
-            lbCartTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lbCartTotal.Location = new System.Drawing.Point(9, 415);
             lbCartTotal.Name = "lbCartTotal";
-            lbCartTotal.Size = new System.Drawing.Size(78, 25);
+            lbCartTotal.Size = new System.Drawing.Size(116, 38);
             lbCartTotal.TabIndex = 53;
             lbCartTotal.Text = "TOTAL: ";
             // 
@@ -1611,19 +1664,20 @@
             cbCartSorting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbCartSorting.FormattingEnabled = true;
             cbCartSorting.Items.AddRange(new object[] { "Sort by", "Price asc", "Price desc" });
-            cbCartSorting.Location = new System.Drawing.Point(8, 196);
-            cbCartSorting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            cbCartSorting.Location = new System.Drawing.Point(11, 327);
+            cbCartSorting.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cbCartSorting.Name = "cbCartSorting";
-            cbCartSorting.Size = new System.Drawing.Size(254, 23);
+            cbCartSorting.Size = new System.Drawing.Size(361, 33);
             cbCartSorting.TabIndex = 51;
             cbCartSorting.SelectedIndexChanged += cbCartSorting_SelectedIndexChanged;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new System.Drawing.Point(6, 181);
+            label17.Location = new System.Drawing.Point(9, 302);
+            label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(45, 15);
+            label17.Size = new System.Drawing.Size(70, 25);
             label17.TabIndex = 52;
             label17.Text = "Sorting";
             // 
@@ -1633,48 +1687,63 @@
             cbCartFilterCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbCartFilterCategory.FormattingEnabled = true;
             cbCartFilterCategory.Items.AddRange(new object[] { "Select the category" });
-            cbCartFilterCategory.Location = new System.Drawing.Point(8, 142);
-            cbCartFilterCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            cbCartFilterCategory.Location = new System.Drawing.Point(11, 237);
+            cbCartFilterCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cbCartFilterCategory.Name = "cbCartFilterCategory";
-            cbCartFilterCategory.Size = new System.Drawing.Size(254, 23);
+            cbCartFilterCategory.Size = new System.Drawing.Size(361, 33);
             cbCartFilterCategory.TabIndex = 3;
             cbCartFilterCategory.SelectedIndexChanged += cbCartFilterCategory_SelectedIndexChanged;
             cbCartFilterCategory.SelectedValueChanged += cbCartFilterCategory_SelectedValueChanged;
             // 
+            // btnCheckout
+            // 
+            btnCheckout.BackColor = System.Drawing.Color.LemonChiffon;
+            btnCheckout.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCheckout.Location = new System.Drawing.Point(73, 612);
+            btnCheckout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCheckout.Name = "btnCheckout";
+            btnCheckout.Size = new System.Drawing.Size(217, 95);
+            btnCheckout.TabIndex = 3;
+            btnCheckout.Text = "Checkout";
+            btnCheckout.UseVisualStyleBackColor = false;
+            btnCheckout.Click += btnCheckout_Click;
+            // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(6, 127);
+            label18.Location = new System.Drawing.Point(9, 212);
+            label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(55, 15);
+            label18.Size = new System.Drawing.Size(84, 25);
             label18.TabIndex = 50;
             label18.Text = "Category";
             // 
             // txtCartFilterName
             // 
             txtCartFilterName.BackColor = System.Drawing.Color.White;
-            txtCartFilterName.Location = new System.Drawing.Point(8, 91);
-            txtCartFilterName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtCartFilterName.Location = new System.Drawing.Point(11, 152);
+            txtCartFilterName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCartFilterName.Name = "txtCartFilterName";
-            txtCartFilterName.Size = new System.Drawing.Size(254, 23);
+            txtCartFilterName.Size = new System.Drawing.Size(361, 31);
             txtCartFilterName.TabIndex = 0;
             txtCartFilterName.TextChanged += txtFilterName_TextChanged;
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new System.Drawing.Point(6, 74);
+            label19.Location = new System.Drawing.Point(9, 123);
+            label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(84, 15);
+            label19.Size = new System.Drawing.Size(126, 25);
             label19.TabIndex = 48;
             label19.Text = "Product Name";
             // 
             // btnCartReset
             // 
-            btnCartReset.Location = new System.Drawing.Point(162, 29);
-            btnCartReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCartReset.Location = new System.Drawing.Point(231, 48);
+            btnCartReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnCartReset.Name = "btnCartReset";
-            btnCartReset.Size = new System.Drawing.Size(100, 23);
+            btnCartReset.Size = new System.Drawing.Size(143, 38);
             btnCartReset.TabIndex = 7;
             btnCartReset.Text = "Reset";
             btnCartReset.UseVisualStyleBackColor = true;
@@ -1683,9 +1752,10 @@
             // button2
             // 
             button2.Enabled = false;
-            button2.Location = new System.Drawing.Point(22, 29);
+            button2.Location = new System.Drawing.Point(31, 48);
+            button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(124, 23);
+            button2.Size = new System.Drawing.Size(177, 38);
             button2.TabIndex = 0;
             button2.Text = "Auto Filting";
             button2.UseVisualStyleBackColor = true;
@@ -1694,7 +1764,7 @@
             // 
             splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer8.Location = new System.Drawing.Point(0, 0);
-            splitContainer8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            splitContainer8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             splitContainer8.Name = "splitContainer8";
             splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1706,9 +1776,9 @@
             // 
             splitContainer8.Panel2.Controls.Add(dgvCarts);
             splitContainer8.Panel2.Controls.Add(button6);
-            splitContainer8.Size = new System.Drawing.Size(938, 535);
-            splitContainer8.SplitterDistance = 278;
-            splitContainer8.SplitterWidth = 3;
+            splitContainer8.Size = new System.Drawing.Size(1344, 901);
+            splitContainer8.SplitterDistance = 468;
+            splitContainer8.SplitterWidth = 5;
             splitContainer8.TabIndex = 88;
             // 
             // groupBox7
@@ -1729,10 +1799,10 @@
             groupBox7.Controls.Add(pbCartAvatar);
             groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox7.Location = new System.Drawing.Point(0, 0);
-            groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox7.Name = "groupBox7";
-            groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            groupBox7.Size = new System.Drawing.Size(938, 278);
+            groupBox7.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox7.Size = new System.Drawing.Size(1344, 468);
             groupBox7.TabIndex = 86;
             groupBox7.TabStop = false;
             groupBox7.Text = "Product Name";
@@ -1740,10 +1810,10 @@
             // btnCartDelete
             // 
             btnCartDelete.BackColor = System.Drawing.Color.LemonChiffon;
-            btnCartDelete.Location = new System.Drawing.Point(724, 119);
-            btnCartDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCartDelete.Location = new System.Drawing.Point(1034, 198);
+            btnCartDelete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnCartDelete.Name = "btnCartDelete";
-            btnCartDelete.Size = new System.Drawing.Size(126, 28);
+            btnCartDelete.Size = new System.Drawing.Size(180, 47);
             btnCartDelete.TabIndex = 97;
             btnCartDelete.Text = "Delete";
             btnCartDelete.UseVisualStyleBackColor = false;
@@ -1751,10 +1821,9 @@
             // 
             // btnDecrease
             // 
-            btnDecrease.Location = new System.Drawing.Point(821, 93);
-            btnDecrease.Margin = new System.Windows.Forms.Padding(2);
+            btnDecrease.Location = new System.Drawing.Point(1173, 155);
             btnDecrease.Name = "btnDecrease";
-            btnDecrease.Size = new System.Drawing.Size(30, 18);
+            btnDecrease.Size = new System.Drawing.Size(43, 30);
             btnDecrease.TabIndex = 96;
             btnDecrease.Text = "-";
             btnDecrease.UseVisualStyleBackColor = true;
@@ -1762,10 +1831,9 @@
             // 
             // btnIncrease
             // 
-            btnIncrease.Location = new System.Drawing.Point(821, 74);
-            btnIncrease.Margin = new System.Windows.Forms.Padding(2);
+            btnIncrease.Location = new System.Drawing.Point(1173, 123);
             btnIncrease.Name = "btnIncrease";
-            btnIncrease.Size = new System.Drawing.Size(30, 16);
+            btnIncrease.Size = new System.Drawing.Size(43, 27);
             btnIncrease.TabIndex = 95;
             btnIncrease.Text = "+";
             btnIncrease.UseVisualStyleBackColor = true;
@@ -1773,12 +1841,12 @@
             // 
             // txtCartQuantity
             // 
-            txtCartQuantity.Location = new System.Drawing.Point(771, 82);
-            txtCartQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtCartQuantity.Location = new System.Drawing.Point(1101, 137);
+            txtCartQuantity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCartQuantity.Name = "txtCartQuantity";
             txtCartQuantity.ReadOnly = true;
             txtCartQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtCartQuantity.Size = new System.Drawing.Size(47, 23);
+            txtCartQuantity.Size = new System.Drawing.Size(65, 31);
             txtCartQuantity.TabIndex = 94;
             txtCartQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1786,25 +1854,13 @@
             // 
             label28.AutoSize = true;
             label28.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label28.Location = new System.Drawing.Point(688, 82);
+            label28.Location = new System.Drawing.Point(983, 137);
+            label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(73, 21);
+            label28.Size = new System.Drawing.Size(111, 32);
             label28.TabIndex = 93;
             label28.Text = "Quantity:";
             label28.Click += label28_Click;
-            // 
-            // btnCheckout
-            // 
-            btnCheckout.BackColor = System.Drawing.Color.LemonChiffon;
-            btnCheckout.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCheckout.Location = new System.Drawing.Point(51, 367);
-            btnCheckout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new System.Drawing.Size(152, 57);
-            btnCheckout.TabIndex = 3;
-            btnCheckout.Text = "Checkout";
-            btnCheckout.UseVisualStyleBackColor = false;
-            btnCheckout.Click += btnCheckout_Click;
             // 
             // groupBox8
             // 
@@ -1812,30 +1868,30 @@
             groupBox8.Controls.Add(btnCartBack);
             groupBox8.Controls.Add(btnCartNext);
             groupBox8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            groupBox8.Location = new System.Drawing.Point(3, 236);
-            groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBox8.Location = new System.Drawing.Point(4, 398);
+            groupBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox8.Name = "groupBox8";
-            groupBox8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            groupBox8.Size = new System.Drawing.Size(932, 40);
+            groupBox8.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox8.Size = new System.Drawing.Size(1336, 67);
             groupBox8.TabIndex = 92;
             groupBox8.TabStop = false;
             // 
             // lblCartIndex
             // 
-            lblCartIndex.Location = new System.Drawing.Point(414, 14);
-            lblCartIndex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            lblCartIndex.Location = new System.Drawing.Point(591, 23);
+            lblCartIndex.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             lblCartIndex.Name = "lblCartIndex";
             lblCartIndex.ReadOnly = true;
-            lblCartIndex.Size = new System.Drawing.Size(111, 23);
+            lblCartIndex.Size = new System.Drawing.Size(157, 31);
             lblCartIndex.TabIndex = 1;
             lblCartIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCartBack
             // 
-            btnCartBack.Location = new System.Drawing.Point(283, 12);
-            btnCartBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCartBack.Location = new System.Drawing.Point(404, 20);
+            btnCartBack.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnCartBack.Name = "btnCartBack";
-            btnCartBack.Size = new System.Drawing.Size(126, 23);
+            btnCartBack.Size = new System.Drawing.Size(180, 38);
             btnCartBack.TabIndex = 0;
             btnCartBack.Text = "<< Back";
             btnCartBack.UseVisualStyleBackColor = true;
@@ -1843,10 +1899,10 @@
             // 
             // btnCartNext
             // 
-            btnCartNext.Location = new System.Drawing.Point(529, 12);
-            btnCartNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnCartNext.Location = new System.Drawing.Point(756, 20);
+            btnCartNext.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnCartNext.Name = "btnCartNext";
-            btnCartNext.Size = new System.Drawing.Size(126, 23);
+            btnCartNext.Size = new System.Drawing.Size(180, 38);
             btnCartNext.TabIndex = 2;
             btnCartNext.Text = "Next >>";
             btnCartNext.UseVisualStyleBackColor = true;
@@ -1854,46 +1910,46 @@
             // 
             // txtCartAvailable
             // 
-            txtCartAvailable.Location = new System.Drawing.Point(551, 84);
-            txtCartAvailable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtCartAvailable.Location = new System.Drawing.Point(787, 140);
+            txtCartAvailable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCartAvailable.Name = "txtCartAvailable";
             txtCartAvailable.ReadOnly = true;
             txtCartAvailable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtCartAvailable.Size = new System.Drawing.Size(97, 23);
+            txtCartAvailable.Size = new System.Drawing.Size(137, 31);
             txtCartAvailable.TabIndex = 2;
             txtCartAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCartPrice
             // 
-            txtCartPrice.Location = new System.Drawing.Point(317, 84);
-            txtCartPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtCartPrice.Location = new System.Drawing.Point(453, 140);
+            txtCartPrice.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCartPrice.Name = "txtCartPrice";
             txtCartPrice.ReadOnly = true;
             txtCartPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            txtCartPrice.Size = new System.Drawing.Size(97, 23);
+            txtCartPrice.Size = new System.Drawing.Size(137, 31);
             txtCartPrice.TabIndex = 1;
             txtCartPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox9
             // 
             groupBox9.Controls.Add(txtCartDescription);
-            groupBox9.Location = new System.Drawing.Point(254, 146);
-            groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            groupBox9.Location = new System.Drawing.Point(363, 243);
+            groupBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox9.Name = "groupBox9";
-            groupBox9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            groupBox9.Size = new System.Drawing.Size(641, 86);
+            groupBox9.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox9.Size = new System.Drawing.Size(916, 143);
             groupBox9.TabIndex = 89;
             groupBox9.TabStop = false;
             groupBox9.Text = "Description";
             // 
             // txtCartDescription
             // 
-            txtCartDescription.Location = new System.Drawing.Point(8, 20);
-            txtCartDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtCartDescription.Location = new System.Drawing.Point(11, 33);
+            txtCartDescription.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             txtCartDescription.Multiline = true;
             txtCartDescription.Name = "txtCartDescription";
             txtCartDescription.ReadOnly = true;
-            txtCartDescription.Size = new System.Drawing.Size(626, 63);
+            txtCartDescription.Size = new System.Drawing.Size(893, 102);
             txtCartDescription.TabIndex = 0;
             txtCartDescription.TextChanged += textBox9_TextChanged;
             // 
@@ -1901,18 +1957,20 @@
             // 
             label24.AutoSize = true;
             label24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label24.Location = new System.Drawing.Point(262, 147);
+            label24.Location = new System.Drawing.Point(374, 245);
+            label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(0, 21);
+            label24.Size = new System.Drawing.Size(0, 32);
             label24.TabIndex = 88;
             // 
             // label25
             // 
             label25.AutoSize = true;
             label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label25.Location = new System.Drawing.Point(465, 82);
+            label25.Location = new System.Drawing.Point(664, 137);
+            label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(76, 21);
+            label25.Size = new System.Drawing.Size(115, 32);
             label25.TabIndex = 87;
             label25.Text = "Available:";
             // 
@@ -1920,9 +1978,10 @@
             // 
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label26.Location = new System.Drawing.Point(261, 82);
+            label26.Location = new System.Drawing.Point(373, 137);
+            label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(47, 21);
+            label26.Size = new System.Drawing.Size(70, 32);
             label26.TabIndex = 86;
             label26.Text = "Price:";
             // 
@@ -1930,18 +1989,20 @@
             // 
             lbCartName.AutoSize = true;
             lbCartName.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbCartName.Location = new System.Drawing.Point(254, 38);
+            lbCartName.Location = new System.Drawing.Point(363, 63);
+            lbCartName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbCartName.Name = "lbCartName";
-            lbCartName.Size = new System.Drawing.Size(194, 37);
+            lbCartName.Size = new System.Drawing.Size(284, 54);
             lbCartName.TabIndex = 0;
             lbCartName.Text = "Product Name";
+            lbCartName.TextChanged += lbCartName_TextChanged;
             // 
             // pbCartAvatar
             // 
-            pbCartAvatar.Location = new System.Drawing.Point(15, 29);
-            pbCartAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            pbCartAvatar.Location = new System.Drawing.Point(21, 48);
+            pbCartAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pbCartAvatar.Name = "pbCartAvatar";
-            pbCartAvatar.Size = new System.Drawing.Size(210, 203);
+            pbCartAvatar.Size = new System.Drawing.Size(300, 338);
             pbCartAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pbCartAvatar.TabIndex = 85;
             pbCartAvatar.TabStop = false;
@@ -1955,13 +2016,13 @@
             dgvCarts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Check });
             dgvCarts.Dock = System.Windows.Forms.DockStyle.Top;
             dgvCarts.Location = new System.Drawing.Point(0, 0);
-            dgvCarts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dgvCarts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             dgvCarts.Name = "dgvCarts";
             dgvCarts.ReadOnly = true;
             dgvCarts.RowHeadersWidth = 51;
             dgvCarts.RowTemplate.Height = 29;
             dgvCarts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvCarts.Size = new System.Drawing.Size(938, 223);
+            dgvCarts.Size = new System.Drawing.Size(1344, 372);
             dgvCarts.TabIndex = 0;
             dgvCarts.CellClick += dgvCarts_CellClick;
             dgvCarts.CellContentClick += dgvCarts_CellContentClick;
@@ -1978,21 +2039,21 @@
             // button6
             // 
             button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button6.Location = new System.Drawing.Point(1675, 441);
-            button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            button6.Location = new System.Drawing.Point(2397, 742);
+            button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button6.Name = "button6";
-            button6.Size = new System.Drawing.Size(74, 22);
+            button6.Size = new System.Drawing.Size(106, 37);
             button6.TabIndex = 83;
             button6.Text = "Close";
             button6.UseVisualStyleBackColor = true;
             // 
             // frmCustomer
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1240, 567);
+            ClientSize = new System.Drawing.Size(1771, 945);
             Controls.Add(tabcontrolCustomer);
-            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "frmCustomer";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmCustomer";
