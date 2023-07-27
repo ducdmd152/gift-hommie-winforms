@@ -175,7 +175,7 @@ namespace GiftHommieWinforms
                 var product = productRepository.Get(id);
                 int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
 
-                if (product.Quantity == 0)
+                if (orderRepository.GetAvailableProductQuantity(product.Id) <=0 )
                 {
                     MessageBox.Show($"Sold out '{product.Name}', can not select it to checkout.");
                     selectedProducts = selectedProducts.Where(p => p.Id != id).ToList();
