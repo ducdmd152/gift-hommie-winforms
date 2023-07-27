@@ -5,7 +5,7 @@
 --------------------------------------------------
 ## Table of Contents
 - [Description](#description)
-- [Screen-shots]()
+- [Screenshots]()
 - [Technology](#technology)
 - [Documentation](#documentation)
 - [How can get started](#how-can-get-started)
@@ -41,6 +41,6 @@
 	| hoangthien  | 123456   | SHIPPER |
 	| tannguyen  | 123456   | ADMIN |
 ## License & Copyright
-&copy; 2023 Duc Dao ducdmd152 Licensed under the [GNU LICENSE](https://github.com/ducdmd152/dsocial-frontend/blob/main/LICENSE).
+&copy; 2023 Codies Team Licensed under the [GNU LICENSE](https://github.com/ducdmd152/dsocial-frontend/blob/main/LICENSE).
 
 > 🤟 Feel free to use my repository and star it if you find something interesting 🤟
