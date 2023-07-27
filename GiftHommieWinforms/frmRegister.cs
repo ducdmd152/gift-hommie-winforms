@@ -61,7 +61,7 @@ namespace GiftHommieWinforms
                 txtName.Focus();
                 throw new Exception("NAME WAS TOO SHORT");
             }
-                
+
 
             string pattern = @"\d"; // Ký tự chữ cái không phải là số
             if (Regex.IsMatch(input, pattern))
@@ -142,7 +142,7 @@ namespace GiftHommieWinforms
                 txtEmail.Focus();
                 throw new Exception("WRONG FORMAT OF EMAIL");
             }
-                
+
             if (userRepository.Exist(txtEmail.Text))
             {
                 txtEmail.Focus();
@@ -190,7 +190,7 @@ namespace GiftHommieWinforms
             {
                 throw ex;
             }
-            
+
             return true;
         }
         //CHECK VALIDATION

@@ -789,8 +789,19 @@ namespace GiftHommieWinforms
 
             }
 
+            if (int.Parse(txtYob.Text) < 1950 || int.Parse(txtYob.Text) >= 2023) {
+                MessageBox.Show("Please enter only the correct year of birth (1950 - 2023).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtYob.Clear();
+                return false;
+
+
+            }
+            
+
+
             return true;
         }
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -996,12 +1007,12 @@ namespace GiftHommieWinforms
                     d = MessageBox.Show("Bạn có thật sự muốn giao đơn hàng này không ?", "Quản lý shipper", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button1);
 
-                    if (d == DialogResult.OK  && order.Status == "ORDERED")
+                    if (d == DialogResult.OK && order.Status == "ORDERED")
                     {
                         orderRepository.Save(order);
                         LoadOrderShipping();
                     }
-                    else if(order.Status=="FAIL" || order.Status == "CANCELLED")
+                    else if (order.Status == "FAIL" || order.Status == "CANCELLED")
                     {
                         MessageBox.Show("Đơn hàng này đã bị hủy");
                     }

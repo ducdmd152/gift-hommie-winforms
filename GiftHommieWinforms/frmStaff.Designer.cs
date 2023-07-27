@@ -72,6 +72,7 @@
             tabHome = new System.Windows.Forms.TabPage();
             tabcontrolStaff = new System.Windows.Forms.TabControl();
             tabOrder = new System.Windows.Forms.TabPage();
+            button2 = new System.Windows.Forms.Button();
             btnCreateOrder = new System.Windows.Forms.Button();
             VbtnViewOrderDetail = new System.Windows.Forms.Button();
             groupBox5 = new System.Windows.Forms.GroupBox();
@@ -147,7 +148,6 @@
             txtSearchOrder = new System.Windows.Forms.TextBox();
             btnOrderSearch = new System.Windows.Forms.Button();
             btnSortOrder = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBoxSearch.SuspendLayout();
@@ -637,7 +637,7 @@
             // button1
             // 
             button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            button1.Location = new System.Drawing.Point(848, 280);
+            button1.Location = new System.Drawing.Point(848, 281);
             button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(74, 22);
@@ -668,7 +668,7 @@
             // btnClose
             // 
             btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnClose.Location = new System.Drawing.Point(1655, 498);
+            btnClose.Location = new System.Drawing.Point(1655, 499);
             btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(74, 22);
@@ -725,6 +725,18 @@
             tabOrder.Text = "Order";
             tabOrder.UseVisualStyleBackColor = true;
             tabOrder.Click += tabOrder_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.Silver;
+            button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button2.Location = new System.Drawing.Point(1113, 308);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(128, 33);
+            button2.TabIndex = 121;
+            button2.Text = "Edit Shipping Fee";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // btnCreateOrder
             // 
@@ -1567,18 +1579,6 @@
             btnSortOrder.TabIndex = 111;
             btnSortOrder.Text = "Sort In Ascending Date Order";
             btnSortOrder.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.BackColor = System.Drawing.Color.Silver;
-            button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            button2.Location = new System.Drawing.Point(1113, 308);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(128, 33);
-            button2.TabIndex = 121;
-            button2.Text = "Edit Shipping Fee";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // frmStaff
             // 
