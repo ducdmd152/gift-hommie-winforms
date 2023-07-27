@@ -85,7 +85,21 @@ namespace GiftHommieWinforms
                 dgvProducts.Columns["CategoryId"].Visible = false;
                 dgvProducts.Columns["OrderDetails"].Visible = false;
                 dgvProducts.Columns["isDelete"].Visible = false;
+                dgvProducts.Columns["Quantity"].Visible = false;
                 setRowNumber(dgvProducts);
+                // Add the column to the DataGridView
+                if (dgvProducts.Columns["Available"] == null)
+                    dgvProducts.Columns.Add("Available", "Available");
+
+                //Calculate and assign the total value for each row
+                foreach (DataGridViewRow row in dgvProducts.Rows)
+                {
+                    int id = Convert.ToInt32(row.Cells["Id"].Value);
+
+                    row.Cells["Available"].Value = orderRepository.GetAvailableProductQuantity(id);
+                }
+                dgvProducts.Columns["Available"].DisplayIndex = 4;
+                dgvProducts.Columns["Available"].DataPropertyName = "Available";
                 LoadChoosenItems();
 
 
