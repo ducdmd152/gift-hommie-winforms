@@ -1181,6 +1181,13 @@ namespace GiftHommieWinforms
 
             }
 
+            if (int.Parse(txtYob.Text) < 1950 || int.Parse(txtYob.Text) >= 2023)
+            {
+                MessageBox.Show("Please enter only the correct year of birth (1950 - 2023).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtYob.Clear();
+                return false;
+            }
+
             return true;
         }
 
