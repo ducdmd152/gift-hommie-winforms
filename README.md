@@ -1,4 +1,5 @@
 
+
 #  Gift E-commerce Desktop Application
 ### Released versions: [ Hommie Desktop Releases](https://github.com/ducdmd152/gift-hommie-winforms/releases/)
 
@@ -24,6 +25,17 @@
 ## Documentation
 - Link: [[Gift E-Co Winforms] Document.pdf](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/%5BGift%20E-Co%20Winforms%5D%20Document.pdf)
 
+## Screenshots
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/1.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/2.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/3.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/4.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/4-1.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/5.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/6.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/7.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/8.png)
+![1](https://github.com/ducdmd152/gift-hommie-winforms/blob/main/screenshots/9.png)
 ## How can Get Started
 
 - **Source/Project**:
