@@ -15,7 +15,11 @@
 ## Description
 
  - A simple desktop app that offers basic purchasing flow like shopping and manages orders/products.
- - The system supports the basic functions of an e-commerce app for 4 actors: CUSTOMER, SHIPPER, STAFF & ADMIN.
+ - The system supports the basic functions of an e-commerce app for 4 actors:
+ 	- CUSTOMER
+  	- SHIPPER
+   	- STAFF
+   	- ADMIN.
 
 ## Technology
 
