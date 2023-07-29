@@ -23,8 +23,8 @@
 
 ## Technology
 
-- .NET Winforms
-- Entity Framework Core
+- .NET Winforms (v5.0.408)
+- Entity Framework Core (v5.0.17)
 - MSSQL Server
 
 ## Documentation
